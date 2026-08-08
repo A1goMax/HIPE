@@ -27,16 +27,6 @@ def load_train_validation(
             raise TypeError("Explicit train and validation paths must contain Dataset objects")
         return train, validation
 
-    try:
-        dataset = _load_dataset(root)
-    except FileNotFoundError:
-        raise
-
-    if isinstance(dataset, DatasetDict):
-        if "train" not in dataset or "validation" not in dataset:
-            raise KeyError("DatasetDict must contain train and validation splits")
-        return dataset["train"], dataset["validation"]
-
     train_path = root / "c4_30M_train"
     validation_path = root / "c4_30M_validation"
     if train_path.exists() and validation_path.exists():
@@ -44,6 +34,12 @@ def load_train_validation(
         validation = _load_dataset(validation_path)
         if isinstance(train, Dataset) and isinstance(validation, Dataset):
             return train, validation
+
+    dataset = _load_dataset(root)
+    if isinstance(dataset, DatasetDict):
+        if "train" not in dataset or "validation" not in dataset:
+            raise KeyError("DatasetDict must contain train and validation splits")
+        return dataset["train"], dataset["validation"]
 
     raise TypeError(
         "data_path must be a DatasetDict with train/validation or a directory "

@@ -896,9 +896,6 @@ class ScaledRoPE(RotaryEmbedding):
 """
 
 
-# 尝试生物真实多尺度，数据量从小到大变化测试，设置validation调整lr,epoch,batchsize等超参数，micro_batchsize和batchsize区别
-
-
 class ScaledRoPE(nn.Module):
     def __init__(self, config, cache):
         super().__init__()
@@ -928,7 +925,6 @@ class ScaledRoPE(nn.Module):
         cache_key_sin = "scaled_rope_pos_sin"
         cache_key_cos = "scaled_rope_pos_cos"
 
-        # 尝试从缓存读取
         if (
             (pos_sin := self._cache.get(cache_key_sin)) is not None
             and (pos_cos := self._cache.get(cache_key_cos)) is not None
@@ -943,7 +939,6 @@ class ScaledRoPE(nn.Module):
                 self._cache[cache_key_cos] = pos_cos
             return pos_sin[:, :, :seq_len, :], pos_cos[:, :, :seq_len, :]
 
-        # 缓存未命中，重新计算
         with torch.autocast(device.type, enabled=False):
             pos = torch.arange(seq_len, device=device, dtype=torch.float)
             freqs = torch.einsum("i,d->id", pos, self.inv_freq)  # (seq_len, d_half)
@@ -1016,9 +1011,9 @@ class DiagPositionEmbedding(nn.Module):
         self.base = getattr(config, "rope_theta", 10000.0)
         self.max_seq_len = getattr(config, "max_sequence_length", 8192)
 
-        # 构建 theta_d = base^(-2d/dim)
+
         inv_freq = 1.0 / (self.base ** (torch.arange(0, self.dim, 2).float() / self.dim))
-        # 保存为 buffer，支持缓存
+
         self.register_buffer("inv_freq", inv_freq, persistent=False)
         self._cos_cached = None
         self._sin_cached = None
@@ -1026,7 +1021,7 @@ class DiagPositionEmbedding(nn.Module):
     def _update_cos_sin_tables(self, x, seq_len):
         # x: (B, nh, T, hd)
         if seq_len > self.max_seq_len:
-            # 动态外推（可选）
+
             self.max_seq_len = seq_len
             t = torch.arange(seq_len, device=x.device).type_as(self.inv_freq)
             freqs = torch.outer(t, self.inv_freq)
@@ -1217,16 +1212,12 @@ class XPosEmbedding(RotaryEmbedding):
         self.symbolic_scale_base = 512
         
         dim = config.d_model // config.n_heads
-        
-        # [关键修复] 调整 Scale 的范围
-        # 原论文公式: (i + 0.4d) / (1.4d) -> 范围约 [0.28, 1.0] -> 导致 1024 步后 NaN
-        # 修正公式: 映射到 [0.95, 1.0] -> 保证 1024 步后数值仍在 bfloat16 范围内
-        # calculation: 0.95^1024 ~= 1.6e-23 (bfloat16 min ~= 1e-38), safe.
+
         
         min_decay = 0.95 
         max_decay = 1.0
         
-        # 生成线性插值
+
         indices = torch.arange(0, dim, 2, dtype=torch.float32)
         scale = min_decay + (max_decay - min_decay) * (indices / dim)
         
@@ -1237,7 +1228,6 @@ class XPosEmbedding(RotaryEmbedding):
         t = torch.arange(seq_len, device=device, dtype=self.scale.dtype)
         power = t[:, None] # [Seq, 1]
         
-        # [新增] 增加一个极小的 epsilon 防止完全为 0
         scale_val = self.scale.to(device) ** power # [Seq, Dim/2]
         
         # Repeat for sin/cos shape
@@ -1271,9 +1261,7 @@ class XPosEmbedding(RotaryEmbedding):
             q_emb = q_emb * scale_q
             
             # 4. Apply to K (Inverse Scale)
-            # [关键修复] 增加 clamp 防止除以 0 或数值爆炸
             scale_k_slice = scale[:, :, :key_len, :]
-            # 限制最小值为 1e-6，防止除零
             scale_k_safe = torch.clamp(scale_k_slice, min=1e-6)
             scale_k = 1.0 / scale_k_safe
             
@@ -1448,27 +1436,23 @@ class OLMoBlock(nn.Module):
                 )
             else:
                 self.rotary_emb = FourierEmbedding(config, self.__cache)
-        # === [Model.py 修复代码] ===
+
         elif self.config.rope:
             use_scaled = getattr(self.config, 'use_scaled_rope1', False)
             
-            # 1. 获取 Sigma 配置
+
             raw_sigma = getattr(self.config, 'scaled_rope_sigmas', None)
             if raw_sigma is None:
                 raw_sigma = self.config.scaled_rope_sigma
             
             current_layer_sigma = raw_sigma
             
-            # 2. 如果是列表，取当前层的值
+
             if use_scaled and isinstance(raw_sigma, list) and len(raw_sigma) == config.n_layers:
                 current_layer_sigma = raw_sigma[self.layer_id]
                 # Log only once per layer to avoid spam
                 # log.info(f"Layer {self.layer_id}: Sigma={current_layer_sigma}")
 
-            # 3. 决策：到底用哪个 Embedding 类？
-            # 如果 current_layer_sigma 是 None，说明这一层不仅不 Scaling，
-            # 甚至不应该实例化 ScaledRotaryEmbedding (因为它处理不了 None)
-            # 我们直接回退到标准 RotaryEmbedding
             
             if use_scaled and current_layer_sigma is not None:
                 self.rotary_emb = ScaledRotaryEmbedding(
@@ -1480,18 +1464,16 @@ class OLMoBlock(nn.Module):
             elif getattr(self.config, 'use_scaled_rope2', False):
                 self.rotary_emb = ScaledRoPE(config)
             else:
-                # Fallback to Standard RoPE
-                # 当 sigma 为 None 时也会走到这里，这正是我们想要的 (Layer 0, 1)
                 self.rotary_emb = RotaryEmbedding(config, self.__cache)
-        # ==========================
+
         
         elif getattr(self.config, 'nope', False):
             self.rotary_emb = NoPE(config, self.__cache)
-            # log.info("Using NoPE (No Positional Encoding)")
+
 
         elif getattr(self.config, 'xpos', False):
             self.rotary_emb = XPosEmbedding(config, self.__cache)
-            # log.info("Using XPos (Extrapolatable Position Embedding)")
+
 
 
         self.flash_attn_func = None

@@ -72,6 +72,24 @@ Prepare WikiText:
 bash scripts/prepare_wikitext.sh
 ```
 
+Prepare the C4 splits expected by the C4 launcher:
+
+```bash
+bash scripts/prepare_c4.sh
+```
+
+This streams the English C4 training split, shuffles it deterministically, and
+materializes `c4_30M_train` and `c4_30M_validation` as local Hugging Face
+`Dataset` directories. The default source subset contains 30M documents, with
+90% assigned to training and 5% to validation. For a small local smoke dataset,
+set `TRAIN_DOCS`, `VALIDATION_DOCS`, and `SHARD_SIZE`.
+
+Prepare only the tokenizer when the datasets are already available:
+
+```bash
+bash scripts/prepare_tokenizer.sh
+```
+
 Run the fixed-sigma bipartite method on WikiText:
 
 ```bash

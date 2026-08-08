@@ -1,10 +1,11 @@
-"""Download and materialize the WikiText-103 dataset and tokenizer."""
+"""Download and materialize WikiText-103 and its local tokenizer."""
 
 import argparse
 from pathlib import Path
 
 from datasets import load_dataset
-from transformers import AutoTokenizer
+
+from .prepare_tokenizer import prepare_tokenizer
 
 
 def main() -> None:
@@ -17,8 +18,7 @@ def main() -> None:
     output.mkdir(parents=True, exist_ok=True)
     dataset = load_dataset("wikitext", "wikitext-103-v1")
     dataset.save_to_disk(str(output / "raw"))
-    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name)
-    tokenizer.save_pretrained(str(output / "tokenizer"))
+    prepare_tokenizer(args.tokenizer_name, output / "tokenizer")
 
 
 if __name__ == "__main__":
