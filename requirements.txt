@@ -1,0 +1,9 @@
+numpy<2
+torch>=2.1
+datasets>=4.2
+transformers>=4.56
+omegaconf>=2.3
+tqdm>=4.67
+
+# Optional CUDA acceleration used by the paper-scale runs:
+# flash-attn>=2.8
