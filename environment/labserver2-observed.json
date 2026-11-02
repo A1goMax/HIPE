@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-02",
+  "python": "/home/qijunrong/anaconda3/bin/python",
+  "torch": "2.8.0+cu128",
+  "numpy": "1.26.4",
+  "datasets": "2.19.2",
+  "transformers": "4.56.2",
+  "pytest": "8.4.2",
+  "gpu_models": [
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA GeForce RTX 5090"
+  ],
+  "note": "Observed runtime for CPU code checks; not an exact environment lock or a completed GPU training validation."
+}

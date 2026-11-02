@@ -295,6 +295,13 @@ class ModelConfig(BaseConfig):
     of blocks together with a single FSDP wrapper during training.
     """
 
+    nope: bool = False
+    xpos: bool = False
+    legacy_absolute_positions: bool = False
+    local_attention_layers: Optional[List[int]] = None
+    local_window_size: int = 256
+    num_local_layers: int = 0
+
     alibi: bool = False
     """
     If ``True``, use ALiBi embeddings. Mutually exclusive with ``rope``.
@@ -409,7 +416,7 @@ class ModelConfig(BaseConfig):
 
 # In olmo/config.py, inside the ModelConfig class
 
-    scaled_rope_sigmas: Optional[List[float]] = None
+    scaled_rope_sigmas: Optional[List[Optional[float]]] = None
     """
     A list of sigma values for Scaled-RoPE, with one value per attention head.
     If provided, this list takes precedence. Only used when `use_scaled_rope` is `True`.

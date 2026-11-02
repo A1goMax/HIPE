@@ -1,0 +1,14 @@
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+.gitignore text eol=lf
+.gitattributes text eol=lf
+hipe/olmo/aliases.py -text
+hipe/olmo/beam_search.py -text
+hipe/olmo/exceptions.py -text
+hipe/olmo/initialization.py -text
+hipe/olmo/torch_util.py -text

@@ -1,0 +1,11 @@
+{
+  "partition": "debug",
+  "python": "/home/qijunrong/anaconda3/bin/python",
+  "data_root": "/data/qijunrong/03-proj/PE",
+  "artifacts_root": "/data/qijunrong/03-proj/HIPE-journal",
+  "cpus_per_gpu": 8,
+  "memory_gb_per_gpu": 64,
+  "time_limit": "96:00:00",
+  "gpu_model_required": "NVIDIA GeForce RTX 5090",
+  "repo_root": "/home/qijunrong/03-proj/HIPE"
+}

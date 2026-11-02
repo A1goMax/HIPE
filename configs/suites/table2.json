@@ -1,0 +1,54 @@
+{
+  "source": "MS04, latest user-supplied 21-page PDF; Table 2",
+  "defaults": {
+    "paper_source": "MS04",
+    "max_tokens": 100000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "march2026",
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Batch settings are explicit launcher profiles, not a proven mapping to each reported rounded value.",
+      "NoPE/XPos default to named legacy absolute-position compatibility; --correct-nope selects intended position-free behavior.",
+      "The historical C4 launchers specify 200M tokens while the paper specifies 100M; this suite explicitly follows the paper budget.",
+      "The sampler uses an independent saved seed/cursor; historical script RNG consumption is not asserted identical."
+    ]
+  },
+  "matrix": {
+    "dataset": [
+      "wikitext103",
+      "c4"
+    ],
+    "model_size": [
+      "20M",
+      "60M"
+    ],
+    "seq_len": [
+      512,
+      1024,
+      2048
+    ],
+    "method": [
+      "nope",
+      "alibi",
+      "rope",
+      "hipe"
+    ],
+    "sigma": [
+      50,
+      100,
+      200,
+      500,
+      700,
+      1000
+    ],
+    "seed": [
+      6198,
+      1024,
+      7,
+      568,
+      3427
+    ]
+  }
+}

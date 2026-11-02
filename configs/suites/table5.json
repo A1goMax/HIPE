@@ -1,0 +1,63 @@
+{
+  "source": "MS04 Table 5; local/global attention from PE rebuttal/local-global_attention",
+  "defaults": {
+    "paper_source": "MS04",
+    "dataset": "c4",
+    "model_size": "60M",
+    "seq_len": 1024,
+    "max_tokens": 300000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "attention2026",
+    "sigma": 500,
+    "local_layers": 4,
+    "local_window_size": 256,
+    "data_pipeline": "legacy_wiki",
+    "num_proc": 8,
+    "validation_num_proc": 8,
+    "max_train_samples": 2000000,
+    "max_val_samples": 10000,
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Table 5 fixes sigma 500 and length 1024; checked-in historical launchers instead contain sigma 200/300 and/or length 512.",
+      "The local window of 256 follows the source branch; exact run-to-paper provenance remains to be recovered.",
+      "This suite applies one shared trainer and preprocessing protocol to all six conditions."
+    ]
+  },
+  "seeds": [
+    6198
+  ],
+  "cases": [
+    {
+      "case_name": "global_rope",
+      "method": "rope",
+      "attention_pattern": "global"
+    },
+    {
+      "case_name": "local_global_rope",
+      "method": "rope",
+      "attention_pattern": "local-global"
+    },
+    {
+      "case_name": "global_local_rope",
+      "method": "rope",
+      "attention_pattern": "global-local"
+    },
+    {
+      "case_name": "global_hipe",
+      "method": "hipe",
+      "attention_pattern": "global"
+    },
+    {
+      "case_name": "global_local_hipe",
+      "method": "hipe",
+      "attention_pattern": "global-local"
+    },
+    {
+      "case_name": "local_global_hipe",
+      "method": "hipe",
+      "attention_pattern": "local-global"
+    }
+  ]
+}

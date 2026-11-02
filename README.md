@@ -1,54 +1,68 @@
 # HIPE
 
-**Hippocampus-Inspired Multiscale Representation Learning**
+Shared positional-embedding code for the latest manuscript's main experiments and ablations. **Table 2 is the first target.** The active source is the 21-page PDF registered as MS04; the requested method scope is Tables 1-5.
 
-HIPE connects hippocampal population coding, learning theory and Transformer positional representations. The journal research program asks when multiscale representations improve sample efficiency, what mechanism explains the effect, and where the advantage stops.
+Code is authored in `E:\research\03\HIPE` and synchronized to `/home/qijunrong/03-proj/HIPE`, branch `journal/research-foundation`. GitHub publication remains a later decision.
 
-The existing manuscript title is **The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency**. The research program is organized around its biological, theoretical and computational contributions.
+## One experiment interface
 
-## Start here
-
-- [Project plan](PROJECT_PLAN.md): scientific questions, workstreams, stages and completion criteria.
-- [Current status](STATUS.md): completed work, observed blockers and immediate priorities.
-- [Claims and evidence](docs/science/CLAIM_EVIDENCE.md): the evidence required for each claim.
-- [Experiment registry](experiments/registry.json): conference targets and proposed journal studies.
-- [Architecture](docs/engineering/ARCHITECTURE.md): current implementation, target organization and migration rules.
-- [Manuscript sources](manuscript/sources/manifest.json): versions and file identities.
-
-## Repository organization
-
-```text
-HIPE/
-  hipe/                    Existing method package and model implementation
-  configs/                 Reference specifications and future resolved run configs
-  experiments/             Registry, protocols and run manifest contract
-  analysis/                Figure and table generation conventions
-  manuscript/              Source register and journal manuscript outline
-  docs/                    Scientific reasoning, architecture and decisions
-  reproducibility/         Legacy source register and environment requirements
-  scripts/                 Existing launchers and research-plan validation
-  tests/                   Existing package tests and future equivalence checks
-  third_party_licenses/    Upstream license notices
-  PROJECT_PLAN.md           Research charter and staged roadmap
-  STATUS.md                 Current state and next actions
-```
-
-Large datasets, checkpoints, logs, PDFs and generated outputs belong in external artifact storage. Their identities and evidence links belong in the repository. The project does not require a method-specific Git branch for each experiment.
-
-## Current software scope
-
-The initial package exposes fixed-sigma bipartite HIPE through `python -m hipe.train` and checkpoint evaluation through `python -m hipe.evaluate`. Model-size configurations include 20M, 60M and 300M. The journal registry includes additional methods and scientific tasks whose integration and validation are still pending.
-
-The previous method-release README is preserved at [Method release](docs/engineering/METHOD_RELEASE.md), including its setup and invocation examples. Those commands document the inherited interface; they do not certify equivalence to the conference experiments. The current environment and validation status are recorded in `STATUS.md`.
-
-Validate the planning metadata without installing the training dependencies:
+Preview a paired Table 2 condition without submitting a job:
 
 ```bash
-python scripts/check_research_plan.py
+python -m hipe.experiments submit --suite table2 \
+  --dataset wikitext103 --model-size 20M --seq-len 512 \
+  --method rope hipe --sigma 200 --seed 6198 --gpus 2
 ```
 
-## Publication scope
+The preview prints the SLURM command and resolved batch summary. Add `--execute` when actually submitting. One GPU runs one condition at a time. Two GPUs run independent conditions concurrently; each retains its original batch. The launcher does not use DDP.
 
-The journal campaign combines recovery of the conference evidence with new budget curves, finite-spectrum checks and controlled mechanism studies. Candidate scaling and downstream experiments are staged extensions. Their inclusion depends on the results and resources rather than their presence in a legacy branch.
+Inspect resolved settings:
 
-The current working branch is `journal/research-foundation`. Existing source history and remote configuration are retained. The eventual GitHub destination and release are separate project decisions.
+```bash
+python -m hipe.experiments plan --suite table2 \
+  --dataset wikitext103 --model-size 20M --seq-len 512 \
+  --method rope hipe --sigma 200 --seed 6198 --output pair.json
+```
+
+Preview all six attention ablations:
+
+```bash
+python -m hipe.experiments submit --suite table5 --gpus 2
+```
+
+The machine profile uses the `debug` partition, original Python environment and external data paths. Actual experiments require SLURM and an allocated RTX 5090, with one or two GPUs per job.
+
+## Shared implementation
+
+`hipe/config.py` combines positional method (`rope`, `hipe`, `nope`, `alibi`, `xpos`), sigma schedule (bipartite, uniform, reverse, explicit), fixed/learnable sigma and attention placement (global, local-global, global-local). Main experiments and ablations use the same trainer and preprocessing protocol.
+
+The fixed HIPE formula is checked against PE commit 060b6a6. Learnable HIPE preserves the source branch's per-head normalization and weight floor. Explicit schedules use `null` for unscaled RoPE and positive scales for HIPE; zero is not a RoPE alias.
+
+## Historical compatibility
+
+Global batch is 64. Named profiles preserve recovered micro-batch rules; see [branch integration](docs/engineering/BRANCH_INTEGRATION.md). The six-sigma/five-seed Table 2 search expands to 540 runs rather than 48 paper cells.
+
+Legacy NoPE/XPos also added learned absolute-position embeddings. Compatibility runs retain this explicitly and carry `legacyAPE` in their identities. `--correct-nope` disables the legacy addition for selected NoPE/XPos conditions.
+
+Some C4 launchers specify 200M tokens while the paper states 100M. The Table 2 suite follows the paper budget. Exact historical run-to-table association remains unresolved.
+
+## Evidence and results
+
+Each run stores a recoverable source snapshot, resolved experiment/model configuration, runtime, tokenizer/data identities, evaluation records, resumable checkpoint and final weights. Existing directories are rejected; resume verifies source/config/data identity.
+
+```bash
+python -m hipe.evaluate --checkpoint /path/to/run/model.pt
+python -m hipe.report --runs-root /path/to/runs --endpoint last_interval --output summary.json
+```
+
+The report keeps individual seeds, mean and standard deviation, separates protocols, and rejects duplicate seeds. It distinguishes last-interval validation from an additional final evaluation and does not silently select a best sigma.
+
+## Research records
+
+- [Current status](STATUS.md)
+- [Focused project plan](PROJECT_PLAN.md)
+- [Branch comparison](docs/engineering/BRANCH_INTEGRATION.md)
+- [Experiment registry](experiments/registry.json)
+- [Manuscript sources](manuscript/sources/manifest.json)
+
+`planning/` is the earlier local archive; its old manuscript scope is superseded. Legacy release launchers remain for interface history. Use the suite-driven commands for the new campaign.

@@ -1,7 +1,12 @@
-# HIPE Configuration Organization
+# HIPE Experiment Configuration
 
-`reference/conference_20260129.json` captures settings stated in manuscript MS01. Null fields identify settings still requiring recovery. It is a research specification and cannot be passed directly to the current trainer.
+- suites/table2.json: restricted-budget main comparison and explicit sigma search.
+- suites/table5.json: local/global attention comparisons through the same model/trainer.
+- suites/schedules.json: uniform, reverse and continuous layer schedules, currently outside the requested run scope.
+- machines/labserver2.json: server paths, original Python runtime and scheduler resources.
+- reference/latest_hipe_tables.json: current paper specification, not directly runnable.
+- reference/conference_20260129.json: historical MS01 specification, superseded for the current campaign.
 
-Runnable configurations will be added after method/data/training semantics are compared and validated. They should identify model shape, positional method and schedule, corpus/task, tokenizer, optimization, budget, seed and evaluation. Shared defaults must be resolved into each run manifest; a mutable default is not a historical record.
+Suite defaults and per-condition choices are resolved into a complete ExperimentConfig. A run stores these resolved settings rather than relying on mutable launcher defaults. Global batch is 64. Named micro-batch profiles record historical differences; GPU count does not change the per-condition batch.
 
-Separate configurations by evidence purpose: recovered conference reference, prospective replication, exploratory journal pilot, and confirmatory journal campaign. Keep their source and status explicit. Machine paths belong in local profiles; large data and outputs remain outside version control.
+The source comparison documents unresolved settings and intentional protocol choices. Use filtered submission previews before the measured SLURM pilot.

@@ -1,14 +1,15 @@
 {
-  "schema_version": 1,
-  "record_type": "research_inventory_not_an_execution_log",
-  "reference_source_id": "MS01",
-  "created_date": "2026-11-02",
+  "schema_version": 2,
+  "record_type": "reference_inventory_not_execution_log",
+  "reference_source_id": "MS04",
+  "scope": "HIPE method Tables 1-5",
+  "first_target": "Table 2",
   "records": [
     {
-      "experiment_id": "MS01-SYN-associative-rope",
+      "experiment_id": "MS04-SYN-associative-rope",
       "family": "SYN",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 1",
       "pdf_pages": [
         7
@@ -33,13 +34,14 @@
         "batch_size",
         "seed",
         "checkpoint_rule"
-      ]
+      ],
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "MS01-SYN-associative-hipe",
+      "experiment_id": "MS04-SYN-associative-hipe",
       "family": "SYN",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 1",
       "pdf_pages": [
         7
@@ -64,13 +66,14 @@
         "batch_size",
         "seed",
         "checkpoint_rule"
-      ]
+      ],
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "MS01-SYN-block-rope",
+      "experiment_id": "MS04-SYN-block-rope",
       "family": "SYN",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 1",
       "pdf_pages": [
         7
@@ -95,13 +98,14 @@
         "batch_size",
         "seed",
         "checkpoint_rule"
-      ]
+      ],
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "MS01-SYN-block-hipe",
+      "experiment_id": "MS04-SYN-block-hipe",
       "family": "SYN",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 1",
       "pdf_pages": [
         7
@@ -126,13 +130,14 @@
         "batch_size",
         "seed",
         "checkpoint_rule"
-      ]
+      ],
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L512-nope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L512-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -160,13 +165,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L1024-nope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L1024-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -194,13 +200,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L2048-nope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L2048-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -228,13 +235,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L512-nope",
+      "experiment_id": "MS04-LM-c4-20M-L512-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -262,13 +270,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L1024-nope",
+      "experiment_id": "MS04-LM-c4-20M-L1024-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -296,13 +305,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L2048-nope",
+      "experiment_id": "MS04-LM-c4-20M-L2048-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -330,13 +340,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L512-alibi",
+      "experiment_id": "MS04-LM-wikitext103-20M-L512-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -364,13 +375,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L1024-alibi",
+      "experiment_id": "MS04-LM-wikitext103-20M-L1024-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -398,13 +410,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L2048-alibi",
+      "experiment_id": "MS04-LM-wikitext103-20M-L2048-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -430,13 +443,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L512-alibi",
+      "experiment_id": "MS04-LM-c4-20M-L512-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -464,13 +478,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L1024-alibi",
+      "experiment_id": "MS04-LM-c4-20M-L1024-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -498,13 +513,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L2048-alibi",
+      "experiment_id": "MS04-LM-c4-20M-L2048-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -530,13 +546,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L512-rope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L512-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -564,13 +581,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L1024-rope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L1024-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -598,13 +616,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L2048-rope",
+      "experiment_id": "MS04-LM-wikitext103-20M-L2048-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -632,13 +651,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L512-rope",
+      "experiment_id": "MS04-LM-c4-20M-L512-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -666,13 +686,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L1024-rope",
+      "experiment_id": "MS04-LM-c4-20M-L1024-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -700,13 +721,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L2048-rope",
+      "experiment_id": "MS04-LM-c4-20M-L2048-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -734,13 +756,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L512-hipe",
+      "experiment_id": "MS04-LM-wikitext103-20M-L512-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -769,13 +792,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L1024-hipe",
+      "experiment_id": "MS04-LM-wikitext103-20M-L1024-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -804,13 +828,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-20M-L2048-hipe",
+      "experiment_id": "MS04-LM-wikitext103-20M-L2048-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -839,13 +864,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L512-hipe",
+      "experiment_id": "MS04-LM-c4-20M-L512-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -874,13 +900,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L1024-hipe",
+      "experiment_id": "MS04-LM-c4-20M-L1024-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -909,13 +936,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-20M-L2048-hipe",
+      "experiment_id": "MS04-LM-c4-20M-L2048-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -944,13 +972,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L512-nope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L512-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -978,13 +1007,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L1024-nope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L1024-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1012,13 +1042,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L2048-nope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L2048-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1046,13 +1077,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L512-nope",
+      "experiment_id": "MS04-LM-c4-60M-L512-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1080,13 +1112,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L1024-nope",
+      "experiment_id": "MS04-LM-c4-60M-L1024-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1114,13 +1147,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L2048-nope",
+      "experiment_id": "MS04-LM-c4-60M-L2048-nope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1148,13 +1182,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L512-alibi",
+      "experiment_id": "MS04-LM-wikitext103-60M-L512-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1182,13 +1217,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L1024-alibi",
+      "experiment_id": "MS04-LM-wikitext103-60M-L1024-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1216,13 +1252,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L2048-alibi",
+      "experiment_id": "MS04-LM-wikitext103-60M-L2048-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1248,13 +1285,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L512-alibi",
+      "experiment_id": "MS04-LM-c4-60M-L512-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1282,13 +1320,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L1024-alibi",
+      "experiment_id": "MS04-LM-c4-60M-L1024-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1316,13 +1355,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L2048-alibi",
+      "experiment_id": "MS04-LM-c4-60M-L2048-alibi",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1348,13 +1388,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L512-rope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L512-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1382,13 +1423,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L1024-rope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L1024-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1416,13 +1458,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L2048-rope",
+      "experiment_id": "MS04-LM-wikitext103-60M-L2048-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1450,13 +1493,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L512-rope",
+      "experiment_id": "MS04-LM-c4-60M-L512-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1484,13 +1528,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L1024-rope",
+      "experiment_id": "MS04-LM-c4-60M-L1024-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1518,13 +1563,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L2048-rope",
+      "experiment_id": "MS04-LM-c4-60M-L2048-rope",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1552,13 +1598,14 @@
         "seed",
         "checkpoint_rule",
         "evaluation_population"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L512-hipe",
+      "experiment_id": "MS04-LM-wikitext103-60M-L512-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1587,13 +1634,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L1024-hipe",
+      "experiment_id": "MS04-LM-wikitext103-60M-L1024-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1622,13 +1670,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-wikitext103-60M-L2048-hipe",
+      "experiment_id": "MS04-LM-wikitext103-60M-L2048-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1657,13 +1706,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L512-hipe",
+      "experiment_id": "MS04-LM-c4-60M-L512-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1692,13 +1742,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L1024-hipe",
+      "experiment_id": "MS04-LM-c4-60M-L1024-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1727,13 +1778,14 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-LM-c4-60M-L2048-hipe",
+      "experiment_id": "MS04-LM-c4-60M-L2048-hipe",
       "family": "LM",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "study_type": "current_paper_reference",
+      "source_id": "MS04",
       "paper_locator": "Table 2",
       "pdf_pages": [
         8
@@ -1762,13 +1814,13 @@
         "checkpoint_rule",
         "evaluation_population",
         "sigma"
-      ]
+      ],
+      "implementation_state": "suite_prepared"
     },
     {
-      "experiment_id": "MS01-ABL-rope",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
+      "experiment_id": "MS04-T3-rope-L512",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
       "paper_locator": "Table 3",
       "pdf_pages": [
         8
@@ -1776,557 +1828,664 @@
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "rope",
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 512,
+      "method": "rope",
       "reported_metrics": {
-        "validation_ppl": 133.81
+        "validation_ppl": 28.93,
+        "reported_plusminus": 0.031
       },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ],
-      "reuse_experiment_id": "MS01-LM-wikitext103-20M-L2048-rope"
-    },
-    {
-      "experiment_id": "MS01-ABL-uniform50",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "uniform50",
-      "reported_metrics": {
-        "validation_ppl": 138.45
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ]
-    },
-    {
-      "experiment_id": "MS01-ABL-uniform200",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "uniform200",
-      "reported_metrics": {
-        "validation_ppl": 134.1
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ]
-    },
-    {
-      "experiment_id": "MS01-ABL-reverse",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "reverse",
-      "reported_metrics": {
-        "validation_ppl": 136.22
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ]
-    },
-    {
-      "experiment_id": "MS01-ABL-cg1",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "cg1",
-      "reported_metrics": {
-        "validation_ppl": 136.37
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ],
-      "reported_schedule": {
-        "layers": [
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "sigma": [
-          50,
-          200,
-          500,
-          700,
-          1000
-        ]
-      },
-      "reported_layer_index_convention": "one_based"
-    },
-    {
-      "experiment_id": "MS01-ABL-cg2",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "cg2",
-      "reported_metrics": {
-        "validation_ppl": 135.96
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ],
-      "reported_schedule": {
-        "layers": [
-          5,
-          6,
-          7,
-          8
-        ],
-        "sigma": [
-          50,
-          200,
-          500,
-          700
-        ]
-      },
-      "reported_layer_index_convention": "one_based"
-    },
-    {
-      "experiment_id": "MS01-ABL-cg3",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "cg3",
-      "reported_metrics": {
-        "validation_ppl": 135.12
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ],
-      "reported_schedule": {
-        "layers": [
-          7,
-          8
-        ],
-        "sigma": [
-          200,
-          700
-        ]
-      },
-      "reported_layer_index_convention": "one_based"
-    },
-    {
-      "experiment_id": "MS01-ABL-bipartite",
-      "family": "ABL",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Table 3",
-      "pdf_pages": [
-        8
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "dataset": "wikitext103",
-      "model_size": "20M",
-      "sequence_length": 2048,
-      "schedule": "bipartite",
-      "reported_metrics": {
-        "validation_ppl": 132.97
-      },
-      "required_recovery": [
-        "exact_schedule_mapping",
-        "normalization",
-        "optimizer",
-        "seed",
-        "checkpoint_rule"
-      ],
-      "reuse_experiment_id": "MS01-LM-wikitext103-20M-L2048-hipe"
-    },
-    {
-      "experiment_id": "MS01-BIO-F02",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 2",
-      "pdf_pages": [
-        2
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "question": "Grid-to-place weight reconstruction and frequency decay",
+      "reported_uncertainty_definition": "not specified in table",
       "reported_settings": {
-        "environment_length": "2*pi"
+        "max_training_tokens": 1000000000,
+        "seeds": 3
       },
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-BIO-F03",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 3",
+      "experiment_id": "MS04-T3-rope-L2048",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        3
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Context-dependent AND/OR task and readout specification",
-      "reported_settings": {},
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
-    },
-    {
-      "experiment_id": "MS01-BIO-F04",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 4",
-      "pdf_pages": [
-        3
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "question": "Sample-size versus field-width precision/generalization trade-off",
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 2048,
+      "method": "rope",
+      "reported_metrics": {
+        "validation_ppl": 31.68,
+        "reported_plusminus": 0.039
+      },
+      "reported_uncertainty_definition": "not specified in table",
       "reported_settings": {
-        "environment_length": 100,
-        "region_width": 25
+        "max_training_tokens": 1000000000,
+        "seeds": 3
       },
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-BIO-F05",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 5",
+      "experiment_id": "MS04-T3-hipe_learnable-L512",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        4
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Optimal field scale and its relationship to task region width",
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 512,
+      "method": "hipe_learnable",
+      "reported_metrics": {
+        "validation_ppl": 28.97,
+        "reported_plusminus": 0.032
+      },
+      "reported_uncertainty_definition": "not specified in table",
       "reported_settings": {
-        "repeats": 1000,
-        "uncertainty": "SEM"
+        "max_training_tokens": 1000000000,
+        "seeds": 3
       },
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-BIO-F06",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 6",
+      "experiment_id": "MS04-T3-hipe_learnable-L2048",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        4
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Performance landscape across field and region widths",
-      "reported_settings": {},
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
-    },
-    {
-      "experiment_id": "MS01-BIO-F07",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 7",
-      "pdf_pages": [
-        5
-      ],
-      "execution_status": "not_run_in_this_project",
-      "historical_provenance": "unknown",
-      "new_results": [],
-      "question": "Heterogeneous versus single-scale codes across task environments",
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 2048,
+      "method": "hipe_learnable",
+      "reported_metrics": {
+        "validation_ppl": 31.69,
+        "reported_plusminus": 0.024
+      },
+      "reported_uncertainty_definition": "not specified in table",
       "reported_settings": {
-        "repeats": 1000,
-        "task_count": 5,
-        "highlighted_scale_distribution": "Uniform(5,20)",
-        "uncertainty": "SEM"
+        "max_training_tokens": 1000000000,
+        "seeds": 3
       },
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-BIO-F08",
-      "family": "BIO",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 8",
+      "experiment_id": "MS04-T3-hipe_fixed-L512",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        16
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Task spectrum and the dominant-mode approximation",
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 512,
+      "method": "hipe_fixed",
+      "reported_metrics": {
+        "validation_ppl": 29.04,
+        "reported_plusminus": 0.043
+      },
+      "reported_uncertainty_definition": "not specified in table",
       "reported_settings": {
-        "environment_length": 100,
-        "region_width": 25
+        "max_training_tokens": 1000000000,
+        "seeds": 3
       },
-      "required_recovery": [
-        "simulation_source",
-        "generator_parameters",
-        "readout",
-        "seeds",
-        "analysis"
-      ]
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-MECH-kernel",
-      "family": "MECH",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Equations 17-19 and Appendix C",
+      "experiment_id": "MS04-T3-hipe_fixed-L2048",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        6,
-        16,
-        17,
-        18
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Discrete positional kernel and the interpretation of the RoPE limit",
-      "required_recovery": [
-        "exact_frequency_grid",
-        "scale_normalization",
-        "finite_spectrum_derivation"
-      ]
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 2048,
+      "method": "hipe_fixed",
+      "reported_metrics": {
+        "validation_ppl": 31.93,
+        "reported_plusminus": 0.03
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "max_training_tokens": 1000000000,
+        "seeds": 3
+      },
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-MECH-scale-selection",
-      "family": "MECH",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 1 performance panel and section 5.3",
+      "experiment_id": "MS04-T3-xpos-L512",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        1,
-        7
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Sequence length versus validation-selected field scale",
-      "required_recovery": [
-        "input_runs",
-        "sigma_search_grid",
-        "selection_protocol",
-        "plotting_source"
-      ]
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 512,
+      "method": "xpos",
+      "reported_metrics": {
+        "validation_ppl": 29.97,
+        "reported_plusminus": 0.055
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "max_training_tokens": 1000000000,
+        "seeds": 3
+      },
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "MS01-MECH-attention",
-      "family": "MECH",
-      "study_type": "conference_reference",
-      "source_id": "MS01",
-      "paper_locator": "Figure 9 and Appendix D",
+      "experiment_id": "MS04-T3-xpos-L2048",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 3",
       "pdf_pages": [
-        18
+        8
       ],
       "execution_status": "not_run_in_this_project",
       "historical_provenance": "unknown",
       "new_results": [],
-      "question": "Layer-wise attention pattern comparison on associative recall",
-      "required_recovery": [
-        "paired_checkpoints",
-        "input_examples",
-        "plotting_source",
-        "attention_aggregation"
-      ]
+      "dataset": "c4",
+      "model_size": "300M",
+      "sequence_length": 2048,
+      "method": "xpos",
+      "reported_metrics": {
+        "validation_ppl": 32.75,
+        "reported_plusminus": 0.063
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "max_training_tokens": 1000000000,
+        "seeds": 3
+      },
+      "implementation_state": "model_variant_supported_campaign_spec_pending"
     },
     {
-      "experiment_id": "JRN01",
-      "family": "JRN",
-      "study_type": "prospective_journal",
-      "source_id": null,
-      "paper_locator": null,
-      "pdf_pages": [],
-      "question": "Finite-spectrum kernel and normalization analysis",
-      "priority": "primary",
-      "execution_status": "design_pending",
-      "historical_provenance": "not_applicable",
+      "experiment_id": "MS04-T4-rope-N100",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
       "new_results": [],
-      "protocol": "experiments/protocols/journal_validation.md"
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 67.3,
+        "reported_plusminus": 5.0
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 100,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "JRN02",
-      "family": "JRN",
-      "study_type": "prospective_journal",
-      "source_id": null,
-      "paper_locator": null,
-      "pdf_pages": [],
-      "question": "Data-budget curves and quality-threshold sample efficiency",
-      "priority": "primary",
-      "execution_status": "design_pending",
-      "historical_provenance": "not_applicable",
+      "experiment_id": "MS04-T4-rope-N200",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
       "new_results": [],
-      "protocol": "experiments/protocols/journal_validation.md"
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 68.8,
+        "reported_plusminus": 6.4
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 200,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "JRN03",
-      "family": "JRN",
-      "study_type": "prospective_journal",
-      "source_id": null,
-      "paper_locator": null,
-      "pdf_pages": [],
-      "question": "Hierarchy, spectral-shape and equal-energy mechanism controls",
-      "priority": "primary",
-      "execution_status": "design_pending",
-      "historical_provenance": "not_applicable",
+      "experiment_id": "MS04-T4-rope-N500",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
       "new_results": [],
-      "protocol": "experiments/protocols/journal_validation.md"
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 75.7,
+        "reported_plusminus": 0.1
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 500,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "JRN04",
-      "family": "JRN",
-      "study_type": "prospective_journal",
-      "source_id": null,
-      "paper_locator": null,
-      "pdf_pages": [],
-      "question": "Task-scale alignment and held-out scale selection",
-      "priority": "primary",
-      "execution_status": "design_pending",
-      "historical_provenance": "not_applicable",
+      "experiment_id": "MS04-T4-rope-N1000",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
       "new_results": [],
-      "protocol": "experiments/protocols/journal_validation.md"
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 76.3,
+        "reported_plusminus": 0.6
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 1000,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
     },
     {
-      "experiment_id": "JRN05",
-      "family": "JRN",
-      "study_type": "prospective_journal",
-      "source_id": null,
-      "paper_locator": null,
-      "pdf_pages": [],
-      "question": "Selected scale, corpus or downstream transfer and failure cases",
-      "priority": "staged_extension",
-      "execution_status": "design_pending",
-      "historical_provenance": "not_applicable",
+      "experiment_id": "MS04-T4-rope-N2000",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
       "new_results": [],
-      "protocol": "experiments/protocols/journal_validation.md"
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 77.9,
+        "reported_plusminus": 0.3
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 2000,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-rope-Nfull",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "rope",
+      "reported_metrics": {
+        "accuracy_percent": 82.03,
+        "reported_plusminus": 0.4
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": "full",
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-N100",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 68.5,
+        "reported_plusminus": 2.0
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 100,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-N200",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 70.1,
+        "reported_plusminus": 5.5
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 200,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-N500",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 76.4,
+        "reported_plusminus": 1.6
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 500,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-N1000",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 77.4,
+        "reported_plusminus": 0.3
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 1000,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-N2000",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 78.2,
+        "reported_plusminus": 1.5
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": 2000,
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T4-hipe-Nfull",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 4",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "sst2",
+      "model_size": "300M",
+      "method": "hipe",
+      "reported_metrics": {
+        "accuracy_percent": 81.77,
+        "reported_plusminus": 0.65
+      },
+      "reported_uncertainty_definition": "not specified in table",
+      "reported_settings": {
+        "training_samples": "full",
+        "sequence_length": 512,
+        "adaptation": "LoRA"
+      },
+      "implementation_state": "adapter_pending"
+    },
+    {
+      "experiment_id": "MS04-T5-baseline",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "attention_pattern": "global",
+      "reported_metrics": {
+        "validation_ppl": 62.82
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": null
+      },
+      "implementation_state": "suite_prepared"
+    },
+    {
+      "experiment_id": "MS04-T5-local_global",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "attention_pattern": "local-global",
+      "reported_metrics": {
+        "validation_ppl": 59.36
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": null
+      },
+      "implementation_state": "suite_prepared"
+    },
+    {
+      "experiment_id": "MS04-T5-global_local",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "attention_pattern": "global-local",
+      "reported_metrics": {
+        "validation_ppl": 64.32
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": null
+      },
+      "implementation_state": "suite_prepared"
+    },
+    {
+      "experiment_id": "MS04-T5-bipartite_hipe",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "attention_pattern": "global",
+      "reported_metrics": {
+        "validation_ppl": 62.71
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": 500
+      },
+      "implementation_state": "suite_prepared"
+    },
+    {
+      "experiment_id": "MS04-T5-global_local_hipe",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "attention_pattern": "global-local",
+      "reported_metrics": {
+        "validation_ppl": 64.3
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": 500
+      },
+      "implementation_state": "suite_prepared"
+    },
+    {
+      "experiment_id": "MS04-T5-local_global_hipe",
+      "source_id": "MS04",
+      "study_type": "current_paper_reference",
+      "paper_locator": "Table 5",
+      "pdf_pages": [
+        9
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "attention_pattern": "local-global",
+      "reported_metrics": {
+        "validation_ppl": 59.01
+      },
+      "reported_settings": {
+        "max_training_tokens": 300000000,
+        "sigma": 500
+      },
+      "implementation_state": "suite_prepared"
     }
   ]
 }

@@ -1,9 +1,7 @@
-# HIPE Analysis Organization
+# HIPE Result Analysis
 
-Analysis should consume registered runs and write figure/table products with their input run IDs, source revision and aggregation rule. Analysis code for the journal campaign has not yet been integrated here.
+Use python -m hipe.report --runs-root PATH to summarize completed runs. The report keeps individual seeds, mean/std PPL, source identity, full scientific protocol and evaluation fingerprints. It rejects duplicate seeds within a protocol.
 
-Planned outputs include population-code learning curves, discrete-kernel comparisons, retrieval metrics, token-weighted LM perplexity, data-budget curves, paired effect estimates, attention-distance summaries and measured compute/memory profiles.
+The default last_interval endpoint follows the historical validation cadence. The final endpoint is a separately available additional evaluation. The report recomputes PPL from summed token loss and prediction-token count and retains every sigma configuration rather than silently selecting a best result.
 
-For a manuscript table or figure, store an analysis manifest containing the contributing runs, exclusions and reasons, checkpoint rule, evaluation population, uncertainty method, plot settings and output hashes. Generated manuscript values should come from these records rather than edits to the reference numbers in the experiment registry.
-
-Keep individual seed outcomes visible. Preserve failed and censored outcomes separately from successful measurements, and do not combine different protocols in an aggregate. A historical reproduction report should show the reported reference alongside recovered and newly executed results.
+Publication plots and final table rendering remain later analysis tasks. Input runs, sigma/checkpoint selection and any exclusions must be recorded. Incomplete runs and SLURM/worker failures retain their own status records.

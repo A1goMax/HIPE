@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "reference_source_id": "MS01",
+  "reference_source_id": "MS04",
   "registered_date": "2026-11-02",
   "sources": [
     {
       "source_id": "MS01",
       "role": "user_supplied_conference_reference",
       "title": "The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency",
-      "local_origin": "E:\\research\\03-LLMpostionalembedding\\论文版本\\The Hippocampal Place Field Gradient-A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency.pdf",
+      "local_origin": "E:\\research\\03-LLMpostionalembedding\\\u8bba\u6587\u7248\u672c\\The Hippocampal Place Field Gradient-A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency.pdf",
       "artifact_path": "artifacts/sources/ms01-conference-submission.pdf",
       "sha256": "f291aaa4ead54f01d8c25b10c82ebdb1ff62ee23a55ae6542aa95f91cdaa1d3f",
       "pages": 19,
@@ -44,6 +44,22 @@
       "pages": null,
       "retrieval_status": "earlier_download_attempt_returned_http_403",
       "relation_to_local_sources": "unverified"
+    },
+    {
+      "source_id": "MS04",
+      "role": "current_user_designated_method_reference",
+      "title": "The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency",
+      "local_origin": "E:\\research\\03\\HIPE\\The Hippocampal Place Field Gradient_A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency.pdf",
+      "artifact_path": "artifacts/sources/ms04-current.pdf",
+      "sha256": "2d89e566caef56d39362c5e9fcbdd779e3a97dd721850f057f126e4f6ceb20d4",
+      "pages": 21,
+      "pdf_metadata": {
+        "/CreationDate": "D:20261102165220+00'00'",
+        "/Creator": "PDFium",
+        "/Producer": "PDFium"
+      },
+      "current_scope": "HIPE method Tables 1-5; Table 2 first; biological simulations excluded",
+      "table6": "Schedule configuration support only; outside current requested run scope"
     }
   ]
 }

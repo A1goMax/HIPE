@@ -1,0 +1,97 @@
+{
+  "source": "MS04 Table 6; configuration support only, outside current Tables 1-5 run scope",
+  "defaults": {
+    "paper_source": "MS04",
+    "dataset": "wikitext103",
+    "model_size": "20M",
+    "seq_len": 2048,
+    "max_tokens": 100000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "january2026",
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Reverse and bipartite sigma 200 is a proposed setting; exact historical value is unresolved.",
+      "Layer lists explicitly translate one-based labels in the paper into zero-based decoder layers."
+    ]
+  },
+  "seeds": [
+    6198
+  ],
+  "cases": [
+    {
+      "case_name": "rope",
+      "method": "rope"
+    },
+    {
+      "case_name": "uniform50",
+      "method": "hipe",
+      "sigma": 50,
+      "schedule": "uniform"
+    },
+    {
+      "case_name": "uniform200",
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "uniform"
+    },
+    {
+      "case_name": "reverse200",
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "reverse"
+    },
+    {
+      "case_name": "cg1",
+      "method": "hipe",
+      "schedule": "explicit",
+      "layer_sigmas": [
+        null,
+        null,
+        null,
+        50,
+        200,
+        500,
+        700,
+        1000
+      ]
+    },
+    {
+      "case_name": "cg2",
+      "method": "hipe",
+      "schedule": "explicit",
+      "layer_sigmas": [
+        null,
+        null,
+        null,
+        null,
+        50,
+        200,
+        500,
+        700
+      ]
+    },
+    {
+      "case_name": "cg3",
+      "method": "hipe",
+      "schedule": "explicit",
+      "layer_sigmas": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        200,
+        700
+      ]
+    },
+    {
+      "case_name": "bipartite200",
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "bipartite"
+    }
+  ]
+}

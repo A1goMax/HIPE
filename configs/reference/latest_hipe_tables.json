@@ -1,0 +1,45 @@
+{
+  "record_type": "paper_specification_not_runnable",
+  "source_id": "MS04",
+  "sha256": "2d89e566caef56d39362c5e9fcbdd779e3a97dd721850f057f126e4f6ceb20d4",
+  "scope": [
+    "Table 1",
+    "Table 2",
+    "Table 3",
+    "Table 4",
+    "Table 5"
+  ],
+  "first_target": "Table 2",
+  "table2": {
+    "datasets": [
+      "wikitext103",
+      "c4"
+    ],
+    "model_sizes": [
+      "20M",
+      "60M"
+    ],
+    "lengths": [
+      512,
+      1024,
+      2048
+    ],
+    "methods": [
+      "nope",
+      "alibi",
+      "rope",
+      "hipe"
+    ],
+    "max_training_tokens": 100000000,
+    "reported_cells": 48,
+    "reported_oom_cells": 4,
+    "exact_sigma_by_cell": null
+  },
+  "table5": {
+    "model_size": "60M",
+    "length": 1024,
+    "max_training_tokens": 300000000,
+    "hipe_sigma": 500,
+    "local_window_from_code": 256
+  }
+}

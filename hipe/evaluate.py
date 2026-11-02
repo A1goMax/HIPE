@@ -1,103 +1,57 @@
-"""Evaluate a fixed-sigma bipartite HIPE checkpoint on a processed dataset."""
-
-from __future__ import annotations
-
+"""Evaluate a checkpoint using its saved model/config and preprocessing protocol."""
 import argparse
+from dataclasses import asdict
 import json
-import math
-from contextlib import nullcontext
+import os
 from pathlib import Path
 
 import torch
-import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
-from .config import build_model_config
-from .data import load_train_validation, tokenize_and_chunk
-from .train import collate_batch
+from .data import prepare_data
+from .olmo.config import ModelConfig
 from .olmo.model import OLMo
+from .provenance import sha256
+from .spec import ExperimentConfig
+from .train import collate_batch, evaluate, resolve_device
 
 
-def parse_args() -> argparse.Namespace:
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", required=True)
-    parser.add_argument("--data-path", required=True)
-    parser.add_argument("--validation-path", default=None)
-    parser.add_argument("--tokenizer-path", required=True)
-    parser.add_argument("--model-size", choices=["20M", "60M", "300M"], default="60M")
-    parser.add_argument("--seq-len", type=int, default=1024)
-    parser.add_argument("--sigma", type=float, default=500.0)
-    parser.add_argument("--rope-scaling-threshold", type=int, default=None)
-    parser.add_argument("--num-proc", type=int, default=1)
-    parser.add_argument("--batch-size", type=int, default=8)
-    parser.add_argument("--max-samples", type=int, default=0)
+    parser.add_argument("--config", help="Defaults to run_config.json beside checkpoint")
     parser.add_argument("--device", default="auto")
-    parser.add_argument("--flash-attention", action="store_true")
-    parser.add_argument("--output", default=None)
-    return parser.parse_args()
-
-
-def main() -> None:
-    args = parse_args()
-    device = torch.device(
-        "cuda" if args.device == "auto" and torch.cuda.is_available() else args.device
-    )
-    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_path, local_files_only=True)
-    _, validation_raw = load_train_validation(args.data_path, args.validation_path)
-    validation_data = tokenize_and_chunk(
-        validation_raw, tokenizer, args.seq_len, args.num_proc
-    )
-    if args.max_samples:
-        validation_data = validation_data.select(
-            range(min(args.max_samples, len(validation_data)))
-        )
-    loader = DataLoader(validation_data, batch_size=args.batch_size, collate_fn=collate_batch)
-
-    config = build_model_config(
-        model_size=args.model_size,
-        vocab_size=tokenizer.vocab_size,
-        sequence_length=args.seq_len,
-        sigma=args.sigma,
-        layer_threshold=args.rope_scaling_threshold,
-        flash_attention=args.flash_attention,
-    )
-    model = OLMo(config).to(device)
-    state = torch.load(args.checkpoint, map_location="cpu")
-    if isinstance(state, dict) and "model" in state:
-        state = state["model"]
-    model.load_state_dict(state, strict=True)
-    model.eval()
-
-    total_loss = 0.0
-    total_tokens = 0
-    with torch.no_grad():
-        for inputs, labels in loader:
-            inputs, labels = inputs.to(device), labels.to(device)
-            context = (
-                torch.autocast(device_type="cuda", dtype=torch.bfloat16)
-                if args.flash_attention and device.type == "cuda"
-                else nullcontext()
-            )
-            with context:
-                logits = model(input_ids=inputs).logits
-                loss = F.cross_entropy(
-                    logits.reshape(-1, logits.size(-1)),
-                    labels.reshape(-1),
-                    reduction="sum",
-                )
-            total_loss += float(loss.item())
-            total_tokens += labels.numel()
-
-    mean_loss = total_loss / total_tokens
-    result = {
-        "method": "fixed_sigma_bipartite_hipe",
-        "checkpoint": str(Path(args.checkpoint).resolve()),
-        "sequence_length": args.seq_len,
-        "tokens": total_tokens,
-        "loss": mean_loss,
-        "ppl": math.exp(mean_loss),
-    }
+    parser.add_argument("--output")
+    args = parser.parse_args()
+    checkpoint = Path(args.checkpoint)
+    folder = checkpoint.parent
+    config = ExperimentConfig.load(args.config or folder / "run_config.json")
+    device = resolve_device(args.device)
+    if device.type == "cuda" and not os.environ.get("SLURM_JOB_ID"):
+        raise RuntimeError("GPU evaluation requires a SLURM allocation")
+    tokenizer = AutoTokenizer.from_pretrained(config.tokenizer_path, local_files_only=True)
+    # Retain the exact model config, including legacy baseline behavior and learned scales.
+    model_config = ModelConfig(**json.loads((folder / "model_config.json").read_text()))
+    model = OLMo(model_config).to(device)
+    if checkpoint.name == "checkpoint.pt":
+        # Full optimizer/RNG checkpoint authored by this project.
+        state = torch.load(checkpoint, map_location="cpu", weights_only=False)
+        if state["experiment"] != config.to_dict():
+            raise ValueError("Checkpoint and evaluation experiment configuration differ")
+        weights = state["model"]
+    else:
+        weights = torch.load(checkpoint, map_location="cpu", weights_only=True)
+    model.load_state_dict(weights, strict=True)
+    _, validation, identity = prepare_data(config, tokenizer)
+    expected = json.loads((folder / "run_manifest.json").read_text())["data"]
+    if identity != expected:
+        raise ValueError("Evaluation data identity differs from training manifest")
+    loader = DataLoader(validation, batch_size=config.micro_batch_size, collate_fn=collate_batch)
+    result = evaluate(model, loader, device, config.precision, config.max_val_batches, config.attention_backend)
+    result.update({"checkpoint_sha256": sha256(checkpoint), "experiment_id": config.experiment_id,
+                   "method": config.method, "legacy_absolute_positions": config.legacy_absolute_positions,
+                   "data_identity": identity})
     print(json.dumps(result, indent=2))
     if args.output:
         Path(args.output).write_text(json.dumps(result, indent=2) + "\n")

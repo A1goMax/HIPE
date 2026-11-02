@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hipe"
 version = "0.1.0"
-description = "Fixed-sigma bipartite HIPE implementation"
+description = "Shared HIPE main-experiment and ablation implementation"
 requires-python = ">=3.10"
 dependencies = [
   "numpy<2",
-  "torch>=2.1",
-  "datasets>=4.2",
+  "torch>=2.8",
+  "datasets>=2.19,<5",
   "transformers>=4.56",
   "omegaconf>=2.3",
   "tqdm>=4.67",

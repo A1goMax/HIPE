@@ -1,25 +1,11 @@
-# HIPE Experiment Organization
+# HIPE Method Experiment Inventory
 
-`registry.json` is the research inventory. Each record names a scientific question or a reported table cell, its manuscript source, its current evidence status and the next action. Reported values are preserved as reference data. No registry entry constitutes a newly measured result.
+The current registry is based on MS04, the latest 21-page PDF. It contains 78 reported targets: Table 1 has four method/task conditions; Table 2 has 48 cells; Table 3 has eight larger-model conditions; Table 4 has twelve downstream conditions; Table 5 has six attention conditions.
 
-## Experiment families
+Reported values are reference evidence, not new results. Table 2 includes four historical OOM entries whose new outcomes must be measured. Biological simulations are outside the current scope. Table 6 schedules have code support but are not part of the requested Tables 1-5 campaign.
 
-| Family | Purpose |
-| --- | --- |
-| `BIO` | Population-code theory and learning simulations |
-| `SYN` | Synthetic associative and block retrieval |
-| `LM` | Conference restricted-budget language modeling |
-| `ABL` | Conference layer-schedule ablations |
-| `MECH` | Kernel and trained-attention analyses |
-| `JRN` | Proposed journal hypotheses and extensions |
+Runnable suite specifications live under configs/suites/. Use python -m hipe.experiments for planning and SLURM submission. The current model/trainer supports Table 2 and Table 5 configurations; remaining task adapters and exact larger-model specifications are tracked in STATUS.md.
 
-An experiment ID identifies a scientific condition. A run ID identifies one execution of that condition with a specified seed and source snapshot. Failed, incomplete and resumed executions keep their own records. An analysis lists its input run IDs and its selection/aggregation rule.
+The earlier protocol documents are retained with their explicit older manuscript source IDs. The current implementation decisions and compatibility findings are in docs/engineering/BRANCH_INTEGRATION.md.
 
-`manifest_template.json` specifies the intended new-run record. It is a template, not an executed run. Required settings still marked null must be resolved by a future collector/launcher. `configs/reference/conference_20260129.json` is a paper specification; it is not a runnable trainer configuration.
-
-## Protocols
-
-- [Reference recovery](protocols/reference_recovery.md): recover and compare the conference evidence.
-- [Journal validation](protocols/journal_validation.md): prospective research, paired comparisons and analysis rules.
-
-The registry contains 48 Table 2 cells, including four reported OOM outcomes, and eight Table 3 rows. The Table 3 RoPE and bipartite HIPE rows explicitly reuse Table 2 conditions. Actual run counts depend on recovered settings, selected seeds and campaign decisions.
+Each execution writes its own run_manifest.json and configuration, data/source identities, checkpoint and evaluation records. experiments/manifest_template.json is an earlier planning template; actual run manifests are authored by hipe/provenance.py and hipe/train.py.

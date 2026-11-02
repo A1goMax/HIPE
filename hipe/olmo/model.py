@@ -553,92 +553,61 @@ class GridEmbedding(RotaryEmbedding):
 
 
 class ScaledRotaryEmbedding(RotaryEmbedding):
-    """
-    Scaled RoPE with Optional Layer-wise Control.
-    Modes:
-    1. Uniform Scaling: All layers use the same sigma (if threshold < 0).
-    2. Bio-Gradient: Shallow layers use Standard RoPE, Deep layers use Scaled RoPE (if threshold >= 0).
-    """
+    """Shared fixed/learnable spectral HIPE, preserving the legacy fixed formula."""
 
-    def __init__(self, config: ModelConfig, cache: BufferCache, sigma: float = 1.0, layer_index: Optional[int] = None):
-        """
-        Args:
-            sigma (float): The scaling factor.
-            layer_index (int, optional): The current layer index.
-        """
+    def __init__(self, config: ModelConfig, cache: BufferCache, sigma=1.0, layer_index=None):
         super().__init__(config, cache)
-        
-        # --- 1. 更加健壮的层级控制逻辑 ---
-        
-        # 默认行为：启用 Scaling (即假设我们想要全层应用 Sigma)
-        use_scaling = True
-        
-        # 获取阈值。关键修改：默认值设为 -1 (代表禁用层级策略，保持 Uniform)
-        # 只有当你在 config 中显式设置了 rope_scaling_threshold >= 0 时，才会激活HIPE
-        scaling_threshold = getattr(config, "rope_scaling_threshold", -1)
-        
-        # 仅当阈值有效(>=0) 且 当前层号已知 且 当前层 <= 阈值 时，才强制关闭 Scaling
-        if scaling_threshold >= 0 and layer_index is not None:
-            if layer_index <= scaling_threshold:
-                use_scaling = False
-                print(f"Layer {layer_index}: Scaling DISABLED (Gradient Mode)")
-        
-        # 否则，use_scaling 保持为 True，即执行原来的逻辑（全层使用传入的 sigma）
-        
-        # --------------------------------
-
-        # 获取维度信息
-        dim = self.config.d_model // self.config.n_heads
-        
-        # --- 2. 如果不启用 Scaling (即退化为 Standard RoPE) ---
-        # 这是针对需要layer分布的前几层，前几层需要使用原始的RoPE
-        if not use_scaling:
-            scale_full = torch.ones(self.config.n_heads, dim)
-            self.register_buffer('scale_factor', scale_full)
-            return 
-
-        # --- 3. 如果启用 Scaling (应用 Sigma) ---
-        
-        if isinstance(sigma, float):
-            sigmas = [sigma] * self.config.n_heads
+        threshold = getattr(config, "rope_scaling_threshold", -1)
+        self.use_scaling = not (threshold >= 0 and layer_index is not None and layer_index <= threshold)
+        self.is_learnable = bool(getattr(config, "learnable_sigma", False)) and self.use_scaling
+        device = _non_meta_init_device(config)
+        dim = config.d_model // config.n_heads
+        if not self.use_scaling:
+            self.register_buffer("scale_factor", torch.ones(config.n_heads, dim, device=device))
+        elif self.is_learnable:
+            self.sigma_param = nn.Parameter(torch.full((config.n_heads,), float(sigma), device=device))
         else:
-            sigmas = sigma
-            
-        if len(sigmas) != self.config.n_heads:
-             raise ValueError(f"Sigma count ({len(sigmas)}) must match head count ({self.config.n_heads})")
+            values = [float(sigma)] * config.n_heads if isinstance(sigma, (float, int)) else list(sigma)
+            if len(values) != config.n_heads:
+                raise ValueError("Sigma count must equal attention head count")
+            with torch.no_grad():
+                self.register_buffer("scale_factor", self._spectral_scale(torch.tensor(values, device=device), False))
 
-        with torch.no_grad():
-            device = _non_meta_init_device(config)
-            inv_freq = self.get_inv_freq(device) 
-            
-            sigmas_tensor = torch.tensor(sigmas, device=device, dtype=torch.float).view(self.config.n_heads, 1)
-            freqs = inv_freq.view(1, -1) 
-            
-            decay_func = getattr(self.config, 'decay_func', 'gaussian')
-            
-            if decay_func == 'gaussian':
-                scale = torch.exp(-sigmas_tensor**2 * freqs**2/2) * freqs
-            elif decay_func == 'exp':
-                scale = (1/sigmas_tensor)**2 / ((1/sigmas_tensor)**2 + freqs**2) * freqs
-            elif decay_func == 'power':
-                scale = torch.exp(-sigmas_tensor * freqs) * freqs
-            elif decay_func == 'segmented':
-                order = getattr(self.config, 'decay_order', 8)
-                scale = (1.0 / (1.0 + (sigmas_tensor * freqs) ** order)) * freqs
-            else:
-                scale = torch.exp(-sigmas_tensor**2 * freqs**2/2) * freqs
-            
-            scale = torch.sqrt(scale)
-            scale_full = torch.cat((scale, scale), dim=-1)
+    def _spectral_scale(self, sigmas, learnable):
+        freqs = self.get_inv_freq(sigmas.device).view(1, -1)
+        sigmas = sigmas.view(self.config.n_heads, 1)
+        decay = getattr(self.config, "decay_func", None) or "gaussian"
+        if decay == "gaussian":
+            weight = torch.exp(-sigmas.square() * freqs.square() / 2) * freqs
+        elif decay == "exp":
+            weight = sigmas.reciprocal().square() / (sigmas.reciprocal().square() + freqs.square()) * freqs
+        elif decay == "power":
+            weight = torch.exp(-sigmas * freqs) * freqs
+        elif decay == "segmented":
+            weight = freqs / (1 + (sigmas * freqs) ** getattr(self.config, "decay_order", 8))
+        else:
+            raise ValueError(f"Unknown HIPE decay: {decay}")
+        # The learnable branch used a weight floor and per-head RMS.
+        # Fixed HIPE keeps the original global RMS without this floor.
+        if learnable:
+            weight = weight.clamp_min(1e-10)
+        scale = torch.sqrt(weight)
+        full = torch.cat((scale, scale), dim=-1)
+        energy = full.square().mean(dim=-1, keepdim=True) if learnable else full.square().mean()
+        if not learnable and (not torch.isfinite(energy) or energy <= 0):
+            raise ValueError("HIPE scales have zero/nonfinite energy")
+        return full * torch.rsqrt(energy.clamp_min(1e-10) if learnable else energy)
 
-            correction_factor = torch.rsqrt(torch.mean(scale_full**2))
-            scale_full = scale_full * correction_factor
+    def apply_rotary_pos_emb(self, pos_sin, pos_cos, t):
+        if self.is_learnable:
+            scale = self._spectral_scale(self.sigma_param.clamp_min(1e-3), True)
+        else:
+            scale = self.scale_factor
+        return super().apply_rotary_pos_emb(pos_sin, pos_cos, t * scale.view(1, self.config.n_heads, 1, -1))
 
-            self.register_buffer('scale_factor', scale_full)
+    def get_sigma_values(self):
+        return self.sigma_param.detach().clamp_min(1e-3) if self.is_learnable else None
 
-    def apply_rotary_pos_emb(self, pos_sin: torch.Tensor, pos_cos: torch.Tensor, t: torch.Tensor) -> torch.Tensor:
-        t_scaled = t * self.scale_factor.view(1, self.config.n_heads, 1, -1)
-        return super().apply_rotary_pos_emb(pos_sin, pos_cos, t_scaled)
     
 
 
@@ -1712,6 +1681,21 @@ class OLMoBlock(nn.Module):
                 bias_slice = attention_bias[:, :, offset_k:offset_k + T_q, :T_k]
                 attention_bias = self._cast_attn_bias(bias_slice, dtype)
 
+            local_ids = getattr(self.config, "local_attention_layers", None)
+            if local_ids is None:
+                count = getattr(self.config, "num_local_layers", 0)
+                local_ids = list(range(count)) if count >= 0 else list(range(self.config.n_layers + count, self.config.n_layers))
+            if self.layer_id in local_ids:
+                window = self.config.local_window_size
+                if window <= 0:
+                    raise ValueError("Local attention requires a positive window")
+                q_pos = torch.arange(T_q, device=q.device).view(-1, 1) + offset_k
+                k_pos = torch.arange(T_k, device=k.device).view(1, -1)
+                allowed = (k_pos <= q_pos) & ((q_pos - k_pos) < window)
+                local_bias = torch.zeros((1, 1, T_q, T_k), device=q.device, dtype=dtype)
+                local_bias.masked_fill_(~allowed, float("-inf"))
+                attention_bias = local_bias if attention_bias is None else attention_bias + local_bias
+
             att = self._scaled_dot_product_attention(
                 q, k, v,
                 attn_mask=attention_bias,
@@ -2144,6 +2128,10 @@ class OLMo(nn.Module):
         super().__init__()
         self.config = config
         self.__cache = BufferCache()
+        self._use_absolute_positions = not (config.alibi or config.rope) and (
+            getattr(config, "legacy_absolute_positions", False)
+            or not (getattr(config, "nope", False) or getattr(config, "xpos", False))
+        )
 
         # Validate config.
         if self.config.alibi and self.config.flash_attention:
@@ -2194,7 +2182,7 @@ class OLMo(nn.Module):
         else:
             self.transformer.update({"blocks": nn.ModuleList(blocks)})
 
-        if not (self.config.alibi or self.config.rope):
+        if self._use_absolute_positions:
             self.transformer.update(
                 {"wpe": nn.Embedding(config.max_sequence_length, config.d_model, device=config.init_device)}
             )
@@ -2393,7 +2381,7 @@ class OLMo(nn.Module):
         if self.config.embedding_layer_norm:
             x = self.transformer.emb_norm(x)
 
-        if not (self.config.alibi or self.config.rope):
+        if self._use_absolute_positions:
             # Get positional embeddings.
             # shape: (1, seq_len)
             pos = torch.arange(past_length, past_length + seq_len, dtype=torch.long, device=x.device).unsqueeze(0)
