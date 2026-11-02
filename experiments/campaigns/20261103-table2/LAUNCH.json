@@ -1,0 +1,26 @@
+{
+  "main_job_id": "41315",
+  "successful_gpu_preflight": "41313",
+  "failed_launcher_preflight": "41311",
+  "source_commit": "224bc280b72a595d4e1aa5273ac35f47a0ba24d0",
+  "source_root": "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source",
+  "remote_campaign": "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1",
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "token_cap": 100000000,
+  "global_batch_size": 64,
+  "runs": 324,
+  "gpu_per_task": 1,
+  "max_concurrent_tasks": 2,
+  "ddp": false,
+  "nominal_complete_batch_tokens": {
+    "512": 99975168,
+    "1024": 99942400,
+    "2048": 99876864
+  },
+  "local_manifest": "artifacts/campaigns/41315/manifest.json",
+  "local_configs": "artifacts/campaigns/41315/configs.json"
+}

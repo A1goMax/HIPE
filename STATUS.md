@@ -1,6 +1,6 @@
 # HIPE Implementation Status
 
-Updated 2 November 2026, Asia/Shanghai.
+Updated 3 November 2026, Asia/Shanghai.
 
 ## Current scope
 
@@ -19,11 +19,11 @@ MS04 is the active 21-page manuscript. The requested scope is HIPE Tables 1-5, w
 
 ## Validation
 
-34 CPU tests pass in an isolated source copy on labserver2 with CUDA hidden. These include legacy fixed-formula equality, all baseline gradients, learnable state reload, layer schedules, local causal masks/cached decoding, original global-batch accumulation, preprocessing, full two-step manifest/checkpoint execution, saved-config evaluation and exact CPU resume.
+36 CPU tests pass in an isolated source copy on labserver2 with CUDA hidden. These include legacy fixed-formula equality, all baseline gradients, learnable state reload, layer schedules, local causal masks/cached decoding, original global-batch accumulation, preprocessing, full two-step manifest/checkpoint execution, saved-config evaluation and exact CPU resume.
 
 Submission previews are checked without calling sbatch. The source also retains a vendored PyTorch deprecation warning during CPU attention-mask checks.
 
-No GPU training job has been submitted. GPU kernel compatibility, actual memory usage, throughput and paper metrics still require a SLURM pilot.
+GPU preflight array 41313 completed for RoPE and HIPE. Main Table 2 array 41315 is running/queued with three seeds and a 100M-token cap. See experiments/campaigns/20261103-table2/RUNNING.md. Full paper metrics are not complete.
 
 The healthy original environment is /home/qijunrong/anaconda3/bin/python, with Torch 2.8.0+cu128 and NumPy 1.26.4. Earlier import failures affected other environments. Observed versions are recorded under environment/.
 
