@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "inventory_date": "2026-11-02",
+  "sources": [
+    {
+      "path": "/home/qijunrong/03-proj/HIPE",
+      "role": "canonical_method_package",
+      "head": "bd1d53a6d905e2d8a9e2320852eb7fc2079cf004",
+      "branch": "main",
+      "working_tree_status": "",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/03-proj/PE",
+      "role": "historical_research_checkout",
+      "head": "060b6a64707614d6ec3406719e8c3424ff93eeb2",
+      "branch": "autoresearch",
+      "working_tree_status": "M .gitignore\n M OLMo/olmo/config.py\n M download_arxiv_data.py\n M download_wiki_data.py\n M eval_extrapolation.py\n M train.py\n M train_exp2_c4full.py\n M train_exp2_wikifull.py\n?? README.md\n?? praxist_task/\n?? release_utils.py\n?? requirements.txt\n?? scripts/release/",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/03-proj/PE_main_release",
+      "role": "legacy_release_worktree",
+      "head": "6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+      "branch": "main",
+      "working_tree_status": "",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/03-proj/PE_finetune_audit",
+      "role": "legacy_finetune_worktree",
+      "head": "59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e",
+      "branch": "rebuttal/finetune",
+      "working_tree_status": "",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/PE-finetune-exp",
+      "role": "historical_experiment_checkout",
+      "head": "44192e7483f3400d139332b23c6b9e4c82cfe4e0",
+      "branch": "rebuttal/finetune",
+      "working_tree_status": "",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/PE-learnable-exp",
+      "role": "historical_experiment_checkout",
+      "head": "c2e3af36aa0b9b37bcb8eae4ca02319929e73f79",
+      "branch": "rebuttal/learnable_sigma",
+      "working_tree_status": "M OLMo/olmo/config.py\n M OLMo/olmo/model.py\n?? train_exp2_c4_300m_learnable_sigma.py\n?? train_exp2_c4_300m_learnable_sigma.sh",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/PE-local-global-exp",
+      "role": "historical_experiment_checkout",
+      "head": "c0fc0c42394cfd54c6250d9beb70a2a64e6b197d",
+      "branch": "rebuttal/local-global_attention",
+      "working_tree_status": "?? PE-local-global-exp/",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/PE-XPos",
+      "role": "historical_experiment_checkout",
+      "head": "060b6a64707614d6ec3406719e8c3424ff93eeb2",
+      "branch": "rebuttal/XPos",
+      "working_tree_status": "",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    },
+    {
+      "path": "/home/qijunrong/03-proj/PE_reproducibility/unified",
+      "role": "prior_integration_staging",
+      "head": "6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+      "branch": "unify/reproducibility",
+      "working_tree_status": "M OLMo/olmo/config.py\n M OLMo/olmo/model.py\n M scripts/release/common.sh\n M scripts/train_exp2_c4full.py\n M scripts/train_exp2_wikifull.py\n?? REPRODUCIBILITY_AUDIT.md",
+      "runtime_dependency": false,
+      "provenance_status": "inventory_only_not_a_run_mapping"
+    }
+  ],
+  "audit_archive": "/home/qijunrong/03-proj/PE_reproducibility/audit",
+  "historical_logs_indexed": 769,
+  "recognized_git_fields": 37
+}

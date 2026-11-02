@@ -1,0 +1,2332 @@
+{
+  "schema_version": 1,
+  "record_type": "research_inventory_not_an_execution_log",
+  "reference_source_id": "MS01",
+  "created_date": "2026-11-02",
+  "records": [
+    {
+      "experiment_id": "MS01-SYN-associative-rope",
+      "family": "SYN",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 1",
+      "pdf_pages": [
+        7
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "method": "rope",
+      "task": "associative",
+      "reported_metrics": {
+        "loss": 0.5973,
+        "accuracy_percent": 81.56
+      },
+      "reported_settings": {
+        "training_steps": 20000,
+        "sigma": null
+      },
+      "required_recovery": [
+        "model_size",
+        "task_generator",
+        "sequence_length",
+        "batch_size",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-SYN-associative-hipe",
+      "family": "SYN",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 1",
+      "pdf_pages": [
+        7
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "method": "hipe",
+      "task": "associative",
+      "reported_metrics": {
+        "loss": 0.3836,
+        "accuracy_percent": 88.53
+      },
+      "reported_settings": {
+        "training_steps": 20000,
+        "sigma": 200
+      },
+      "required_recovery": [
+        "model_size",
+        "task_generator",
+        "sequence_length",
+        "batch_size",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-SYN-block-rope",
+      "family": "SYN",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 1",
+      "pdf_pages": [
+        7
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "method": "rope",
+      "task": "block",
+      "reported_metrics": {
+        "loss": 0.1155,
+        "accuracy_percent": 96.32
+      },
+      "reported_settings": {
+        "training_steps": 20000,
+        "sigma": null
+      },
+      "required_recovery": [
+        "model_size",
+        "task_generator",
+        "sequence_length",
+        "batch_size",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-SYN-block-hipe",
+      "family": "SYN",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 1",
+      "pdf_pages": [
+        7
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "method": "hipe",
+      "task": "block",
+      "reported_metrics": {
+        "loss": 0.0963,
+        "accuracy_percent": 97.1
+      },
+      "reported_settings": {
+        "training_steps": 20000,
+        "sigma": 50
+      },
+      "required_recovery": [
+        "model_size",
+        "task_generator",
+        "sequence_length",
+        "batch_size",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L512-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 61.32
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L1024-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 93.85
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L2048-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 179.46
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L512-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 160.15
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L1024-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 223.97
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L2048-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 376.38
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L512-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 66.37
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L1024-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 84.74
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L2048-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "alibi",
+      "reported_outcome": "oom",
+      "reported_metrics": null,
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L512-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 122.58
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L1024-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 168.91
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L2048-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "alibi",
+      "reported_outcome": "oom",
+      "reported_metrics": null,
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L512-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 63.25
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L1024-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 88.3
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L2048-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 133.81
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L512-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 122.71
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L1024-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 177.3
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L2048-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 276.01
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L512-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 59.35
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L1024-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 86.16
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-20M-L2048-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 132.97
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L512-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 512,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 117.76
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L1024-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 171.13
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-20M-L2048-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 274.93
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L512-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 50.6
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L1024-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 69.97
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L2048-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 152.22
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L512-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 123.99
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L1024-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 201.79
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L2048-nope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "nope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 355.56
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L512-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 42.63
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L1024-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 55.21
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L2048-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "alibi",
+      "reported_outcome": "oom",
+      "reported_metrics": null,
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L512-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 88.32
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L1024-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "alibi",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 101.62
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L2048-alibi",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "alibi",
+      "reported_outcome": "oom",
+      "reported_metrics": null,
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L512-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 48.85
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L1024-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 71.34
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L2048-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 109.17
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L512-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 99.01
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L1024-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 141.65
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L2048-rope",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "rope",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 237.9
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L512-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 47.98
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L1024-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 68.27
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-wikitext103-60M-L2048-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 108.21
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L512-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 512,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 97.54
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L1024-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 1024,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 130.47
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-LM-c4-60M-L2048-hipe",
+      "family": "LM",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 2",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "c4",
+      "model_size": "60M",
+      "sequence_length": 2048,
+      "method": "hipe",
+      "reported_outcome": "numeric",
+      "reported_metrics": {
+        "validation_ppl": 237.09
+      },
+      "reported_settings": {
+        "max_training_tokens": 100000000,
+        "layers": 8,
+        "sigma": null
+      },
+      "required_recovery": [
+        "source_snapshot",
+        "data_and_tokenizer",
+        "optimizer",
+        "seed",
+        "checkpoint_rule",
+        "evaluation_population",
+        "sigma"
+      ]
+    },
+    {
+      "experiment_id": "MS01-ABL-rope",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "rope",
+      "reported_metrics": {
+        "validation_ppl": 133.81
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ],
+      "reuse_experiment_id": "MS01-LM-wikitext103-20M-L2048-rope"
+    },
+    {
+      "experiment_id": "MS01-ABL-uniform50",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "uniform50",
+      "reported_metrics": {
+        "validation_ppl": 138.45
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-ABL-uniform200",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "uniform200",
+      "reported_metrics": {
+        "validation_ppl": 134.1
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-ABL-reverse",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "reverse",
+      "reported_metrics": {
+        "validation_ppl": 136.22
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ]
+    },
+    {
+      "experiment_id": "MS01-ABL-cg1",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "cg1",
+      "reported_metrics": {
+        "validation_ppl": 136.37
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ],
+      "reported_schedule": {
+        "layers": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "sigma": [
+          50,
+          200,
+          500,
+          700,
+          1000
+        ]
+      },
+      "reported_layer_index_convention": "one_based"
+    },
+    {
+      "experiment_id": "MS01-ABL-cg2",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "cg2",
+      "reported_metrics": {
+        "validation_ppl": 135.96
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ],
+      "reported_schedule": {
+        "layers": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "sigma": [
+          50,
+          200,
+          500,
+          700
+        ]
+      },
+      "reported_layer_index_convention": "one_based"
+    },
+    {
+      "experiment_id": "MS01-ABL-cg3",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "cg3",
+      "reported_metrics": {
+        "validation_ppl": 135.12
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ],
+      "reported_schedule": {
+        "layers": [
+          7,
+          8
+        ],
+        "sigma": [
+          200,
+          700
+        ]
+      },
+      "reported_layer_index_convention": "one_based"
+    },
+    {
+      "experiment_id": "MS01-ABL-bipartite",
+      "family": "ABL",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Table 3",
+      "pdf_pages": [
+        8
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "sequence_length": 2048,
+      "schedule": "bipartite",
+      "reported_metrics": {
+        "validation_ppl": 132.97
+      },
+      "required_recovery": [
+        "exact_schedule_mapping",
+        "normalization",
+        "optimizer",
+        "seed",
+        "checkpoint_rule"
+      ],
+      "reuse_experiment_id": "MS01-LM-wikitext103-20M-L2048-hipe"
+    },
+    {
+      "experiment_id": "MS01-BIO-F02",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 2",
+      "pdf_pages": [
+        2
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Grid-to-place weight reconstruction and frequency decay",
+      "reported_settings": {
+        "environment_length": "2*pi"
+      },
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F03",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 3",
+      "pdf_pages": [
+        3
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Context-dependent AND/OR task and readout specification",
+      "reported_settings": {},
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F04",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 4",
+      "pdf_pages": [
+        3
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Sample-size versus field-width precision/generalization trade-off",
+      "reported_settings": {
+        "environment_length": 100,
+        "region_width": 25
+      },
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F05",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 5",
+      "pdf_pages": [
+        4
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Optimal field scale and its relationship to task region width",
+      "reported_settings": {
+        "repeats": 1000,
+        "uncertainty": "SEM"
+      },
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F06",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 6",
+      "pdf_pages": [
+        4
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Performance landscape across field and region widths",
+      "reported_settings": {},
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F07",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 7",
+      "pdf_pages": [
+        5
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Heterogeneous versus single-scale codes across task environments",
+      "reported_settings": {
+        "repeats": 1000,
+        "task_count": 5,
+        "highlighted_scale_distribution": "Uniform(5,20)",
+        "uncertainty": "SEM"
+      },
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-BIO-F08",
+      "family": "BIO",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 8",
+      "pdf_pages": [
+        16
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Task spectrum and the dominant-mode approximation",
+      "reported_settings": {
+        "environment_length": 100,
+        "region_width": 25
+      },
+      "required_recovery": [
+        "simulation_source",
+        "generator_parameters",
+        "readout",
+        "seeds",
+        "analysis"
+      ]
+    },
+    {
+      "experiment_id": "MS01-MECH-kernel",
+      "family": "MECH",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Equations 17-19 and Appendix C",
+      "pdf_pages": [
+        6,
+        16,
+        17,
+        18
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Discrete positional kernel and the interpretation of the RoPE limit",
+      "required_recovery": [
+        "exact_frequency_grid",
+        "scale_normalization",
+        "finite_spectrum_derivation"
+      ]
+    },
+    {
+      "experiment_id": "MS01-MECH-scale-selection",
+      "family": "MECH",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 1 performance panel and section 5.3",
+      "pdf_pages": [
+        1,
+        7
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Sequence length versus validation-selected field scale",
+      "required_recovery": [
+        "input_runs",
+        "sigma_search_grid",
+        "selection_protocol",
+        "plotting_source"
+      ]
+    },
+    {
+      "experiment_id": "MS01-MECH-attention",
+      "family": "MECH",
+      "study_type": "conference_reference",
+      "source_id": "MS01",
+      "paper_locator": "Figure 9 and Appendix D",
+      "pdf_pages": [
+        18
+      ],
+      "execution_status": "not_run_in_this_project",
+      "historical_provenance": "unknown",
+      "new_results": [],
+      "question": "Layer-wise attention pattern comparison on associative recall",
+      "required_recovery": [
+        "paired_checkpoints",
+        "input_examples",
+        "plotting_source",
+        "attention_aggregation"
+      ]
+    },
+    {
+      "experiment_id": "JRN01",
+      "family": "JRN",
+      "study_type": "prospective_journal",
+      "source_id": null,
+      "paper_locator": null,
+      "pdf_pages": [],
+      "question": "Finite-spectrum kernel and normalization analysis",
+      "priority": "primary",
+      "execution_status": "design_pending",
+      "historical_provenance": "not_applicable",
+      "new_results": [],
+      "protocol": "experiments/protocols/journal_validation.md"
+    },
+    {
+      "experiment_id": "JRN02",
+      "family": "JRN",
+      "study_type": "prospective_journal",
+      "source_id": null,
+      "paper_locator": null,
+      "pdf_pages": [],
+      "question": "Data-budget curves and quality-threshold sample efficiency",
+      "priority": "primary",
+      "execution_status": "design_pending",
+      "historical_provenance": "not_applicable",
+      "new_results": [],
+      "protocol": "experiments/protocols/journal_validation.md"
+    },
+    {
+      "experiment_id": "JRN03",
+      "family": "JRN",
+      "study_type": "prospective_journal",
+      "source_id": null,
+      "paper_locator": null,
+      "pdf_pages": [],
+      "question": "Hierarchy, spectral-shape and equal-energy mechanism controls",
+      "priority": "primary",
+      "execution_status": "design_pending",
+      "historical_provenance": "not_applicable",
+      "new_results": [],
+      "protocol": "experiments/protocols/journal_validation.md"
+    },
+    {
+      "experiment_id": "JRN04",
+      "family": "JRN",
+      "study_type": "prospective_journal",
+      "source_id": null,
+      "paper_locator": null,
+      "pdf_pages": [],
+      "question": "Task-scale alignment and held-out scale selection",
+      "priority": "primary",
+      "execution_status": "design_pending",
+      "historical_provenance": "not_applicable",
+      "new_results": [],
+      "protocol": "experiments/protocols/journal_validation.md"
+    },
+    {
+      "experiment_id": "JRN05",
+      "family": "JRN",
+      "study_type": "prospective_journal",
+      "source_id": null,
+      "paper_locator": null,
+      "pdf_pages": [],
+      "question": "Selected scale, corpus or downstream transfer and failure cases",
+      "priority": "staged_extension",
+      "execution_status": "design_pending",
+      "historical_provenance": "not_applicable",
+      "new_results": [],
+      "protocol": "experiments/protocols/journal_validation.md"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "reference_source_id": "MS01",
+  "registered_date": "2026-11-02",
+  "sources": [
+    {
+      "source_id": "MS01",
+      "role": "user_supplied_conference_reference",
+      "title": "The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency",
+      "local_origin": "E:\\research\\03-LLMpostionalembedding\\论文版本\\The Hippocampal Place Field Gradient-A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency.pdf",
+      "artifact_path": "artifacts/sources/ms01-conference-submission.pdf",
+      "sha256": "f291aaa4ead54f01d8c25b10c82ebdb1ff62ee23a55ae6542aa95f91cdaa1d3f",
+      "pages": 19,
+      "pdf_metadata": {
+        "/Author": "Anonymous Authors",
+        "/CreationDate": "D:20260129103435Z",
+        "/Creator": "LaTeX with hyperref",
+        "/Keywords": "Machine Learning, ICML",
+        "/ModDate": "D:20260129103435Z",
+        "/PTEX.Fullbanner": "This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) kpathsea version 6.4.0",
+        "/Producer": "pdfTeX-1.40.26",
+        "/Subject": "Proceedings of the International Conference on Machine Learning 2026",
+        "/Title": "The Hippocampal Place Field Gradient:A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency",
+        "/Trapped": "/False"
+      },
+      "publication_status": "not_established_by_metadata",
+      "scope": "Population-code theory and simulations, synthetic retrieval, restricted-budget LM, schedule ablations, attention visualization; three main tables"
+    },
+    {
+      "source_id": "MS02",
+      "role": "distinct_later_server_manuscript",
+      "local_origin": "/home/qijunrong/03-proj/The Hippocampal Place Field Gradient_A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency.pdf",
+      "sha256": "53c8ef2176d27b9bfcb2618c904f65e62edcb5b9a7b8fc81f46077279fdbe534",
+      "pages": 20,
+      "pdf_creation_date": "2026-05-27 from server pdfinfo",
+      "publication_status": "not_independently_verified",
+      "scope": "Includes additional scaling, SST-2 adaptation and local/global attention results; separate source from MS01"
+    },
+    {
+      "source_id": "MS03",
+      "role": "user_supplied_openreview_reference",
+      "url": "https://openreview.net/pdf?id=HpkknqHNPU",
+      "sha256": null,
+      "pages": null,
+      "retrieval_status": "earlier_download_attempt_returned_http_403",
+      "relation_to_local_sources": "unverified"
+    }
+  ]
+}

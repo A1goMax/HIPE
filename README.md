@@ -1,143 +1,54 @@
 # HIPE
 
-This directory contains the single main method selected for the formal code release:
-fixed-sigma bipartite HIPE.
+**Hippocampus-Inspired Multiscale Representation Learning**
 
-HIPE is the implementation accompanying the paper:
+HIPE connects hippocampal population coding, learning theory and Transformer positional representations. The journal research program asks when multiscale representations improve sample efficiency, what mechanism explains the effect, and where the advantage stops.
 
-**The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency**
+The existing manuscript title is **The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency**. The research program is organized around its biological, theoretical and computational contributions.
 
-The public code path is intentionally limited to this method. It does not include
-alternative positional encodings, ablations, exploratory schedules, historical
-results, or pretrained checkpoints.
+## Start here
 
-## Layout
+- [Project plan](PROJECT_PLAN.md): scientific questions, workstreams, stages and completion criteria.
+- [Current status](STATUS.md): completed work, observed blockers and immediate priorities.
+- [Claims and evidence](docs/science/CLAIM_EVIDENCE.md): the evidence required for each claim.
+- [Experiment registry](experiments/registry.json): conference targets and proposed journal studies.
+- [Architecture](docs/engineering/ARCHITECTURE.md): current implementation, target organization and migration rules.
+- [Manuscript sources](manuscript/sources/manifest.json): versions and file identities.
 
-- `hipe/olmo/`: the required decoder and rotary-position implementation.
-- `hipe/config.py`: the three model-size configurations and the hierarchical split.
-- `hipe/train.py`: the only training entry point.
-- `hipe/evaluate.py`: the checkpoint evaluation entry point.
-- `hipe/data.py`: dataset loading and deterministic text chunking.
-- `scripts/`: local data preparation and main-method launchers.
-- `third_party_licenses/`: license notices for vendored upstream components.
-
-The supported model sizes are 20M, 60M, and 300M. The default hierarchy keeps
-standard RoPE in the shallow half of the decoder and applies Gaussian HIPE in the
-deep half. The corresponding default layer thresholds are 3 for the 8-layer models
-and 7 for the 16-layer model.
-
-## Installation
-
-Use Python 3.10 or newer:
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-For an editable local installation:
-
-```bash
-python -m pip install -e .
-```
-
-FlashAttention is optional. The main implementation can use PyTorch attention when
-the optional CUDA dependency is not installed; paper-scale runs may enable it with
-`FLASH_ATTENTION=1` in the launcher environment.
-
-## Data contract
-
-WikiText data should be materialized as:
+## Repository organization
 
 ```text
-DATA_ROOT/wikitext/raw
-DATA_ROOT/wikitext/tokenizer
+HIPE/
+  hipe/                    Existing method package and model implementation
+  configs/                 Reference specifications and future resolved run configs
+  experiments/             Registry, protocols and run manifest contract
+  analysis/                Figure and table generation conventions
+  manuscript/              Source register and journal manuscript outline
+  docs/                    Scientific reasoning, architecture and decisions
+  reproducibility/         Legacy source register and environment requirements
+  scripts/                 Existing launchers and research-plan validation
+  tests/                   Existing package tests and future equivalence checks
+  third_party_licenses/    Upstream license notices
+  PROJECT_PLAN.md           Research charter and staged roadmap
+  STATUS.md                 Current state and next actions
 ```
 
-The C4 launcher expects:
+Large datasets, checkpoints, logs, PDFs and generated outputs belong in external artifact storage. Their identities and evidence links belong in the repository. The project does not require a method-specific Git branch for each experiment.
 
-```text
-DATA_ROOT/c4/c4_30M_train
-DATA_ROOT/c4/c4_30M_validation
-DATA_ROOT/wikitext/tokenizer
-```
+## Current software scope
 
-Raw datasets, tokenizer files, checkpoints, and training artifacts are external to
-this source tree.
+The initial package exposes fixed-sigma bipartite HIPE through `python -m hipe.train` and checkpoint evaluation through `python -m hipe.evaluate`. Model-size configurations include 20M, 60M and 300M. The journal registry includes additional methods and scientific tasks whose integration and validation are still pending.
 
-## Main method entry points
+The previous method-release README is preserved at [Method release](docs/engineering/METHOD_RELEASE.md), including its setup and invocation examples. Those commands document the inherited interface; they do not certify equivalence to the conference experiments. The current environment and validation status are recorded in `STATUS.md`.
 
-Prepare WikiText:
+Validate the planning metadata without installing the training dependencies:
 
 ```bash
-bash scripts/prepare_wikitext.sh
+python scripts/check_research_plan.py
 ```
 
-Prepare the C4 splits expected by the C4 launcher:
+## Publication scope
 
-```bash
-bash scripts/prepare_c4.sh
-```
+The journal campaign combines recovery of the conference evidence with new budget curves, finite-spectrum checks and controlled mechanism studies. Candidate scaling and downstream experiments are staged extensions. Their inclusion depends on the results and resources rather than their presence in a legacy branch.
 
-This streams the English C4 training split, shuffles it deterministically, and
-materializes `c4_30M_train` and `c4_30M_validation` as local Hugging Face
-`Dataset` directories. The default source subset contains 30M documents, with
-90% assigned to training and 5% to validation. For a small local smoke dataset,
-set `TRAIN_DOCS`, `VALIDATION_DOCS`, and `SHARD_SIZE`.
-
-Prepare only the tokenizer when the datasets are already available:
-
-```bash
-bash scripts/prepare_tokenizer.sh
-```
-
-Run the fixed-sigma bipartite method on WikiText:
-
-```bash
-bash scripts/run_hipe_wikitext.sh
-```
-
-Run the fixed-sigma bipartite method on the processed C4 subsets:
-
-```bash
-bash scripts/run_hipe_c4.sh
-```
-
-All paths are controlled by `HIPE_DATA_DIR` and `HIPE_ARTIFACTS_DIR`.
-
-Training writes the model state to `model.pt`, the resolved run configuration to
-`run_config.json`, and evaluation records to `metrics.jsonl` under the selected
-artifact directory. These generated files are intentionally excluded from the
-source tree.
-
-Evaluate a checkpoint with the same fixed-sigma HIPE configuration:
-
-```bash
-PYTHONPATH=. python -m hipe.evaluate \
-  --checkpoint /path/to/model.pt \
-  --data-path /path/to/wikitext/raw \
-  --tokenizer-path /path/to/wikitext/tokenizer \
-  --model-size 60M \
-  --seq-len 1024 \
-  --sigma 500 \
-  --rope-scaling-threshold 3
-```
-
-The repository contains source code only. Dataset files, tokenizer files,
-checkpoints, and training artifacts must be supplied externally and should not be
-committed to the project.
-
-## Citation
-
-If you use this code, please cite:
-
-```bibtex
-@inproceedings{zhou2026hippocampal,
-  title     = {The Hippocampal Place Field Gradient: A Bio-inspired Framework Building Multiscale Representation for Better Sample Efficiency},
-  author    = {Shujun Zhou and Junrong Qi and Guozhang Chen},
-  booktitle = {Proceedings of the International Conference on Machine Learning},
-  year      = {2026}
-}
-```
-
-The vendored OLMo components retain their original license notice in
-`third_party_licenses/OLMo-LICENSE`.
+The current working branch is `journal/research-foundation`. Existing source history and remote configuration are retained. The eventual GitHub destination and release are separate project decisions.

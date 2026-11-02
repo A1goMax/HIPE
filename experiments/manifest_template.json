@@ -1,0 +1,76 @@
+{
+  "record_type": "template_not_an_executed_run",
+  "schema_version": 1,
+  "experiment_id": null,
+  "run_id": null,
+  "stage": null,
+  "status": "planned",
+  "started_at_utc": null,
+  "finished_at_utc": null,
+  "source": {
+    "repository": null,
+    "commit": null,
+    "dirty": null,
+    "source_snapshot_path": null,
+    "source_snapshot_sha256": null,
+    "command": null
+  },
+  "configuration": {
+    "resolved_config_path": null,
+    "resolved_config_sha256": null,
+    "method_variant": null,
+    "seed": null,
+    "initialization_seed": null,
+    "data_seed": null,
+    "layer_index_convention": "zero_based",
+    "checkpoint_selection_rule": null
+  },
+  "data": {
+    "source_revision": null,
+    "preprocessing_revision": null,
+    "tokenizer_fingerprint": null,
+    "train_fingerprint": null,
+    "validation_fingerprint": null,
+    "test_fingerprint": null,
+    "ordered_sample_index_path": null,
+    "evaluation_population_fingerprint": null,
+    "fingerprint_method": null
+  },
+  "runtime": {
+    "environment_lock_path": null,
+    "environment_lock_sha256": null,
+    "python": null,
+    "torch": null,
+    "cuda": null,
+    "driver": null,
+    "gpu_model": null,
+    "gpu_count": null,
+    "precision": null,
+    "attention_backend": null,
+    "determinism_settings": null,
+    "scheduler_job_id": null
+  },
+  "budget": {
+    "target_training_tokens": null,
+    "actual_prediction_tokens": null,
+    "unique_training_examples": null,
+    "unique_training_tokens": null,
+    "optimizer_steps": null,
+    "wall_time_seconds": null,
+    "gpu_hours": null,
+    "peak_allocated_memory_bytes": null
+  },
+  "artifacts": {
+    "log_path": null,
+    "metrics_path": null,
+    "checkpoint_manifest_path": null,
+    "evaluation_record_path": null,
+    "analysis_revision": null
+  },
+  "outcome": {
+    "summary_metrics": null,
+    "failure_or_stop_reason": null,
+    "resumed_from_run_id": null,
+    "protocol_deviations": []
+  }
+}

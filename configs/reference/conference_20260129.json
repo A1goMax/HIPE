@@ -1,0 +1,144 @@
+{
+  "record_type": "paper_specification_not_a_runnable_config",
+  "source_id": "MS01",
+  "source_sha256": "f291aaa4ead54f01d8c25b10c82ebdb1ff62ee23a55ae6542aa95f91cdaa1d3f",
+  "architecture": {
+    "family": "decoder_only_OLMo",
+    "model_sizes": [
+      "20M",
+      "60M"
+    ],
+    "layers": 8,
+    "hierarchy": {
+      "index_convention": "zero_based",
+      "shallow_rope_layers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "deep_hipe_layers": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "exact_shape_and_vocab_by_cell": null
+  },
+  "synthetic": {
+    "paper_pages": [
+      7
+    ],
+    "training_steps": 20000,
+    "tasks": [
+      "one_to_one_associative_recall",
+      "one_to_many_block_retrieval"
+    ],
+    "reported_hipe_sigma": {
+      "one_to_one_associative_recall": 200,
+      "one_to_many_block_retrieval": 50
+    },
+    "batch_size": null,
+    "model_size_per_cell": null,
+    "sequence_length": null,
+    "original_seeds": null
+  },
+  "language_modeling": {
+    "paper_pages": [
+      7,
+      8
+    ],
+    "datasets": [
+      "wikitext103",
+      "c4"
+    ],
+    "model_sizes": [
+      "20M",
+      "60M"
+    ],
+    "sequence_lengths": [
+      512,
+      1024,
+      2048
+    ],
+    "methods": [
+      "nope",
+      "alibi",
+      "rope",
+      "hipe"
+    ],
+    "max_training_tokens": 100000000,
+    "hipe_sigma_by_cell": null,
+    "original_seeds": null,
+    "tokenizer_fingerprint": null,
+    "evaluation_population_fingerprint": null,
+    "optimizer_and_lr_schedule": null,
+    "checkpoint_selection_rule": null
+  },
+  "schedule_ablation": {
+    "paper_pages": [
+      8
+    ],
+    "dataset": "wikitext103",
+    "model_size": "20M",
+    "sequence_length": 2048,
+    "reported_layer_index_convention": "one_based",
+    "continuous_schedules": {
+      "cg1": {
+        "layers": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "sigma": [
+          50,
+          200,
+          500,
+          700,
+          1000
+        ]
+      },
+      "cg2": {
+        "layers": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "sigma": [
+          50,
+          200,
+          500,
+          700
+        ]
+      },
+      "cg3": {
+        "layers": [
+          7,
+          8
+        ],
+        "sigma": [
+          200,
+          700
+        ]
+      }
+    },
+    "reverse_sigma": null,
+    "bipartite_sigma": null
+  },
+  "population_code": {
+    "figure2_environment_length": "2*pi",
+    "figure4_environment_length": 100,
+    "figure4_region_width": 25,
+    "figure5_repeats": 1000,
+    "figure7_repeats": 1000,
+    "figure7_task_count": 5,
+    "figure7_highlighted_scale_distribution": "Uniform(5,20)",
+    "uncertainty_in_figure5_and_figure7": "SEM",
+    "original_simulation_source": null,
+    "original_seeds": null
+  }
+}
