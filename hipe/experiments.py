@@ -102,11 +102,13 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
     return result
 
 
-def submission_command(machine, gpus, manifest_path, log_dir):
+def submission_command(machine, gpus, manifest_path, log_dir, array_size=None):
     if gpus not in {1, 2}:
         raise ValueError("Request one or two GPUs")
+    concurrency = gpus
+    gpus = 1 if array_size is not None else gpus
     execution_root = Path(machine.get("repo_root", str(ROOT))) if os.name != "nt" else PurePosixPath(machine.get("repo_root", str(ROOT)))
-    return ["sbatch", "--parsable", "--partition=" + machine["partition"],
+    command = ["sbatch", "--parsable", "--partition=" + machine["partition"],
             f"--gres=gpu:{gpus}", "--nodes=1", "--ntasks=1",
             f"--cpus-per-task={machine['cpus_per_gpu'] * gpus}",
             f"--mem={machine['memory_gb_per_gpu'] * gpus}G",
@@ -114,6 +116,12 @@ def submission_command(machine, gpus, manifest_path, log_dir):
             "--chdir=" + str(execution_root), "--output=" + str(log_dir / "slurm-%j.out"),
             "--error=" + str(log_dir / "slurm-%j.err"),
             str(execution_root / "scripts/slurm_worker.sh"), str(manifest_path), machine["python"]]
+    if array_size is not None:
+        if array_size < 1:
+            raise ValueError("Array must contain at least one condition")
+        command.insert(2, f"--array=0-{array_size-1}%{concurrency}")
+        command = [part.replace("slurm-%j", "slurm-%A_%a") for part in command]
+    return command
 
 
 def worker(manifest_path):
@@ -129,6 +137,12 @@ def worker(manifest_path):
         raise RuntimeError("Allocated visible GPU count differs from campaign plan")
     log_root = Path(manifest["log_dir"])
     configs = manifest["configs"]
+    array_index = None
+    if manifest.get("array"):
+        array_index = int(os.environ["SLURM_ARRAY_TASK_ID"])
+        if not 0 <= array_index < len(configs):
+            raise ValueError("Array index outside campaign")
+        configs = [configs[array_index]]
     def slot(index):
         results = []
         for config_path in configs[index::gpus]:
@@ -149,7 +163,7 @@ def worker(manifest_path):
         return results
     with ThreadPoolExecutor(max_workers=gpus) as executor:
         results = [row for group in executor.map(slot, range(gpus)) for row in group]
-    (log_root / "campaign_results.json").write_text(json.dumps(results, indent=2))
+    (log_root / (f"campaign_results-{array_index}.json" if array_index is not None else "campaign_results.json")).write_text(json.dumps(results, indent=2))
     if any(row["returncode"] for row in results):
         raise SystemExit(1)
 
@@ -171,6 +185,8 @@ def main():
     parser.add_argument("--data-root")
     parser.add_argument("--artifacts-root")
     parser.add_argument("--gpus", type=int, choices=[1, 2], default=1)
+    parser.add_argument("--array", action="store_true", help="One GPU per Slurm array task; --gpus caps concurrency")
+    parser.add_argument("--preflight", action="store_true", help="Two-step, small-data GPU execution check, labeled separately")
     parser.add_argument("--execute", action="store_true", help="Actually call sbatch; default is a preview")
     parser.add_argument("--output")
     parser.add_argument("--manifest")
@@ -186,6 +202,15 @@ def main():
                           datasets=args.dataset, models=args.model_size, lengths=args.seq_len,
                           methods=args.method, seeds=args.seed, sigmas=args.sigma,
                           batch_profile=args.batch_profile, correct_nope=args.correct_nope)
+    if args.preflight:
+        for config in cases:
+            config.max_train_steps = 2
+            config.max_train_samples = 512
+            config.max_val_samples = 128
+            config.eval_interval = config.checkpoint_interval = 2
+            config.experiment_id += "_gpucheck2"
+            config.output_dir += "_gpucheck2"
+            config.source_notes.append("Two-step GPU preflight; excluded from paper experiment results")
     preview = {"suite": args.suite, "conditions": len(cases), "gpus_per_job": args.gpus,
                "execution": "independent one-GPU conditions; original batch per condition",
                "source_fingerprint": source_fingerprint(),
@@ -199,25 +224,35 @@ def main():
         return
     campaign = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
     campaign_dir = artifacts_root / "campaigns" / campaign
-    command = submission_command(machine, args.gpus, campaign_dir / "manifest.json", campaign_dir / "logs")
+    snapshot = campaign_dir / "source"
+    execution_machine = dict(machine, repo_root=str(snapshot))
+    command = submission_command(execution_machine, args.gpus, campaign_dir / "manifest.json", campaign_dir / "logs", len(cases) if args.array else None)
     if not args.execute:
         print(json.dumps({"conditions": len(cases), "sbatch": shlex.join(command),
+                          "one_gpu_per_array_task": args.array, "max_concurrent_conditions": args.gpus,
                           "global_batch_size": sorted({c.global_batch_size for c in cases}),
                           "micro_batch_sizes": sorted({c.micro_batch_size for c in cases}),
                           "submitted": False}, indent=2))
         return
     if os.name == "nt":
         raise RuntimeError("Submit from the deployed labserver2 checkout; Windows supports planning previews")
+    if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip():
+        raise RuntimeError("Commit source changes before submitting the frozen campaign")
+    source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     campaign_dir = Path(campaign_dir)
     campaign_dir.mkdir(parents=True, exist_ok=False)
     (campaign_dir / "logs").mkdir()
+    subprocess.run(["git", "clone", "--shared", "--no-checkout", "--quiet", str(ROOT), str(snapshot)], check=True)
+    subprocess.run(["git", "checkout", "--quiet", "--detach", source_commit], cwd=snapshot, check=True)
     config_paths = []
     for config in cases:
         config.output_dir += "_" + campaign
         path = campaign_dir / (config.experiment_id + ".json")
         path.write_text(json.dumps(config.to_dict(), indent=2) + "\n")
         config_paths.append(str(path))
-    manifest = {"source_fingerprint": source_fingerprint(), "gpus": args.gpus,
+    manifest = {"source_fingerprint": source_fingerprint(), "gpus": 1 if args.array else args.gpus,
+                "array": args.array, "max_concurrent_conditions": args.gpus,
+                "source_root": str(snapshot), "source_commit": source_commit,
                 "cpus_per_gpu": machine["cpus_per_gpu"], "configs": config_paths,
                 "log_dir": str(campaign_dir / "logs")}
     (campaign_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))

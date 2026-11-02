@@ -10,7 +10,7 @@ MS04 is the active 21-page manuscript. The requested scope is HIPE Tables 1-5, w
 
 - One shared model configuration for RoPE, HIPE, NoPE, ALiBi and XPos.
 - Fixed and learnable HIPE, explicit per-layer schedules, and shallow/deep local attention.
-- Table 2 suite with named original batch profiles, five seeds and six HIPE sigma values; 540 search runs before filtering.
+- Table 2 suite with named original batch profiles, three seeds and six HIPE sigma values; 324 search runs before filtering.
 - Six Table 5 conditions through the same model/trainer with global batch 64 and micro-batch 16.
 - One SLURM launcher for one or two RTX 5090 GPUs. Two-GPU jobs run independent conditions with unchanged per-condition batches.
 - Named legacy preprocessing, padded vocabulary, recovered optimizer settings, actual token counts, source/data manifests, unique run directories and full resumable checkpoints.

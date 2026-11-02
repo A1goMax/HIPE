@@ -41,7 +41,7 @@ Global batch remains 64. Accumulation is global divided by micro-batch. Two GPUs
 5. Table 5 launchers: inspected scripts contain L512 and/or sigma 200/300; the paper reports L1024 and sigma 500. The suite follows the paper and records the discrepancy.
 6. Validation endpoint: old scripts evaluate every 100 steps and save final weights. An extra final-step evaluation differs from the last interval. Reporting exposes both.
 7. Sample ordering: the new independent seeded sampler has a resumable cursor and pairs data across methods. It does not assert bitwise equivalence with old global-RNG consumption.
-8. Sigma search: the six-sigma/five-seed grid expands to 540 runs. Aggregation keeps every configuration without implicit favorable-run selection.
+8. Sigma search: the six-sigma/three-seed grid expands to 324 runs. Aggregation keeps every configuration without implicit favorable-run selection.
 
 ## Validation scope
 

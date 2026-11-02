@@ -11,7 +11,7 @@
     "source_notes": [
       "Batch settings are explicit launcher profiles, not a proven mapping to each reported rounded value.",
       "NoPE/XPos default to named legacy absolute-position compatibility; --correct-nope selects intended position-free behavior.",
-      "The historical C4 launchers specify 200M tokens while the paper specifies 100M; this suite explicitly follows the paper budget.",
+      "The user confirmed 200M was a post-paper change; the main experiment uses the paper budget of 100M tokens.",
       "The sampler uses an independent saved seed/cursor; historical script RNG consumption is not asserted identical."
     ]
   },
@@ -46,9 +46,7 @@
     "seed": [
       6198,
       1024,
-      7,
-      568,
-      3427
+      7
     ]
   }
 }

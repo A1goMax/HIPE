@@ -6,9 +6,9 @@ from hipe.experiments import resolve_suite, submission_command
 
 def test_table2_grid_preserves_original_global_batch_and_sigma_search():
     cases = resolve_suite("table2", data_root="/data", artifacts_root="/artifacts")
-    assert len(cases) == 540
+    assert len(cases) == 324
     assert {c.global_batch_size for c in cases} == {64}
-    assert {c.seed for c in cases} == {6198, 1024, 7, 568, 3427}
+    assert {c.seed for c in cases} == {6198, 1024, 7}
     assert {c.sigma for c in cases if c.method == "hipe"} == {50, 100, 200, 500, 700, 1000}
     assert all(c.accumulation_steps * c.micro_batch_size == 64 for c in cases)
     nope = [c for c in cases if c.method == "nope"]
@@ -58,3 +58,10 @@ def test_invalid_batch_and_unknown_settings_fail(tmp_path):
     p.write_text(json.dumps({"unknown_switch": True}))
     with pytest.raises(ValueError):
         ExperimentConfig.load(p)
+
+
+def test_array_requests_one_gpu_per_task_with_two_task_limit(tmp_path):
+    machine = {"partition": "debug", "cpus_per_gpu": 8, "memory_gb_per_gpu": 64, "time_limit": "96:00:00", "python": "/env/python"}
+    cmd = submission_command(machine, 2, tmp_path / "manifest.json", tmp_path, array_size=324)
+    assert "--array=0-323%2" in cmd
+    assert "--gres=gpu:1" in cmd and "--cpus-per-task=8" in cmd

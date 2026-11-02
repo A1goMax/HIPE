@@ -11,7 +11,7 @@ Preview a paired Table 2 condition without submitting a job:
 ```bash
 python -m hipe.experiments submit --suite table2 \
   --dataset wikitext103 --model-size 20M --seq-len 512 \
-  --method rope hipe --sigma 200 --seed 6198 --gpus 2
+  --method rope hipe --sigma 200 --seed 6198 --array --gpus 2
 ```
 
 The preview prints the SLURM command and resolved batch summary. Add `--execute` when actually submitting. One GPU runs one condition at a time. Two GPUs run independent conditions concurrently; each retains its original batch. The launcher does not use DDP.
@@ -40,7 +40,7 @@ The fixed HIPE formula is checked against PE commit 060b6a6. Learnable HIPE pres
 
 ## Historical compatibility
 
-Global batch is 64. Named profiles preserve recovered micro-batch rules; see [branch integration](docs/engineering/BRANCH_INTEGRATION.md). The six-sigma/five-seed Table 2 search expands to 540 runs rather than 48 paper cells.
+Global batch is 64. Named profiles preserve recovered micro-batch rules; see [branch integration](docs/engineering/BRANCH_INTEGRATION.md). The six-sigma/three-seed Table 2 search expands to 324 runs rather than 48 paper cells.
 
 Legacy NoPE/XPos also added learned absolute-position embeddings. Compatibility runs retain this explicitly and carry `legacyAPE` in their identities. `--correct-nope` disables the legacy addition for selected NoPE/XPos conditions.
 
@@ -66,3 +66,7 @@ The report keeps individual seeds, mean and standard deviation, separates protoc
 - [Manuscript sources](manuscript/sources/manifest.json)
 
 `planning/` is the earlier local archive; its old manuscript scope is superseded. Legacy release launchers remain for interface history. Use the suite-driven commands for the new campaign.
+
+## Main campaign execution
+
+The main campaign uses seeds 6198, 1024 and 7 and the paper's 100M-token cap. Use --array to request exactly one GPU per SLURM array task; --gpus 2 then caps concurrent tasks at two. Execution uses a frozen Git checkout. Add --preflight for a labeled two-step small-data GPU check.
