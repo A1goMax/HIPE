@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "study": "Completed Table 2 fixed-setting and L2048 sigma search",
+  "code_and_analysis_commit_before_archive": "8c233b1c10e3b1804cb4f27bf1bc53b1e45533b7",
+  "archive_tag": "research/table2-sigma-v1-20261103",
+  "training_commits": [
+    "1db028e05761e9089c4c36a3ad94c22829561535",
+    "224bc280b72a595d4e1aa5273ac35f47a0ba24d0",
+    "ca0e5163a319ae04aa7930e1c5b8de03ae650c84"
+  ],
+  "input_sha256": {
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\best_sigma_comparison.json": "f3b2157f0a1c36ff855deb3b23a18ad68db55ec19a199cedad9e450e351ac393"
+  },
+  "delivered_artifact_sha256": {
+    "ANALYSIS_REPORT.md": "45baa7b83a9e3b6e96a5cbfe904b0df2f87387b73b5dbb8bea10e92087e597a2",
+    "Best_HIPE_vs_RoPE.png": "a6ac0a31981a2eda202e28b84c970a6cad37d11fe08eeede24ff9c19b3c958a5",
+    "Best_vs_Baselines.csv": "594fa1b47b1704e091c5a075f7e7c424e2dfddd9de60e95b1474150623c1776b",
+    "Exact_Seed_PPL.csv": "b25fa1663ae26a7cbea47e8dbdef68eba0bff74016f45824b6a29f0e7c81e5c2",
+    "Execution_Attempts.csv": "81f8b1db053b0195c302ad8d3e1e4021f94b6dbc80eb02ca6b078a3e39c37ada",
+    "HIPE_All_Sigmas.csv": "0cf5a39301a68cbf5df41bb892fa97338c4ed30fd459b64d94c6a60ac67e1b33",
+    "HIPE_Table2_Sigma_Analysis.xlsx": "5df549c4aff9821f7c7678944cb4b6362bb245ec02f887a04d8506b36d0ee327",
+    "L2048_Coverage.csv": "5f374d24feaceae21256ba29bb998b9a79c1efb7f318e552b301998a76f44f62",
+    "L2048_sigma_sweep.png": "bd9f2018869a50515284401f13cd7670a61256cb4b867610416c9134f24bd31f",
+    "README.txt": "d868173799b3eabcfda13496c10302fe55aa1937c306f35edda2e547426bf445",
+    "summary.json": "0a5e3c2b0a083e0dec7fd2b57408d456941ab90743584ca624d0f84d0cb0b81c",
+    "VERIFICATION.json": "b718a8f6817e4781ec8e29e0816e0f6c354338b57d4e0ace06d3ece976344c77",
+    "workbook_data.json": "b90996e69ac08cea672aa1369521a9da23d2a249cc5a10c03970de1d2418b3e9"
+  },
+  "summary": {
+    "new_runs": 42,
+    "new_successful": 42,
+    "reused_requested_runs": 6,
+    "requested_grid_seed_runs": 48,
+    "execution_attempts": 192,
+    "completed_unique_seed_runs": 174,
+    "failed_attempts": 18,
+    "completed_HIPE_seed_runs": 78,
+    "completed_HIPE_configurations": 26,
+    "requested_sigma_grid_complete": true,
+    "selection": "minimum complete three-seed mean validation PPL at each dataset/model/length; never min seed or pooled sigma",
+    "last_interval": {
+      "wins_vs_rope": 9,
+      "losses_vs_rope": 3,
+      "seedwise_wins": 26,
+      "wins_by_length": {
+        "512": 3,
+        "1024": 4,
+        "2048": 2
+      },
+      "best_methods": {
+        "hipe": 5,
+        "alibi": 6,
+        "rope": 1
+      }
+    },
+    "final": {
+      "wins_vs_rope": 9,
+      "losses_vs_rope": 3,
+      "seedwise_wins": 26,
+      "wins_by_length": {
+        "512": 3,
+        "1024": 4,
+        "2048": 2
+      },
+      "best_methods": {
+        "hipe": 5,
+        "alibi": 6,
+        "rope": 1
+      }
+    }
+  },
+  "selection_rule": "minimum complete three-seed mean validation PPL at each dataset/model/length; never min seed or pooled sigma",
+  "primary_endpoint": "last_interval",
+  "secondary_endpoint": "final",
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "nominal_max_tokens": 100000000,
+  "artifact_locations": {
+    "local": "E:\\research\\03\\HIPE\\outputs\\table2_sigma_final",
+    "labserver2": "/home/qijunrong/03-proj/HIPE/outputs/table2_sigma_final"
+  }
+}

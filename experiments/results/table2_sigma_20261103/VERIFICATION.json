@@ -1,0 +1,16 @@
+{
+  "sheet_count": 6,
+  "exact_PPL_text_records_checked": 348,
+  "seed_and_stat_values_checked": 840,
+  "best_comparison_rows_checked": 24,
+  "coverage_groups_checked": 16,
+  "exported_formula_caches_match": true,
+  "source_checksums_unchanged": true,
+  "xlsx_sha256": "5df549c4aff9821f7c7678944cb4b6362bb245ec02f887a04d8506b36d0ee327",
+  "note": "Artifact Tool calculation and exported caches verified; native Excel recalculation was not exercised.",
+  "independent_recomputation_matches": true,
+  "new_42_completions_exit_zero": true,
+  "new_runs_training_steps": 762,
+  "new_runs_prediction_tokens": 99876864,
+  "nominal_token_cap": 100000000
+}

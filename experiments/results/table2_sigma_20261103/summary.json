@@ -1,0 +1,43 @@
+{
+  "new_runs": 42,
+  "new_successful": 42,
+  "reused_requested_runs": 6,
+  "requested_grid_seed_runs": 48,
+  "execution_attempts": 192,
+  "completed_unique_seed_runs": 174,
+  "failed_attempts": 18,
+  "completed_HIPE_seed_runs": 78,
+  "completed_HIPE_configurations": 26,
+  "requested_sigma_grid_complete": true,
+  "selection": "minimum complete three-seed mean validation PPL at each dataset/model/length; never min seed or pooled sigma",
+  "last_interval": {
+    "wins_vs_rope": 9,
+    "losses_vs_rope": 3,
+    "seedwise_wins": 26,
+    "wins_by_length": {
+      "512": 3,
+      "1024": 4,
+      "2048": 2
+    },
+    "best_methods": {
+      "hipe": 5,
+      "alibi": 6,
+      "rope": 1
+    }
+  },
+  "final": {
+    "wins_vs_rope": 9,
+    "losses_vs_rope": 3,
+    "seedwise_wins": 26,
+    "wins_by_length": {
+      "512": 3,
+      "1024": 4,
+      "2048": 2
+    },
+    "best_methods": {
+      "hipe": 5,
+      "alibi": 6,
+      "rope": 1
+    }
+  }
+}
