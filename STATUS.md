@@ -39,3 +39,5 @@ All source changes are authored in E:/research/03/HIPE and synchronized to journ
 ## Idle-campaign diagnosis and recovery
 
 Array41315 exhausted its108 baseline tasks (93completed,15CUDAOOM); all216HIPE sweep tasks remained held by the agent. The node and GPUs were healthy. Recovery uses36fixed-sigmaHIPE tasks with the current paper4/4hierarchy and six correctedALiBiL1024 retries, in one42-task array capped at2single-GPU tasks. See RECOVERED_SETTINGS.md in the campaign directory.
+
+Recovery array41639 is now running (36HIPE +6correctedALiBi retries); the old216held tuning tasks were canceled. First two HIPEtasks passed training steps100/200. See RECOVERY_LAUNCH.json.

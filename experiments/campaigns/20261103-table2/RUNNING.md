@@ -1,3 +1,15 @@
+# Current campaign state
+
+Recovery array **41639** is active: **36 fixed-setting HIPE runs + six corrected ALiBi retries**, one RTX5090 per task, maximum two concurrent tasks, seeds6198/1024/7, 100M-token cap and global batch64. Tasks41639_0 and41639_1 were confirmed training past steps200 and100.
+
+The old baseline portion of41315 ended with93successes and15ALiBiCUDAOOM failures. The216held tuning tasks were canceled after the replacement was accepted. The idle GPUs were caused by the campaign hold, not a server outage.
+
+The new frozen source is ca0e516. HIPE uses the paper4/4split (threshold3), with recovered per-cell sigmas; historical C4threshold4 differences are documented in RECOVERED_SETTINGS.md. The six ALiBi retries restore automatic PyTorch SDPA, with the paper-matched Wiki20M/L1024micro-batch16 and global64.
+
+Check current jobs with `squeue -j 41639`. Details are in RECOVERY_LAUNCH.json. Prior launch history follows.
+
+---
+
 # Table 2 campaign started
 
 SLURM array **41315** was submitted on 3 November 2026 (Asia/Shanghai). The first condition is running and initially preparing the full WikiText data; remaining tasks wait for resources.

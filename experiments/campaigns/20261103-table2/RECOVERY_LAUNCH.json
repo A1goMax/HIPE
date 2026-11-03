@@ -1,0 +1,29 @@
+{
+  "recovery_job_id": "41639",
+  "source_commit": "ca0e5163a319ae04aa7930e1c5b8de03ae650c84",
+  "remote_campaign": "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T021619Z-ffc8f29b",
+  "baseline_outcome": {
+    "successful": 93,
+    "alibi_cuda_oom": 15
+  },
+  "superseded_held_tasks_canceled": 216,
+  "recovery_tasks": {
+    "fixed_hipe": 36,
+    "corrected_alibi_L1024_retries": 6
+  },
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "token_cap": 100000000,
+  "global_batch": 64,
+  "gpus_per_task": 1,
+  "maximum_concurrency": 2,
+  "hipe_layer_threshold": 3,
+  "hipe_hierarchy": "current-paper four shallow RoPE and four deep HIPE layers",
+  "first_observed_steps": {
+    "41639_0": 200,
+    "41639_1": 100
+  }
+}
