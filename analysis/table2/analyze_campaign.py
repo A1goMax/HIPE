@@ -95,8 +95,11 @@ def summarize(raw, registry):
                     runs = [successful[(ds,size,length,method,seed)] for seed in SEEDS if (ds,size,length,method,seed) in successful]
                     assert len(runs) in {0,3}, key
                     groups[key] = runs
+                    sigma_values = {r["config"]["sigma"] for r in runs} if method == "hipe" else set()
+                    assert len(sigma_values) <= 1, "Fixed-main report requires one sigma; use export_exact_ppl.py for a sweep"
+                    sigma_value = next(iter(sigma_values)) if sigma_values else None
                     item = {"dataset":ds,"model_size":size,"seq_len":length,"method":method,
-                            "label":"Legacy NoPE+APE" if method=="nope" else method.upper(),
+                            "label":"Legacy NoPE+APE" if method=="nope" else method.upper(), "sigma": sigma_value,
                             "n":len(runs),"mean_ppl_last_interval":None,"sd_ppl_last_interval":None,
                             "mean_ppl_final":None,"sd_ppl_final":None,
                             "paper_ppl":paper[key],"paper_status":"OOM" if paper[key] is None else "numeric",
@@ -115,7 +118,7 @@ def summarize(raw, registry):
                         for r in runs:
                             a,b=selected(r,"last_interval"),selected(r,"final")
                             per_seed.append({"dataset":ds,"model_size":size,"seq_len":length,"method":method,
-                                             "seed":r["config"]["seed"],"ppl_last_interval":a["ppl"],"ppl_final":b["ppl"],
+                                             "seed":r["config"]["seed"],"sigma":sigma_value,"ppl_last_interval":a["ppl"],"ppl_final":b["ppl"],
                                              "last_interval_step":a["step"],"last_interval_training_tokens":a["training_tokens"],
                                              "final_step":b["step"],"final_training_tokens":b["training_tokens"],
                                              "validation_tokens":a["validation_tokens"],
@@ -142,7 +145,7 @@ def summarize(raw, registry):
                 mean=statistics.mean(deltas);sd=statistics.stdev(deltas);se=sd/math.sqrt(3)
                 critical=float(student_t.ppf(.975,2));p=float(2*student_t.sf(abs(mean/se),2)) if se else (1.0 if mean==0 else 0.0)
                 r=row_map[(ds,size,length,"rope")];h=row_map[(ds,size,length,"hipe")]
-                paired.append({"dataset":ds,"model_size":size,"seq_len":length,
+                paired.append({"dataset":ds,"model_size":size,"seq_len":length,"sigma":hipe[0]["config"]["sigma"],
                                "rope_mean":r["mean_ppl_last_interval"],"rope_sd":r["sd_ppl_last_interval"],
                                "hipe_mean":h["mean_ppl_last_interval"],"hipe_sd":h["sd_ppl_last_interval"],
                                "delta_ppl":mean,"relative_gain_percent":100*(-mean)/r["mean_ppl_last_interval"],
@@ -248,6 +251,7 @@ def main():
     lines=["# Table 2 three-seed analysis","",
            "The campaigns are finished. This is a new three-seed replication under the recorded protocol, with qualified historical comparability. No new experiment or checkpoint evaluation was launched for this analysis.","",
            "## Main finding","",
+           "Each HIPE mean and sample SD is computed over three seeds at one fixed sigma. No different sigma values are averaged together. Sigma is explicit in the tables and CSVs.","",
            f"HIPE has lower mean perplexity than RoPE in **{summary['hipe_mean_wins']}/12 settings**, and in **{summary['paired_seed_wins']}/36 matched-seed comparisons**. It wins 3/4 settings at length512, 4/4 at length1024, and 1/4 at length2048. The directions are unchanged when final-checkpoint evaluations replace the last regular validation.",
            "",
            "These results support a conditional advantage, especially at length1024. They do not reproduce the paper's uniform HIPE improvement over RoPE. A fixed-budget PPL comparison alone does not quantify tokens saved; a sample-efficiency claim additionally needs learning-curve/quality-threshold analysis.",
@@ -273,13 +277,15 @@ def main():
             for method in METHODS:
                 cells=[lookup[(ds,size,n,method)] for n in LENGTHS]
                 vals=[f"{r['mean_ppl_last_interval']:.2f} +/- {r['sd_ppl_last_interval']:.2f}" if r["n"] else "OOM (0/3)" for r in cells]
+                if method == "hipe":
+                    vals = [value + f" (sigma {r['sigma']:g})" if r["n"] else value for value,r in zip(vals,cells)]
                 label="Legacy NoPE+APE" if method=="nope" else method.upper()
                 lines.append("| "+("WikiText-103" if ds=="wikitext103" else "C4")+" | "+size+" | "+label+" | "+" | ".join(vals)+" |")
     lines += ["","## HIPE versus RoPE","",
-              "| Corpus | Model | Length | RoPE mean +/- SD | HIPE mean +/- SD | HIPE minus RoPE | Relative PPL reduction | Seeds favoring HIPE |",
-              "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
+              "| Corpus | Model | Length | Sigma | RoPE mean +/- SD | HIPE mean +/- SD | HIPE minus RoPE | Relative PPL reduction | Seeds favoring HIPE |",
+              "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for r in paired:
-        lines.append(f"| {r['dataset']} | {r['model_size']} | {r['seq_len']} | {r['rope_mean']:.2f} +/- {r['rope_sd']:.2f} | {r['hipe_mean']:.2f} +/- {r['hipe_sd']:.2f} | {r['delta_ppl']:+.2f} | {r['relative_gain_percent']:+.2f}% | {r['seeds_favor_hipe']}/3 |")
+        lines.append(f"| {r['dataset']} | {r['model_size']} | {r['seq_len']} | {r['sigma']:g} | {r['rope_mean']:.2f} +/- {r['rope_sd']:.2f} | {r['hipe_mean']:.2f} +/- {r['hipe_sd']:.2f} | {r['delta_ppl']:+.2f} | {r['relative_gain_percent']:+.2f}% | {r['seeds_favor_hipe']}/3 |")
     lines += ["","![Paired HIPE effects](hipe_vs_rope.png)","",
               "The mean losing settings are WikiText60M/L2048, C420M/L2048, C460M/L512 and C460M/L2048. C460M/L512 is worse for HIPE in each of the three seeds. Long-context effects are small or unfavorable relative to their seed variation.",
               "",
