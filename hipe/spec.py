@@ -21,6 +21,8 @@ class ExperimentConfig:
     local_window_size: int = 256
     local_layers: int = 4
     legacy_absolute_positions: bool = False
+    xpos_variant: str = "torchscale"
+    xpos_scale_base: float = 512.0
     seq_len: int = 1024
     seed: int = 6198
     global_batch_size: int = 64
@@ -62,6 +64,10 @@ class ExperimentConfig:
     def validate(self):
         if self.method not in {"rope", "hipe", "nope", "alibi", "xpos"}:
             raise ValueError("Unknown method")
+        if self.xpos_variant not in {"torchscale", "legacy"}:
+            raise ValueError("Unknown XPos implementation")
+        if not math.isfinite(self.xpos_scale_base) or self.xpos_scale_base <= 0:
+            raise ValueError("xpos_scale_base must be positive and finite")
         if self.dataset not in {"wikitext103", "c4"}:
             raise ValueError("This trainer supports WikiText-103/C4")
         if self.model_size not in {"20M", "60M", "300M"}:

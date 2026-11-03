@@ -1,0 +1,92 @@
+{
+  "study": "table2_sigma_layers_xpos_v1",
+  "previous_snapshot_commit": "eb35933840e2ca732cc3ad58750a1e79357e52b0",
+  "previous_snapshot_tag": "research/table2-sigma-v1-20261103",
+  "cpu_suite": {
+    "passed": 49,
+    "failed": 0,
+    "log_sha256": "7f421c8e2bfe1f1bbb512a2674b9443bdecb45acf7c923251ba3d6b966405c41"
+  },
+  "authors_reference": {
+    "cases": [
+      {
+        "head_dim": 32,
+        "key_length": 511,
+        "query_length": 511
+      },
+      {
+        "head_dim": 32,
+        "key_length": 511,
+        "query_length": 1
+      },
+      {
+        "head_dim": 32,
+        "key_length": 512,
+        "query_length": 512
+      },
+      {
+        "head_dim": 32,
+        "key_length": 512,
+        "query_length": 1
+      },
+      {
+        "head_dim": 32,
+        "key_length": 2048,
+        "query_length": 2048
+      },
+      {
+        "head_dim": 32,
+        "key_length": 2048,
+        "query_length": 1
+      },
+      {
+        "head_dim": 64,
+        "key_length": 511,
+        "query_length": 511
+      },
+      {
+        "head_dim": 64,
+        "key_length": 511,
+        "query_length": 1
+      },
+      {
+        "head_dim": 64,
+        "key_length": 512,
+        "query_length": 512
+      },
+      {
+        "head_dim": 64,
+        "key_length": 512,
+        "query_length": 1
+      },
+      {
+        "head_dim": 64,
+        "key_length": 2048,
+        "query_length": 2048
+      },
+      {
+        "head_dim": 64,
+        "key_length": 2048,
+        "query_length": 1
+      }
+    ],
+    "maximum_absolute_error": 5.7220458984375e-06,
+    "reference": {
+      "repository": "microsoft/torchscale",
+      "commit": "4d1e0e82e5adf86dd424f1463192635b73fc8efc",
+      "url": "https://raw.githubusercontent.com/microsoft/torchscale/4d1e0e82e5adf86dd424f1463192635b73fc8efc/torchscale/component/xpos_relative_position.py",
+      "sha256": "d337ba30c5b837018839d6c442832fe12cf237f9d9b7422d53db7b20fd18b991"
+    }
+  },
+  "regression": {
+    "existing_models_checked": 5,
+    "exact_tensor_matches": 1008,
+    "cpu_logits_parameters_and_gradients_identical": true
+  },
+  "scope": "Isolated CPU correctness checks. These are not training results or evidence of performance superiority.",
+  "full_run_count": 81,
+  "hipe_runs": 45,
+  "xpos_runs": 36,
+  "reused_hipe_seed_runs": 9,
+  "gpu_execution": "Pending SLURM preflight. One GPU per task; two concurrent tasks maximum."
+}

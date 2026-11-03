@@ -53,16 +53,37 @@ def collect(config, model_config, output_dir, device):
     token_root = Path(config.tokenizer_path)
     if token_root.is_dir():
         tokenizer_files = {p.name: sha256(p) for p in token_root.iterdir() if p.is_file()}
+    from .config import resolve_layer_sigmas
+    layout = {"method": config.method, "n_layers": model_config.n_layers,
+              "legacy_absolute_positions": config.legacy_absolute_positions}
+    if config.method == "hipe":
+        sigmas = resolve_layer_sigmas(model_config.n_layers, config.sigma, config.schedule,
+                                     config.layer_threshold, config.layer_sigmas)
+        layout.update({"sigma_by_layer": sigmas,
+                       "hipe_layer_indices_zero_based": [i for i, value in enumerate(sigmas) if value is not None],
+                       "hipe_layer_count": sum(value is not None for value in sigmas)})
+    elif config.method == "xpos":
+        layout.update({"implementation": config.xpos_variant, "scale_base": config.xpos_scale_base,
+                       "rotary_coordinate_layout": "split_half"})
+    publication = None
+    campaign_path = os.environ.get("HIPE_CAMPAIGN_MANIFEST")
+    if campaign_path:
+        publication = json.loads(Path(campaign_path).read_text()).get("publication")
+    core = ["hipe/train.py", "hipe/data.py", "hipe/config.py",
+            "hipe/olmo/model.py", "hipe/olmo/config.py"]
     return {
-        "schema_version": 1, "experiment": asdict(config),
+        "schema_version": 2, "positional_layout": layout, "experiment": asdict(config),
         "model_config": json.loads(json.dumps(asdict(model_config), default=str)),
         "source": {"commit": git_output("rev-parse", "HEAD"), "branch": git_output("branch", "--show-current"),
                    "status": git_output("status", "--short"), "snapshot": snapshot.name,
-                   "snapshot_sha256": sha256(snapshot)},
+                   "snapshot_sha256": sha256(snapshot), "publication": publication,
+                   "code_file_sha256": {name: sha256(ROOT / name) for name in core}},
         "runtime": {"python": platform.python_version(), "packages": packages,
                     "torch_cuda": torch.version.cuda, "device": str(device),
                     "gpu": torch.cuda.get_device_name(device) if device.type == "cuda" else None,
                     "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
+                    "slurm_array_job_id": os.environ.get("SLURM_ARRAY_JOB_ID"),
+                    "slurm_array_task_id": os.environ.get("SLURM_ARRAY_TASK_ID"),
                     "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES")},
         "tokenizer_file_sha256": tokenizer_files,
         "sampler_protocol": "independent_seeded_permutation_v1",

@@ -297,6 +297,9 @@ class ModelConfig(BaseConfig):
 
     nope: bool = False
     xpos: bool = False
+    # Missing fields in historical model_config.json retain the inherited implementation.
+    xpos_variant: str = "legacy"
+    xpos_scale_base: float = 512.0
     legacy_absolute_positions: bool = False
     local_attention_layers: Optional[List[int]] = None
     local_window_size: int = 256

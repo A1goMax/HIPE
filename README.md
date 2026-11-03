@@ -78,3 +78,18 @@ The original baseline portion finished with 93 successes and 15 ALiBi OOM failur
 ## Completed Table2 analysis
 
 The main campaign and requested L2048 high-sigma sweep have ended. See [the completed sweep report](analysis/table2/COMPLETED_SIGMA_REPORT.md). All 42 new runs completed; six matching previous runs complete the 48-run requested grid. The formal workbook and CSV/figure outputs are in outputs/table2_sigma_final/. HIPE has lower mean PPL than RoPE in 9/12 settings after selecting each setting's lowest complete three-seed mean. Sigma 800 is best observed in three L2048 settings; C4 60M retains sigma 50. ALiBi has the lowest available mean in six settings, HIPE in five and RoPE in one. These are validation-selected results. Different sigmas are never pooled. The earlier analysis/table2/REPORT.md is the pre-sweep record.
+
+## Joint sigma/layer search and XPos
+
+The previous code and results are preserved at Git tag
+[research/table2-sigma-v1-20261103](https://github.com/A1goMax/HIPE/tree/research/table2-sigma-v1-20261103).
+The new [bounded protocol](experiments/protocols/table2_sigma_layers_xpos_v1.md)
+defines 45 new HIPE runs across the three mean-loss settings, plus 36 reference
+XPos baseline runs. Nine completed HIPE control runs are reused. Total decoder
+depth remains eight; two, four or six final layers use HIPE.
+
+Use the shared launcher with --suite table2_sigma_layers_xpos --array --gpus 2
+--require-published. Commit and push before --execute. XPos defaults to the
+TorchScale reference formulation without absolute embeddings; the inherited
+implementation is explicitly xpos_variant=legacy. New run manifests include
+effective layer layouts, code/config hashes and the verified publication receipt.

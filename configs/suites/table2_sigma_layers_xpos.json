@@ -1,0 +1,238 @@
+{
+  "source": "JRN exploratory joint sigma/layer search plus reference XPos Table 2 baseline v1",
+  "defaults": {
+    "paper_source": "MS04",
+    "max_tokens": 100000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "march2026",
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Prospective bounded exploratory search after research/table2-sigma-v1-20261103.",
+      "100M token cap, seeds 6198/1024/7, original per-method micro-batch profile and global batch 64.",
+      "Two sigma values x two/four/six HIPE layers at each of the three previous mean-loss settings; three matching four-HIPE-layer settings reused.",
+      "XPos uses reference TorchScale decay, scale_base 512, split-half rotary coordinates and no learned absolute position embeddings.",
+      "One GPU per SLURM array task, maximum two simultaneous tasks, no DDP.",
+      "Select on complete three-seed validation means, report every candidate and failures; no claim that tuning must outperform RoPE."
+    ],
+    "layer_threshold": 3,
+    "legacy_absolute_positions": false,
+    "xpos_variant": "torchscale",
+    "xpos_scale_base": 512.0
+  },
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "cases": [
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "xpos"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "xpos"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "xpos"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "xpos"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "xpos"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "xpos"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 200,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "schedule": "bipartite",
+      "layer_threshold": 5
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "schedule": "bipartite",
+      "layer_threshold": 1
+    }
+  ]
+}

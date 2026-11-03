@@ -105,7 +105,8 @@ def make_model(config, vocab_size):
         config.attention_backend == "flash", method=config.method, schedule=config.schedule,
         layer_sigmas=config.layer_sigmas, learnable_sigma=config.learnable_sigma,
         attention_pattern=config.attention_pattern, local_window_size=config.local_window_size,
-        local_layers=config.local_layers, legacy_absolute_positions=config.legacy_absolute_positions)
+        local_layers=config.local_layers, legacy_absolute_positions=config.legacy_absolute_positions,
+        xpos_variant=config.xpos_variant, xpos_scale_base=config.xpos_scale_base)
     return OLMo(model_config), model_config
 
 

@@ -73,7 +73,8 @@ def build_model_config(model_size: str, vocab_size: int, sequence_length: int,
                        schedule: str = "bipartite", layer_sigmas=None,
                        learnable_sigma: bool = False, attention_pattern: str = "global",
                        local_window_size: int = 256, local_layers: int = 4,
-                       legacy_absolute_positions: bool = False) -> ModelConfig:
+                       legacy_absolute_positions: bool = False,
+                       xpos_variant: str = "torchscale", xpos_scale_base: float = 512.0) -> ModelConfig:
     if model_size not in MODEL_SIZES:
         raise ValueError(f"Unknown model size: {model_size}")
     if method not in {"hipe", "rope", "nope", "alibi", "xpos"}:
@@ -82,6 +83,10 @@ def build_model_config(model_size: str, vocab_size: int, sequence_length: int,
         raise ValueError("Learnable sigma requires HIPE")
     if legacy_absolute_positions and method not in {"nope", "xpos"}:
         raise ValueError("The legacy absolute-position switch only applies to NoPE/XPos")
+    if xpos_variant not in {"torchscale", "legacy"}:
+        raise ValueError("Unknown XPos implementation")
+    if not math.isfinite(xpos_scale_base) or xpos_scale_base <= 0:
+        raise ValueError("xpos_scale_base must be positive and finite")
     size = MODEL_SIZES[model_size]
     sigmas = resolve_layer_sigmas(size.n_layers, sigma, schedule, layer_threshold, layer_sigmas) if method == "hipe" else None
     local_ids = resolve_local_layers(size.n_layers, attention_pattern, local_layers)
@@ -94,6 +99,7 @@ def build_model_config(model_size: str, vocab_size: int, sequence_length: int,
         vocab_size=vocab_size, embedding_size=vocab_size, init_std=0.02,
         rope=method in {"rope", "hipe"}, alibi=method == "alibi",
         nope=method == "nope", xpos=method == "xpos",
+        xpos_variant=xpos_variant, xpos_scale_base=float(xpos_scale_base),
         use_scaled_rope1=method == "hipe", scaled_rope_sigma=float(sigma),
         scaled_rope_sigmas=None if schedule == "bipartite" else sigmas, rope_scaling_threshold=threshold,
         learnable_sigma=learnable_sigma, decay_func="gaussian",

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "planned_before_new_training",
+  "preserved_tag": "research/table2-sigma-v1-20261103",
+  "preserved_commit": "eb35933840e2ca732cc3ad58750a1e79357e52b0",
+  "github_repository": "A1goMax/HIPE",
+  "suite": "table2_sigma_layers_xpos",
+  "new_hipe_configurations": 15,
+  "new_hipe_seed_runs": 45,
+  "new_xpos_configurations": 12,
+  "new_xpos_seed_runs": 36,
+  "total_new_seed_runs": 81,
+  "reused_hipe_seed_runs": 9,
+  "reused_hipe_cases": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 500,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "schedule": "bipartite",
+      "layer_threshold": 3
+    }
+  ],
+  "total_model_layers": 8,
+  "tested_hipe_layer_counts": [
+    2,
+    4,
+    6
+  ],
+  "layer_order": "unscaled RoPE first, fixed-sigma HIPE last",
+  "primary_endpoint": "last_interval",
+  "secondary_endpoint": "final",
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "max_tokens": 100000000,
+  "global_batch_size": 64,
+  "selection": "minimum complete three-seed mean per fixed non-tuned protocol; never pool sigma or layer counts",
+  "stopping_rule": "Run this bounded grid once. Do not add candidates automatically after inspecting outcomes.",
+  "interpretation": "Exploratory validation tuning; an independent held-out evaluation is needed for generalization claims."
+}

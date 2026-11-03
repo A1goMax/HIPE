@@ -1172,6 +1172,48 @@ class NoPE(nn.Module):
 
 
 class XPosEmbedding(RotaryEmbedding):
+    """TorchScale XPos in this decoder's split-half rotary coordinate layout.
+
+    The dimension decay and centered exponent follow microsoft/torchscale.
+    Query scaling and reciprocal key scaling are computed in float32.
+    """
+
+    def __init__(self, config: ModelConfig, cache: BufferCache):
+        super().__init__(config, cache)
+        self.scale_base = float(config.xpos_scale_base)
+        if not math.isfinite(self.scale_base) or self.scale_base <= 0:
+            raise ValueError("XPos scale base must be positive and finite")
+        dim = config.d_model // config.n_heads
+        index = torch.arange(0, dim, 2, dtype=torch.float32,
+                             device=_non_meta_init_device(config))
+        self.register_buffer("scale", (index / dim + 0.4) / 1.4)
+
+    def get_scale(self, seq_len: int, device: torch.device) -> torch.Tensor:
+        # -(seq_len // 2) differs by a common, cancelling factor for odd lengths.
+        # Use the authors' negative-integer-floor convention exactly.
+        position = torch.arange(seq_len, device=device, dtype=torch.float32)
+        position = position - (seq_len + 1) // 2
+        factors = self.scale.to(device=device, dtype=torch.float32).pow(
+            position[:, None] / self.scale_base)
+        return torch.cat((factors, factors), dim=-1)[None, None]
+
+    def forward(self, q: torch.Tensor, k: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        with torch.autocast(q.device.type, enabled=False):
+            query, key = q.float(), k.float()
+            qlen, klen = query.shape[-2], key.shape[-2]
+            if not 0 < qlen <= klen:
+                raise ValueError("XPos query length must be in [1, key length]")
+            sin, cos = self.get_rotary_embedding(klen, q.device)
+            factors = self.get_scale(klen, q.device)
+            query = self.apply_rotary_pos_emb(
+                sin[:, :, -qlen:], cos[:, :, -qlen:], query)
+            key = self.apply_rotary_pos_emb(sin, cos, key)
+            query = query * factors[:, :, -qlen:]
+            key = key / factors
+        return query.to(q.dtype), key.to(k.dtype)
+
+
+class LegacyXPosEmbedding(RotaryEmbedding):
     """
     XPos implementation inheriting from RotaryEmbedding.
     Includes numerical stability fix for bfloat16 and long sequences.
@@ -1441,7 +1483,8 @@ class OLMoBlock(nn.Module):
 
 
         elif getattr(self.config, 'xpos', False):
-            self.rotary_emb = XPosEmbedding(config, self.__cache)
+            xpos_class = LegacyXPosEmbedding if config.xpos_variant == "legacy" else XPosEmbedding
+            self.rotary_emb = xpos_class(config, self.__cache)
 
 
 

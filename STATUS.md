@@ -27,3 +27,14 @@ C4 HIPE retains smaller micro-batches than RoPE. Dropout and accumulation effect
 ## Next priorities
 
 Resolve the evaluation, micro-batch and layer-split comparisons before scaling the experiments. Keep a true position-free NoPE baseline distinct from Legacy NoPE+APE. Table 1 retrieval, Table 3 larger-model campaign specifications and Table 4 LoRA adapter integration remain pending. The shared implementation and SLURM-only single-GPU execution are preserved.
+
+## Next bounded campaign
+
+The completed version and exact per-run mappings have been pushed to
+A1goMax/HIPE under research/table2-sigma-v1-20261103 (eb35933).
+The prospective sigma/layer + XPos protocol is in
+experiments/protocols/table2_sigma_layers_xpos_v1.md. It contains 81 new full
+runs (45 HIPE and 36 XPos), reusing nine prior HIPE seed-runs.
+The code passed 49 CPU tests, numerical comparisons with the pinned authors'
+XPos source in 12 shape/offset cases, and exact checks of 1,008 existing-model
+parameter/gradient tensors plus logits. GPU execution awaits the SLURM checks.

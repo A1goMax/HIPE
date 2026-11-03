@@ -78,7 +78,11 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
             item["data_path"] = str(data_base / "wikitext/raw")
         item["tokenizer_path"] = str(data_base / "wikitext/tokenizer")
         if item["method"] in {"nope", "xpos"}:
-            item["legacy_absolute_positions"] = not correct_nope
+            # Preserve explicitly configured compatibility. New XPos defaults to
+            # reference relative positions without learned absolute embeddings.
+            item.setdefault("legacy_absolute_positions", item["method"] == "nope")
+            if correct_nope:
+                item["legacy_absolute_positions"] = False
         if item["method"] == "alibi":
             item["attention_backend"] = "sdpa"
         if item.get("attention_pattern", "global") != "global":
@@ -89,6 +93,10 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
             tag += "_legacyAPE"
         if item["method"] == "hipe":
             tag += f"_s{item['sigma']:g}_{item.get('schedule','bipartite')}"
+            if item.get("layer_threshold") is not None:
+                tag += f"_t{item['layer_threshold']}"
+        elif item["method"] == "xpos":
+            tag += f"_{item.get('xpos_variant', 'torchscale')}_b{item.get('xpos_scale_base', 512):g}"
         identity = f"{suite}_{dataset}_{item['model_size']}_L{item['seq_len']}_{tag}_seed{item['seed']}"
         item["experiment_id"] = identity
         item["output_dir"] = str(artifact_base / "runs" / identity)
@@ -124,6 +132,21 @@ def submission_command(machine, gpus, manifest_path, log_dir, array_size=None):
     return command
 
 
+def verify_publication(commit, remote="origin"):
+    """Require the exact clean source head to be visible on the selected GitHub branch."""
+    branch = subprocess.check_output(["git", "branch", "--show-current"], cwd=ROOT, text=True).strip()
+    if not branch:
+        raise RuntimeError("Publish from a named branch before submitting")
+    url = subprocess.check_output(["git", "remote", "get-url", remote], cwd=ROOT, text=True).strip()
+    ref = "refs/heads/" + branch
+    output = subprocess.check_output(["git", "ls-remote", remote, ref], cwd=ROOT,
+                                     text=True, timeout=45).strip().splitlines()
+    if len(output) != 1 or output[0].split()[0] != commit:
+        raise RuntimeError("Push the exact source commit to GitHub before submitting")
+    return {"remote": remote, "url": url, "ref": ref, "commit": commit,
+            "verified_at": datetime.now(timezone.utc).isoformat()}
+
+
 def worker(manifest_path):
     if not os.environ.get("SLURM_JOB_ID"):
         raise RuntimeError("The worker must run in a SLURM allocation")
@@ -148,8 +171,12 @@ def worker(manifest_path):
         for config_path in configs[index::gpus]:
             if source_fingerprint() != manifest["source_fingerprint"]:
                 raise RuntimeError("Source changed while a queued condition was waiting")
+            expected_hash = manifest.get("config_sha256", {}).get(config_path)
+            if expected_hash and hashlib.sha256(Path(config_path).read_bytes()).hexdigest() != expected_hash:
+                raise RuntimeError("Resolved configuration changed after submission")
             config = ExperimentConfig.load(config_path)
             env = os.environ.copy()
+            env["HIPE_CAMPAIGN_MANIFEST"] = str(Path(manifest_path).resolve())
             env["CUDA_VISIBLE_DEVICES"] = visible[index]
             env["TOKENIZERS_PARALLELISM"] = "false"
             env["OMP_NUM_THREADS"] = str(manifest["cpus_per_gpu"])
@@ -188,6 +215,8 @@ def main():
     parser.add_argument("--array", action="store_true", help="One GPU per Slurm array task; --gpus caps concurrency")
     parser.add_argument("--preflight", action="store_true", help="Two-step, small-data GPU execution check, labeled separately")
     parser.add_argument("--execute", action="store_true", help="Actually call sbatch; default is a preview")
+    parser.add_argument("--require-published", action="store_true",
+                        help="Require the exact source commit on the origin branch before sbatch")
     parser.add_argument("--output")
     parser.add_argument("--manifest")
     args = parser.parse_args()
@@ -239,20 +268,24 @@ def main():
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip():
         raise RuntimeError("Commit source changes before submitting the frozen campaign")
     source_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    publication = verify_publication(source_commit) if args.require_published else None
     campaign_dir = Path(campaign_dir)
     campaign_dir.mkdir(parents=True, exist_ok=False)
     (campaign_dir / "logs").mkdir()
     subprocess.run(["git", "clone", "--shared", "--no-checkout", "--quiet", str(ROOT), str(snapshot)], check=True)
     subprocess.run(["git", "checkout", "--quiet", "--detach", source_commit], cwd=snapshot, check=True)
     config_paths = []
+    config_hashes = {}
     for config in cases:
         config.output_dir += "_" + campaign
         path = campaign_dir / (config.experiment_id + ".json")
         path.write_text(json.dumps(config.to_dict(), indent=2) + "\n")
         config_paths.append(str(path))
+        config_hashes[str(path)] = hashlib.sha256(path.read_bytes()).hexdigest()
     manifest = {"source_fingerprint": source_fingerprint(), "gpus": 1 if args.array else args.gpus,
                 "array": args.array, "max_concurrent_conditions": args.gpus,
                 "source_root": str(snapshot), "source_commit": source_commit,
+                "publication": publication, "config_sha256": config_hashes,
                 "cpus_per_gpu": machine["cpus_per_gpu"], "configs": config_paths,
                 "log_dir": str(campaign_dir / "logs")}
     (campaign_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
