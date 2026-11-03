@@ -1,0 +1,61 @@
+{
+  "requested_seed_runs": 48,
+  "reused_completed_runs": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 6198,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "model_sha256": "a231b555477fb53efb6c040b33499fa5afc12bed9879435facf21db1b80b4c27"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 1024,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+      "model_sha256": "d9260b9328f612796a1b4347b8d83728c92d024020e5aa184269ae4c4de6f85c"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 7,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed7_20261103T021619Z-ffc8f29b",
+      "model_sha256": "f55480febebd0ecc6e8bdafa7f24e99a8bf5c44870f9b2da58051e30d7d28121"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 6198,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "model_sha256": "ddfb00187fb049687d06a9276d656ddfe040f4a3146b47c25cd0235065f92506"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 1024,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+      "model_sha256": "2f2d94026e217cf0aa99c3590a82476c32ef7bdf507ee2413cb63d92a20c4dd9"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "sigma": 700,
+      "seed": 7,
+      "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed7_20261103T021619Z-ffc8f29b",
+      "model_sha256": "e3264ca6dda1b51766e1b3616a36f9b8d67040a0a20287a21ea006d698a9f31a"
+    }
+  ],
+  "new_seed_runs": 42,
+  "selection": "minimum three-seed mean validation PPL per dataset/model/length, sigma groups never pooled"
+}

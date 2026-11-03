@@ -1,0 +1,141 @@
+{
+  "source": "L2048 high-sigma extension; missing configurations only",
+  "defaults": {
+    "paper_source": "MS04",
+    "max_tokens": 100000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "march2026",
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Batch settings are explicit launcher profiles, not a proven mapping to each reported rounded value.",
+      "NoPE/XPos default to named legacy absolute-position compatibility; --correct-nope selects intended position-free behavior.",
+      "The user confirmed 200M was a post-paper change; the main experiment uses the paper budget of 100M tokens.",
+      "The sampler uses an independent saved seed/cursor; historical script RNG consumption is not asserted identical.",
+      "Fixed sigma values come from paper-matching historical validation logs. Layer threshold3 implements the current paper four/four hierarchy; five historical C4 runs instead used threshold4 (five/three).",
+      "Wiki20M/L512 length is inferred from the 100M budget, 3051 steps and global batch64; the model count and sigma200/threshold3 are explicit in the log.",
+      "User-authorized L2048 sigma700/800/900/1000 search. All non-sigma training settings are unchanged. Complete matching sigma700 runs are reused rather than duplicated."
+    ],
+    "layer_threshold": 3
+  },
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "cases": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "layer_threshold": 3
+    }
+  ]
+}
