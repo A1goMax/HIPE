@@ -1,0 +1,53 @@
+{
+  "sweep_job_id": "41695",
+  "new_runs": 42,
+  "reused_completed_runs": 6,
+  "requested_sigmas": [
+    700,
+    800,
+    900,
+    1000
+  ],
+  "length": 2048,
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "token_cap": 100000000,
+  "global_batch": 64,
+  "gpu_per_task": 1,
+  "max_concurrent_gpu_tasks": 2,
+  "source": {
+    "folder": "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T083710Z-1db4674c",
+    "source_root": "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T083710Z-1db4674c/source",
+    "source_commit": "1db028e05761e9089c4c36a3ad94c22829561535",
+    "conditions": 42
+  },
+  "postprocessing": {
+    "job": "41698",
+    "command": [
+      "sbatch",
+      "--parsable",
+      "--partition=debug",
+      "--nodes=1",
+      "--ntasks=1",
+      "--cpus-per-task=2",
+      "--mem=8G",
+      "--time=00:30:00",
+      "--job-name=hipe-sigma-best",
+      "--dependency=afterany:41695",
+      "--chdir=/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T083710Z-1db4674c/source",
+      "--output=/home/qijunrong/03-proj/HIPE/outputs/best_sigma_after_41695/analysis-%j.out",
+      "--error=/home/qijunrong/03-proj/HIPE/outputs/best_sigma_after_41695/analysis-%j.err",
+      "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T083710Z-1db4674c/source/scripts/post_sigma_analysis.sh",
+      "41695",
+      "/home/qijunrong/03-proj/HIPE/outputs/best_sigma_after_41695",
+      "/home/qijunrong/anaconda3/bin/python",
+      "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261103T083710Z-1db4674c/baseline_runs.json"
+    ],
+    "output": "/home/qijunrong/03-proj/HIPE/outputs/best_sigma_after_41695",
+    "stderr": ""
+  },
+  "baseline_input_sha256": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f"
+}
