@@ -63,7 +63,7 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
         dataset = item["dataset"]
         item["batch_profile"] = batch_profile or item["batch_profile"]
         batch_method = "hipe_learnable" if item.get("learnable_sigma") else item["method"]
-        item["micro_batch_size"] = legacy_micro_batch(dataset, batch_method, item["model_size"], item["seq_len"], item["batch_profile"])
+        item.setdefault("micro_batch_size", legacy_micro_batch(dataset, batch_method, item["model_size"], item["seq_len"], item["batch_profile"]))
         if dataset == "c4":
             item.setdefault("data_pipeline", "legacy_c4")
             item.setdefault("num_proc", 8)
@@ -80,7 +80,7 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
         if item["method"] in {"nope", "xpos"}:
             item["legacy_absolute_positions"] = not correct_nope
         if item["method"] == "alibi":
-            item["attention_backend"] = "math"
+            item["attention_backend"] = "sdpa"
         if item.get("attention_pattern", "global") != "global":
             item["attention_backend"] = "math"
         tag = case.get("case_name", item["method"])

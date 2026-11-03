@@ -6,10 +6,10 @@ from hipe.experiments import resolve_suite, submission_command
 
 def test_table2_grid_preserves_original_global_batch_and_sigma_search():
     cases = resolve_suite("table2", data_root="/data", artifacts_root="/artifacts")
-    assert len(cases) == 324
+    assert len(cases) == 144
     assert {c.global_batch_size for c in cases} == {64}
     assert {c.seed for c in cases} == {6198, 1024, 7}
-    assert {c.sigma for c in cases if c.method == "hipe"} == {50, 100, 200, 500, 700, 1000}
+    assert {c.sigma for c in cases if c.method == "hipe"} == {50, 200, 300, 500, 700}
     assert all(c.accumulation_steps * c.micro_batch_size == 64 for c in cases)
     nope = [c for c in cases if c.method == "nope"]
     assert all(c.legacy_absolute_positions and "legacyAPE" in c.experiment_id for c in nope)
@@ -65,3 +65,19 @@ def test_array_requests_one_gpu_per_task_with_two_task_limit(tmp_path):
     cmd = submission_command(machine, 2, tmp_path / "manifest.json", tmp_path, array_size=324)
     assert "--array=0-323%2" in cmd
     assert "--gres=gpu:1" in cmd and "--cpus-per-task=8" in cmd
+
+
+def test_fixed_hipe_main_has_36_runs_and_current_paper_layer_split():
+    cases = resolve_suite("table2_hipe", data_root="/data", artifacts_root="/out")
+    assert len(cases) == 36 and all(c.method == "hipe" for c in cases)
+    assert all(c.layer_threshold == 3 and c.max_tokens == 100000000 and c.max_train_steps is None for c in cases)
+    assert {c.seed for c in cases} == {6198, 1024, 7}
+    sigma = {(c.dataset,c.model_size,c.seq_len):c.sigma for c in cases}
+    assert sigma[("wikitext103","60M",512)] == 300
+    assert sigma[("c4","60M",2048)] == 50
+
+
+def test_alibi_restores_automatic_sdpa_and_paper_matched_batch():
+    cases = resolve_suite("table2", data_root="/data", artifacts_root="/out", datasets=["wikitext103"], models=["20M"], lengths=[1024], methods=["alibi"], seeds=[6198])
+    assert cases[0].micro_batch_size == 16 and cases[0].global_batch_size == 64
+    assert cases[0].attention_backend == "sdpa"

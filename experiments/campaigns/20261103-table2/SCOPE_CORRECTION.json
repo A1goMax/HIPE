@@ -1,0 +1,10 @@
+{
+  "job": "41315",
+  "original_submitted_runs": 324,
+  "intended_main_experiment_runs": 144,
+  "baseline_runs_eligible": 108,
+  "hipe_sweep_runs_held": 216,
+  "hipe_main_runs_to_retain_after_sigma_recovery": 36,
+  "extra_sweep_runs_to_exclude": 180,
+  "reason": "The original submission repeated the six-value sigma tuning grid for all three seeds. The requested main comparison uses one fixed sigma per HIPE condition."
+}

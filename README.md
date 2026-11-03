@@ -40,7 +40,7 @@ The fixed HIPE formula is checked against PE commit 060b6a6. Learnable HIPE pres
 
 ## Historical compatibility
 
-Global batch is 64. Named profiles preserve recovered micro-batch rules; see [branch integration](docs/engineering/BRANCH_INTEGRATION.md). The six-sigma/three-seed Table 2 search expands to 324 runs rather than 48 paper cells.
+Global batch is 64. Named profiles preserve recovered micro-batch rules; see [branch integration](docs/engineering/BRANCH_INTEGRATION.md). The main Table 2 suite uses one fixed sigma per condition and three seeds: 144 runs. The old grid is retained separately as table2_sweep for historical reference.
 
 Legacy NoPE/XPos also added learned absolute-position embeddings. Compatibility runs retain this explicitly and carry `legacyAPE` in their identities. `--correct-nope` disables the legacy addition for selected NoPE/XPos conditions.
 
@@ -70,3 +70,7 @@ The report keeps individual seeds, mean and standard deviation, separates protoc
 ## Main campaign execution
 
 The main campaign uses seeds 6198, 1024 and 7 and the paper's 100M-token cap. Use --array to request exactly one GPU per SLURM array task; --gpus 2 then caps concurrent tasks at two. Execution uses a frozen Git checkout. Add --preflight for a labeled two-step small-data GPU check.
+
+## Campaign correction
+
+The original baseline portion finished with 93 successes and 15 ALiBi OOM failures. The redundant HIPE sweep was held, then replaced by 36 fixed-setting HIPE runs. The recovery suite table2_remaining additionally retries the six unexpected length1024 ALiBi failures with the restored automatic SDPA policy and the directly supported WikiText micro-batch16. It contains42 tasks but adds only36 missing main conditions; six are retries. All keep global64 and the 100M-token cap.

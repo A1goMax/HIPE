@@ -1,5 +1,5 @@
 {
-  "source": "MS04, latest user-supplied 21-page PDF; Table 2",
+  "source": "MS04 Table2 main comparison; fixed sigma per condition, current-paper four/four hierarchy",
   "defaults": {
     "paper_source": "MS04",
     "max_tokens": 100000000,
@@ -12,41 +12,330 @@
       "Batch settings are explicit launcher profiles, not a proven mapping to each reported rounded value.",
       "NoPE/XPos default to named legacy absolute-position compatibility; --correct-nope selects intended position-free behavior.",
       "The user confirmed 200M was a post-paper change; the main experiment uses the paper budget of 100M tokens.",
-      "The sampler uses an independent saved seed/cursor; historical script RNG consumption is not asserted identical."
-    ]
+      "The sampler uses an independent saved seed/cursor; historical script RNG consumption is not asserted identical.",
+      "Fixed sigma values come from paper-matching historical validation logs. Layer threshold3 implements the current paper four/four hierarchy; five historical C4 runs instead used threshold4 (five/three).",
+      "Wiki20M/L512 length is inferred from the 100M budget, 3051 steps and global batch64; the model count and sigma200/threshold3 are explicit in the log."
+    ],
+    "layer_threshold": 3
   },
-  "matrix": {
-    "dataset": [
-      "wikitext103",
-      "c4"
-    ],
-    "model_size": [
-      "20M",
-      "60M"
-    ],
-    "seq_len": [
-      512,
-      1024,
-      2048
-    ],
-    "method": [
-      "nope",
-      "alibi",
-      "rope",
-      "hipe"
-    ],
-    "sigma": [
-      50,
-      100,
-      200,
-      500,
-      700,
-      1000
-    ],
-    "seed": [
-      6198,
-      1024,
-      7
-    ]
-  }
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "cases": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "alibi"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 200,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "alibi",
+      "micro_batch_size": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "alibi"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "alibi"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 300,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "alibi"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "nope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "alibi"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "rope"
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 300,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 512,
+      "method": "hipe",
+      "sigma": 500,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "layer_threshold": 3
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "nope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "alibi"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "rope"
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "seq_len": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "layer_threshold": 3
+    }
+  ]
 }

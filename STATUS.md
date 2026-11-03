@@ -19,7 +19,7 @@ MS04 is the active 21-page manuscript. The requested scope is HIPE Tables 1-5, w
 
 ## Validation
 
-36 CPU tests pass in an isolated source copy on labserver2 with CUDA hidden. These include legacy fixed-formula equality, all baseline gradients, learnable state reload, layer schedules, local causal masks/cached decoding, original global-batch accumulation, preprocessing, full two-step manifest/checkpoint execution, saved-config evaluation and exact CPU resume.
+38 CPU tests pass in an isolated source copy on labserver2 with CUDA hidden. These include legacy fixed-formula equality, all baseline gradients, learnable state reload, layer schedules, local causal masks/cached decoding, original global-batch accumulation, preprocessing, full two-step manifest/checkpoint execution, saved-config evaluation and exact CPU resume.
 
 Submission previews are checked without calling sbatch. The source also retains a vendored PyTorch deprecation warning during CPU attention-mask checks.
 
@@ -35,3 +35,7 @@ The healthy original environment is /home/qijunrong/anaconda3/bin/python, with T
 4. Finish the separate synthetic retrieval and SST-2 LoRA adapter migrations and the larger-model campaign specifications for Tables 1/3/4.
 
 All source changes are authored in E:/research/03/HIPE and synchronized to journal/research-foundation on labserver2. Existing release history and historical PE checkouts remain available.
+
+## Idle-campaign diagnosis and recovery
+
+Array41315 exhausted its108 baseline tasks (93completed,15CUDAOOM); all216HIPE sweep tasks remained held by the agent. The node and GPUs were healthy. Recovery uses36fixed-sigmaHIPE tasks with the current paper4/4hierarchy and six correctedALiBiL1024 retries, in one42-task array capped at2single-GPU tasks. See RECOVERED_SETTINGS.md in the campaign directory.
