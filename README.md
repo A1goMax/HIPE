@@ -77,4 +77,4 @@ The original baseline portion finished with 93 successes and 15 ALiBi OOM failur
 
 ## Completed Table2 analysis
 
-The campaign has ended. See [the versioned analysis report](analysis/table2/REPORT.md). The output package contains full mean/SD tables, individual seeds, paired effects, learning curves and source records. The main result is conditional: HIPE improves over RoPE in8/12settings, with all4length1024settings improving and mixedlength2048outcomes. No further experiment was launched in this analysis.
+The campaign has ended. See [the versioned analysis report](analysis/table2/REPORT.md). The output package contains full mean/SD tables, individual seeds, paired effects, learning curves and source records. The main result is conditional: HIPE improves over RoPE in 8/12 settings, with all four length-1024 settings improving and mixed length-2048 outcomes. No further experiment was launched in this analysis.

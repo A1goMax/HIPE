@@ -1,19 +1,21 @@
 # HIPE Research Status
 
-Updated3November2026, Asia/Shanghai.
+Updated 3 November 2026, Asia/Shanghai.
 
-## Table2 campaign
+## Completed Table 2 campaign
 
-Arrays41315 and41639 have ended. Adjudicated results contain132successful unique main runs (44cells x3seeds),12unavailable runs (4OOMcells),150execution attempts including6retries. The216superseded tuning tasks were canceled and are excluded. No new GPU work was submitted for analysis.
+Arrays 41315 and 41639 have ended. The adjudicated main results contain 132 successful unique runs (44 cells with three seeds), 12 unavailable runs (four OOM cells), and 150 execution attempts including six retries. The 216 superseded tuning tasks are excluded. No new GPU work was submitted for the analysis.
 
-HIPE improves meanPPL versusRoPE in8/12settings and25/36seed pairs. Wins by length:512=3/4,1024=4/4,2048=1/4. Final-checkpoint sensitivity leaves all directions unchanged. HIPE is best among available methods in4/12settings. Three-seed uncertainty and protocol differences limit publication claims.
+HIPE improves mean perplexity over RoPE in 8/12 settings and 25/36 matched-seed comparisons. Wins by length are 3/4 at 512, 4/4 at 1024, and 1/4 at 2048. Final-checkpoint evaluations leave all directions unchanged. HIPE has the lowest mean among available methods in 4/12 settings. Three-seed uncertainty and protocol differences limit the conclusions.
 
-Read analysis/table2/REPORT.md and outputs/table2_20261103/REPORT.md for the complete table, plots, uncertainty, papercomparison and audit. Numerical CSVs and a standalone reproduction package are under outputs/.
+Read analysis/table2/REPORT.md and outputs/table2_20261103/REPORT.md for the full table, plots, uncertainty, paper comparison and audit. Numerical CSVs and a standalone reproduction package are under outputs/.
 
 ## Evidence quality
 
-All12paired cells share processed/raw data identity, evaluation population, vocabulary, seeds, globalbatch64 and tokenexposure. Frozen trainer/data/model sources match byte-for-byte. C4HIPE retains smaller micro-batches thanRoPE, so dropout/accumulation numerical effects are a remaining confound. Five historical C4matches used5/3layers while these runs use the paper4/4. Our NoPE is the explicitly labeled legacyNoPE+APE. Historical validation source uses a20batchlimit, while current evaluation is fulltokenweighted; exact historical runtime provenance remains incomplete.
+All 12 paired HIPE/RoPE cells share data identity, evaluation population, vocabulary, seeds, global batch 64 and token exposure. The frozen trainer, preprocessing and model files match byte for byte.
+
+C4 HIPE retains smaller micro-batches than RoPE; dropout and accumulation effects remain a potential confound. Five historical C4 log matches used a 5/3 hierarchy, while these runs use the paper's 4/4 hierarchy. The NoPE runs are explicitly labeled legacy NoPE+APE. Historical validation source has a 20-batch limit; current evaluation uses the full validation population with token weighting. Exact historical runtime provenance remains incomplete.
 
 ## Next priorities
 
-Resolve the evaluation/micro-batch/hierarchy comparisons before scaling the experiment. Keep a real position-freeNoPE baseline separate from legacyNoPE+APE. Additional Table1retrieval, Table3large-model specifications and Table4LoRAadapter work remain pending. The shared implementation and SLURM-only single-GPU execution are preserved.
+Resolve the evaluation, micro-batch and hierarchy comparisons before scaling the experiments. Keep a true position-free NoPE baseline distinct from legacy NoPE+APE. Table 1 retrieval, Table 3 larger-model campaign specifications and Table 4 LoRA adapter integration remain pending. The shared implementation and SLURM-only single-GPU execution are preserved.
