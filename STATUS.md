@@ -41,3 +41,10 @@ parameter/gradient tensors plus logits. GPU execution awaits the SLURM checks.
 
 SLURM GPU-check array 41769 (12 two-step checks) is queued with two-task concurrency.
 The full array will use an afterok dependency, with cancellation if any check fails.
+
+Full SLURM array 41770 is submitted from published commit 5df7693, with
+afterok:41769 and automatic cancellation on an invalid check dependency.
+Initial states are pending priority (41769) and pending dependency (41770).
+Each phase uses one GPU per task and at most two concurrent tasks.
+Exact launch receipts are in
+experiments/campaigns/20261103-joint-sigma-layers-xpos/LAUNCH.json.
