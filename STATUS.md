@@ -35,6 +35,9 @@ A1goMax/HIPE under research/table2-sigma-v1-20261103 (eb35933).
 The prospective sigma/layer + XPos protocol is in
 experiments/protocols/table2_sigma_layers_xpos_v1.md. It contains 81 new full
 runs (45 HIPE and 36 XPos), reusing nine prior HIPE seed-runs.
-The code passed 49 CPU tests, numerical comparisons with the pinned authors'
+The code passed 50 CPU tests, numerical comparisons with the pinned authors'
 XPos source in 12 shape/offset cases, and exact checks of 1,008 existing-model
 parameter/gradient tensors plus logits. GPU execution awaits the SLURM checks.
+
+SLURM GPU-check array 41769 (12 two-step checks) is queued with two-task concurrency.
+The full array will use an afterok dependency, with cancellation if any check fails.

@@ -3,9 +3,9 @@
   "previous_snapshot_commit": "eb35933840e2ca732cc3ad58750a1e79357e52b0",
   "previous_snapshot_tag": "research/table2-sigma-v1-20261103",
   "cpu_suite": {
-    "passed": 49,
+    "passed": 50,
     "failed": 0,
-    "log_sha256": "7f421c8e2bfe1f1bbb512a2674b9443bdecb45acf7c923251ba3d6b966405c41"
+    "log_sha256": "c3456eea293773c98458a0720ae7b62ab7e71819d944b20b85ce71a900037920"
   },
   "authors_reference": {
     "cases": [
@@ -88,5 +88,15 @@
   "hipe_runs": 45,
   "xpos_runs": 36,
   "reused_hipe_seed_runs": 9,
-  "gpu_execution": "Pending SLURM preflight. One GPU per task; two concurrent tasks maximum."
+  "gpu_execution": "Pending SLURM preflight. One GPU per task; two concurrent tasks maximum.",
+  "gpu_preflight": {
+    "job": "41769",
+    "source_commit": "f304bce6f2aadb98ab2344ac548bd5d9e361a6f2",
+    "conditions": 12,
+    "steps": 2,
+    "status_at_recording": "pending_priority",
+    "coverage": "60M/L2048 reference XPos for both corpora and all ten new 60M/L2048 HIPE configurations",
+    "excluded_from_research_results": true
+  },
+  "submission_change": "Added afterok success dependency and cancellation on invalid dependency. Scientific model/trainer files unchanged from GPU-check source."
 }

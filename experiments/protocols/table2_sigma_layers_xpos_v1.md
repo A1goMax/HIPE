@@ -79,3 +79,6 @@ runtime, SLURM IDs, checkpoints and metrics.
 
 One GPU runs one independent training process. No DDP is used. All GPU work,
 including short checks, must be submitted through SLURM.
+
+Use --afterok GPU_CHECK_JOB_ID to queue the full array behind successful GPU checks.
+A failed check dependency cancels the dependent array before training starts.

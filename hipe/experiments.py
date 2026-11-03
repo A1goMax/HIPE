@@ -110,7 +110,7 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
     return result
 
 
-def submission_command(machine, gpus, manifest_path, log_dir, array_size=None):
+def submission_command(machine, gpus, manifest_path, log_dir, array_size=None, afterok=None):
     if gpus not in {1, 2}:
         raise ValueError("Request one or two GPUs")
     concurrency = gpus
@@ -124,6 +124,10 @@ def submission_command(machine, gpus, manifest_path, log_dir, array_size=None):
             "--chdir=" + str(execution_root), "--output=" + str(log_dir / "slurm-%j.out"),
             "--error=" + str(log_dir / "slurm-%j.err"),
             str(execution_root / "scripts/slurm_worker.sh"), str(manifest_path), machine["python"]]
+    if afterok is not None:
+        if not isinstance(afterok, int) or afterok <= 0:
+            raise ValueError("afterok requires a positive SLURM job ID")
+        command[2:2] = [f"--dependency=afterok:{afterok}", "--kill-on-invalid-dep=yes"]
     if array_size is not None:
         if array_size < 1:
             raise ValueError("Array must contain at least one condition")
@@ -217,6 +221,7 @@ def main():
     parser.add_argument("--execute", action="store_true", help="Actually call sbatch; default is a preview")
     parser.add_argument("--require-published", action="store_true",
                         help="Require the exact source commit on the origin branch before sbatch")
+    parser.add_argument("--afterok", type=int, help="Wait for every task of this SLURM check job to succeed")
     parser.add_argument("--output")
     parser.add_argument("--manifest")
     args = parser.parse_args()
@@ -255,13 +260,13 @@ def main():
     campaign_dir = artifacts_root / "campaigns" / campaign
     snapshot = campaign_dir / "source"
     execution_machine = dict(machine, repo_root=str(snapshot))
-    command = submission_command(execution_machine, args.gpus, campaign_dir / "manifest.json", campaign_dir / "logs", len(cases) if args.array else None)
+    command = submission_command(execution_machine, args.gpus, campaign_dir / "manifest.json", campaign_dir / "logs", len(cases) if args.array else None, afterok=args.afterok)
     if not args.execute:
         print(json.dumps({"conditions": len(cases), "sbatch": shlex.join(command),
                           "one_gpu_per_array_task": args.array, "max_concurrent_conditions": args.gpus,
                           "global_batch_size": sorted({c.global_batch_size for c in cases}),
                           "micro_batch_sizes": sorted({c.micro_batch_size for c in cases}),
-                          "submitted": False}, indent=2))
+                          "afterok": args.afterok, "submitted": False}, indent=2))
         return
     if os.name == "nt":
         raise RuntimeError("Submit from the deployed labserver2 checkout; Windows supports planning previews")
@@ -284,6 +289,7 @@ def main():
         config_hashes[str(path)] = hashlib.sha256(path.read_bytes()).hexdigest()
     manifest = {"source_fingerprint": source_fingerprint(), "gpus": 1 if args.array else args.gpus,
                 "array": args.array, "max_concurrent_conditions": args.gpus,
+                "afterok": args.afterok,
                 "source_root": str(snapshot), "source_commit": source_commit,
                 "publication": publication, "config_sha256": config_hashes,
                 "cpus_per_gpu": machine["cpus_per_gpu"], "configs": config_paths,

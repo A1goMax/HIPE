@@ -85,3 +85,15 @@ def test_publication_gate_requires_the_exact_source_commit(monkeypatch):
     monkeypatch.setattr("hipe.experiments.subprocess.check_output",lambda *a,**k:next(responses))
     with pytest.raises(RuntimeError,match="Push the exact source"):
         verify_publication("newcommit")
+
+
+def test_full_array_waits_for_all_gpu_checks_and_cancels_on_failed_dependency(tmp_path):
+    from hipe.experiments import submission_command
+    machine={"partition":"debug","cpus_per_gpu":8,"memory_gb_per_gpu":64,
+             "time_limit":"96:00:00","python":"/env/python"}
+    command=submission_command(machine,2,tmp_path/"manifest.json",tmp_path,array_size=81,afterok=41769)
+    assert "--dependency=afterok:41769" in command
+    assert "--kill-on-invalid-dep=yes" in command
+    assert "--array=0-80%2" in command and "--gres=gpu:1" in command
+    with pytest.raises(ValueError,match="positive"):
+        submission_command(machine,2,tmp_path/"manifest.json",tmp_path,array_size=81,afterok=0)
