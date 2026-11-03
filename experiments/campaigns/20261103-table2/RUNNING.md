@@ -1,3 +1,13 @@
+# Completed campaign and analysis
+
+Both arrays have ended; no HIPE jobs are running. The adjudicated main set contains **132 successful runs /44 numeric cells**, with three seeds per cell, and **12 unavailable runs /4 OOM cells**. Recovery retries are retained in the attempt audit.
+
+HIPE has lower mean perplexity than RoPE in **8/12 settings** and25/36 seed pairs. It wins4/4 settings atL1024, but only1/4 atL2048. Final-checkpoint analysis gives the same directions. This is a conditional result, not uniform numerical reproduction of the paper.
+
+Full analysis: `outputs/table2_20261103/REPORT.md`. Source analysis: `analysis/table2/analyze_campaign.py`. Summary/provenance: `ANALYSIS_SUMMARY.json`. Prior launch history follows.
+
+---
+
 # Current campaign state
 
 Recovery array **41639** is active: **36 fixed-setting HIPE runs + six corrected ALiBi retries**, one RTX5090 per task, maximum two concurrent tasks, seeds6198/1024/7, 100M-token cap and global batch64. Tasks41639_0 and41639_1 were confirmed training past steps200 and100.

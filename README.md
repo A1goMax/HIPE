@@ -74,3 +74,7 @@ The main campaign uses seeds 6198, 1024 and 7 and the paper's 100M-token cap. Us
 ## Campaign correction
 
 The original baseline portion finished with 93 successes and 15 ALiBi OOM failures. The redundant HIPE sweep was held, then replaced by 36 fixed-setting HIPE runs. The recovery suite table2_remaining additionally retries the six unexpected length1024 ALiBi failures with the restored automatic SDPA policy and the directly supported WikiText micro-batch16. It contains42 tasks but adds only36 missing main conditions; six are retries. All keep global64 and the 100M-token cap.
+
+## Completed Table2 analysis
+
+The campaign has ended. See [the versioned analysis report](analysis/table2/REPORT.md). The output package contains full mean/SD tables, individual seeds, paired effects, learning curves and source records. The main result is conditional: HIPE improves over RoPE in8/12settings, with all4length1024settings improving and mixedlength2048outcomes. No further experiment was launched in this analysis.

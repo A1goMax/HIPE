@@ -1,0 +1,146 @@
+{
+  "status": "campaigns_finished_analysis_complete",
+  "source_jobs": [
+    "41315",
+    "41639"
+  ],
+  "input_sha256": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
+  "primary_endpoint": "last_interval",
+  "sensitivity_endpoint": "final",
+  "summary": {
+    "attempts": 150,
+    "completed_unique_runs": 132,
+    "failed_attempts": 18,
+    "unique_planned_runs": 144,
+    "unavailable_unique_runs": 12,
+    "numeric_cells": 44,
+    "hipe_mean_wins": 8,
+    "hipe_mean_losses": 4,
+    "paired_seed_wins": 25,
+    "wins_by_length": {
+      "512": 3,
+      "1024": 4,
+      "2048": 1
+    },
+    "same_directions_at_final": true,
+    "equal_cell_average_relative_gain_percent": 1.2924149070318425,
+    "holm_significant_cells": 0,
+    "hipe_best_available_method_cells": 4,
+    "coverage_changes": [
+      {
+        "dataset": "wikitext103",
+        "model_size": "60M",
+        "seq_len": 2048,
+        "method": "alibi",
+        "label": "ALIBI",
+        "n": 3,
+        "mean_ppl_last_interval": 67.32290253157176,
+        "sd_ppl_last_interval": 1.0396226054856568,
+        "mean_ppl_final": 67.16613128280245,
+        "sd_ppl_final": 1.0314579951282254,
+        "paper_ppl": null,
+        "paper_status": "OOM",
+        "rerun_status": "completed",
+        "mean_minus_paper": null,
+        "percent_vs_paper": null,
+        "micro_batch": 4,
+        "backend": "math"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "20M",
+        "seq_len": 1024,
+        "method": "alibi",
+        "label": "ALIBI",
+        "n": 0,
+        "mean_ppl_last_interval": null,
+        "sd_ppl_last_interval": null,
+        "mean_ppl_final": null,
+        "sd_ppl_final": null,
+        "paper_ppl": 168.91,
+        "paper_status": "numeric",
+        "rerun_status": "OOM",
+        "mean_minus_paper": null,
+        "percent_vs_paper": null,
+        "micro_batch": null,
+        "backend": null
+      }
+    ],
+    "best_methods": [
+      {
+        "dataset": "wikitext103",
+        "model_size": "20M",
+        "seq_len": 512,
+        "best_available_method": "hipe"
+      },
+      {
+        "dataset": "wikitext103",
+        "model_size": "20M",
+        "seq_len": 1024,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "wikitext103",
+        "model_size": "20M",
+        "seq_len": 2048,
+        "best_available_method": "hipe"
+      },
+      {
+        "dataset": "wikitext103",
+        "model_size": "60M",
+        "seq_len": 512,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "wikitext103",
+        "model_size": "60M",
+        "seq_len": 1024,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "wikitext103",
+        "model_size": "60M",
+        "seq_len": 2048,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "20M",
+        "seq_len": 512,
+        "best_available_method": "hipe"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "20M",
+        "seq_len": 1024,
+        "best_available_method": "hipe"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "20M",
+        "seq_len": 2048,
+        "best_available_method": "rope"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "60M",
+        "seq_len": 512,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "60M",
+        "seq_len": 1024,
+        "best_available_method": "alibi"
+      },
+      {
+        "dataset": "c4",
+        "model_size": "60M",
+        "seq_len": 2048,
+        "best_available_method": "rope"
+      }
+    ]
+  },
+  "report": "outputs/table2_20261103/REPORT.md",
+  "reproducible_package": "outputs/Table2_results_20261103.zip"
+}
