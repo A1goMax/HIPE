@@ -75,9 +75,21 @@ The main campaign uses seeds 6198, 1024 and 7 and the paper's 100M-token cap. Us
 
 The original baseline portion finished with 93 successes and 15 ALiBi OOM failures. The redundant HIPE sweep was held, then replaced by 36 fixed-setting HIPE runs. The recovery suite table2_remaining additionally retries the six unexpected length1024 ALiBi failures with the restored automatic SDPA policy and the directly supported WikiText micro-batch16. It contains42 tasks but adds only36 missing main conditions; six are retries. All keep global64 and the 100M-token cap.
 
-## Completed Table2 analysis
+## Completed Table 2 analysis
 
-The main campaign and requested L2048 high-sigma sweep have ended. See [the completed sweep report](analysis/table2/COMPLETED_SIGMA_REPORT.md). All 42 new runs completed; six matching previous runs complete the 48-run requested grid. The formal workbook and CSV/figure outputs are in outputs/table2_sigma_final/. HIPE has lower mean PPL than RoPE in 9/12 settings after selecting each setting's lowest complete three-seed mean. Sigma 800 is best observed in three L2048 settings; C4 60M retains sigma 50. ALiBi has the lowest available mean in six settings, HIPE in five and RoPE in one. These are validation-selected results. Different sigmas are never pooled. The earlier analysis/table2/REPORT.md is the pre-sweep record.
+The main, sigma and joint sigma/layer + XPos campaigns have ended. See
+[the latest joint-search report](analysis/table2/JOINT_SEARCH_REPORT.md).
+The formal workbook, exact seed PPLs, figures and verification records are
+under outputs/table2_joint_20261104/. A versioned numerical/source archive
+is under experiments/results/table2_joint_20261104/.
+
+All 81 new full runs completed. Best observed HIPE has lower three-seed
+mean PPL than RoPE in 11/12 settings after per-setting sigma/layer selection,
+up from 9/12. The remaining loss is C4 60M/L2048. The new gains are small
+and validation-selected; individual matched seeds are retained.
+Reference XPos wins 11/12 mean comparisons against RoPE. Among available
+methods, ALiBi has the lowest mean in six settings, HIPE in three and XPos
+in three. Earlier reports remain historical records.
 
 ## Joint sigma/layer search and XPos
 

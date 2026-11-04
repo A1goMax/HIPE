@@ -1,0 +1,49 @@
+{
+  "new_runs": 81,
+  "new_successful": 81,
+  "new_hipe_runs": 45,
+  "new_xpos_runs": 36,
+  "reused_grid_seed_runs": 9,
+  "execution_attempts": 273,
+  "completed_unique_seed_runs": 255,
+  "failed_attempts": 18,
+  "fixed_configurations": 85,
+  "hipe_configurations": 41,
+  "primary_endpoint": "last_interval",
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "max_tokens": 100000000,
+  "global_batch": 64,
+  "previous_primary_wins_vs_rope": 9,
+  "last_interval": {
+    "wins_vs_rope": 11,
+    "losses_vs_rope": 1,
+    "new_winning_configurations": 3,
+    "converted_settings": 2,
+    "paired_seed_wins_selected": 28,
+    "best_methods": {
+      "hipe": 3,
+      "alibi": 6,
+      "xpos": 3
+    },
+    "xpos_wins_vs_rope": 11,
+    "hipe_wins_vs_xpos": 7
+  },
+  "final": {
+    "wins_vs_rope": 11,
+    "losses_vs_rope": 1,
+    "new_winning_configurations": 3,
+    "converted_settings": 2,
+    "paired_seed_wins_selected": 28,
+    "best_methods": {
+      "hipe": 3,
+      "alibi": 6,
+      "xpos": 3
+    },
+    "xpos_wins_vs_rope": 11,
+    "hipe_wins_vs_xpos": 7
+  }
+}
