@@ -1,13 +1,12 @@
 {
-  "new_runs": 81,
-  "new_successful": 81,
+  "new_runs": 45,
+  "new_successful": 45,
   "new_hipe_runs": 45,
-  "new_xpos_runs": 36,
   "reused_grid_seed_runs": 9,
-  "execution_attempts": 273,
-  "completed_unique_seed_runs": 255,
+  "execution_attempts": 237,
+  "completed_unique_seed_runs": 219,
   "failed_attempts": 18,
-  "fixed_configurations": 85,
+  "fixed_configurations": 73,
   "hipe_configurations": 41,
   "primary_endpoint": "last_interval",
   "seeds": [
@@ -25,12 +24,10 @@
     "converted_settings": 2,
     "paired_seed_wins_selected": 28,
     "best_methods": {
-      "hipe": 3,
+      "hipe": 5,
       "alibi": 6,
-      "xpos": 3
-    },
-    "xpos_wins_vs_rope": 11,
-    "hipe_wins_vs_xpos": 7
+      "rope": 1
+    }
   },
   "final": {
     "wins_vs_rope": 11,
@@ -39,11 +36,9 @@
     "converted_settings": 2,
     "paired_seed_wins_selected": 28,
     "best_methods": {
-      "hipe": 3,
+      "hipe": 5,
       "alibi": 6,
-      "xpos": 3
-    },
-    "xpos_wins_vs_rope": 11,
-    "hipe_wins_vs_xpos": 7
+      "rope": 1
+    }
   }
 }

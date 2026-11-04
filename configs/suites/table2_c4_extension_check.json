@@ -1,0 +1,58 @@
+{
+  "source": "Representative numerical/resource checks for C4 extension; excluded from research results",
+  "defaults": {
+    "paper_source": "MS04",
+    "max_tokens": 100000000,
+    "global_batch_size": 64,
+    "lr": 0.0006,
+    "batch_profile": "march2026",
+    "precision": "bf16",
+    "attention_backend": "flash",
+    "source_notes": [
+      "Prospective C4 60M/L2048 extension after research/table2-joint-results-v1-20261104.",
+      "100M token cap, micro-batch4, global batch64, seeds6198/1024/7; non-tuned settings match the completed reference.",
+      "Sigma sweep1/5/10/25/50/100/200/500/2000 at one/two HIPE layers; sigma50 completes H1-H8 coverage with reused controls.",
+      "Eight total decoder layers; final H layers use HIPE, initial layers use RoPE. H8 uses the supported uniform schedule.",
+      "RoPE is the actual H0 control. Sigma0 is not a RoPE alias.",
+      "All complete existing fixed-configuration seed sets are reused; 20 new configurations x3 seeds =60full runs.",
+      "One GPU per SLURM task, max2 concurrent, no DDP. Report every candidate; mean/SD never pool sigma or layer counts.",
+      "XPos comparisons remain local; public Table2 outputs use its original method set."
+    ],
+    "layer_threshold": 3,
+    "dataset": "c4",
+    "model_size": "60M",
+    "seq_len": 2048,
+    "method": "hipe",
+    "micro_batch_size": 4,
+    "legacy_absolute_positions": false
+  },
+  "seeds": [
+    6198
+  ],
+  "cases": [
+    {
+      "sigma": 1,
+      "schedule": "bipartite",
+      "layer_threshold": 6,
+      "case_name": "hipe_H1"
+    },
+    {
+      "sigma": 2000,
+      "schedule": "bipartite",
+      "layer_threshold": 6,
+      "case_name": "hipe_H1"
+    },
+    {
+      "sigma": 2000,
+      "schedule": "bipartite",
+      "layer_threshold": 5,
+      "case_name": "hipe_H2"
+    },
+    {
+      "sigma": 50,
+      "schedule": "uniform",
+      "layer_threshold": null,
+      "case_name": "hipe_H8"
+    }
+  ]
+}

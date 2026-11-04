@@ -1,31 +1,29 @@
 {
-  "schema_version": 1,
-  "tag": "research/table2-joint-results-v1-20261104",
+  "schema_version": 2,
+  "publication_scope": "Paper Table 2 methods only",
+  "local_comparisons_excluded": true,
+  "historical_snapshot_tag": "research/table2-joint-results-v1-20261104",
+  "historical_snapshot_preserved": true,
   "training_source_commit": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
-  "previous_archive_tag": "research/table2-sigma-v1-20261103",
   "input_sha256": {
     "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
     "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
     "E:\\research\\03\\HIPE\\artifacts\\analysis\\joint_sigma_layers_20261104\\raw_runs.json": "910580a5b575df94f187d953c4f444b94c90e581b27f9418cf68ff44415c5ff2"
   },
+  "projection_source_sha256": "1fea2d01c079d78503186523561db83bfeebb10f1a6b6c67107d6ad7c4fa9f33",
   "analysis_script_sha256": {
-    "analysis/table2/analyze_joint_search.py": "df069835b2cd9824f272488a2bfcad3b54c0fdbb8609fc63de1baceb886609c0",
-    "analysis/table2/plot_joint_search.py": "347a1f32d772bc4a47e9620c4d4898bf84ee51f4c28b02d175853f7d900b3535"
-  },
-  "additional_input_sha256": {
-    "E:\\research\\03\\HIPE\\outputs\\table2_sigma_final\\workbook_data.json": "b90996e69ac08cea672aa1369521a9da23d2a249cc5a10c03970de1d2418b3e9",
-    "E:\\research\\03\\HIPE\\experiments\\validation\\table2_sigma_layers_xpos_v1.json": "3d3fb4255e2291ed285a877e969e6fec158dffa0eb62a220c4410200f728986e"
+    "analysis/table2/analyze_joint_search.py": "b6806f64eb5dd253590e9bceea45f9daa108db5b47c2cd78e5a9232efe4d1d81",
+    "analysis/table2/publish_table2.py": "b8257f2e8d4f474d8decb0bfcfe45b0cc8e847059c32bcdd96a2b76af28c5091"
   },
   "summary": {
-    "new_runs": 81,
-    "new_successful": 81,
+    "new_runs": 45,
+    "new_successful": 45,
     "new_hipe_runs": 45,
-    "new_xpos_runs": 36,
     "reused_grid_seed_runs": 9,
-    "execution_attempts": 273,
-    "completed_unique_seed_runs": 255,
+    "execution_attempts": 237,
+    "completed_unique_seed_runs": 219,
     "failed_attempts": 18,
-    "fixed_configurations": 85,
+    "fixed_configurations": 73,
     "hipe_configurations": 41,
     "primary_endpoint": "last_interval",
     "seeds": [
@@ -43,12 +41,10 @@
       "converted_settings": 2,
       "paired_seed_wins_selected": 28,
       "best_methods": {
-        "hipe": 3,
+        "hipe": 5,
         "alibi": 6,
-        "xpos": 3
-      },
-      "xpos_wins_vs_rope": 11,
-      "hipe_wins_vs_xpos": 7
+        "rope": 1
+      }
     },
     "final": {
       "wins_vs_rope": 11,
@@ -57,17 +53,16 @@
       "converted_settings": 2,
       "paired_seed_wins_selected": 28,
       "best_methods": {
-        "hipe": 3,
+        "hipe": 5,
         "alibi": 6,
-        "xpos": 3
-      },
-      "xpos_wins_vs_rope": 11,
-      "hipe_wins_vs_xpos": 7
+        "rope": 1
+      }
     }
   },
-  "workbook_sha256": "473fd1eb443ebb2be23e6d301653a96cddf7dc52172fd603a1d2cf8336890180",
+  "workbook_sha256": "ed890c181d2312afcb8eff40889643a98ade732b6732d1630014847bf1c4383a",
   "locations": {
-    "local": "E:\\research\\03\\HIPE\\outputs\\table2_joint_20261104",
-    "labserver2": "/home/qijunrong/03-proj/HIPE/outputs/table2_joint_20261104"
+    "public_local": "E:\\research\\03\\HIPE\\outputs\\table2_public_20261104",
+    "public_archive": "E:\\research\\03\\HIPE\\experiments\\results\\table2_joint_20261104",
+    "full_local_unchanged": "E:\\research\\03\\HIPE\\outputs\\table2_joint_20261104"
   }
 }

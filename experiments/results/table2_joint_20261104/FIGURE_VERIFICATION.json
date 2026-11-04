@@ -1,9 +1,8 @@
 {
-  "primary_endpoint": "last_interval",
+  "scope": "HIPE-versus-RoPE figures only",
   "target_configuration_groups_checked": 18,
   "seed_mean_and_sample_sd_checked": true,
-  "input_sha256": "1fea2d01c079d78503186523561db83bfeebb10f1a6b6c67107d6ad7c4fa9f33",
-  "previous_sha256": "b90996e69ac08cea672aa1369521a9da23d2a249cc5a10c03970de1d2418b3e9",
+  "projection_preserves_HIPE_and_RoPE_values": true,
   "files": {
     "Targeted_sigma_layers.png": "f9da2b1397451f76b0cb782c3dcda4f02c74ca818903318cf9731d4c357f3a9d",
     "Targeted_sigma_layers.pdf": "df8718190ccb5464eeca45a6db24f97256b6fa992d84b9f8a01fbc47ad0b3511",

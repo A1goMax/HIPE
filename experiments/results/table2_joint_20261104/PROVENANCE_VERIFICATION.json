@@ -1,8 +1,9 @@
 {
-  "configs_verified": 81,
-  "run_source_archives_verified": 81,
-  "source_core_entries_verified": 405,
-  "run_configs_match_frozen_configs": 81,
+  "scope": "Public HIPE subset of completed campaign",
+  "configs_verified": 45,
+  "run_source_archives_verified": 45,
+  "source_core_entries_verified": 225,
+  "run_configs_match_frozen_configs": 45,
   "published_training_commit": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
-  "squeue": ""
+  "local_comparisons_excluded": true
 }

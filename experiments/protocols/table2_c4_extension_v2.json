@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "study": "table2_c4_extension_v2",
+  "status": "planned_before_training",
+  "pinned_previous_result_tag": "research/table2-joint-results-v1-20261104",
+  "pinned_previous_result_commit": "52d794dae777caf18986dcd24127331d39690290",
+  "previous_training_source": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
+  "dataset": "c4",
+  "model_size": "60M",
+  "sequence_length": 2048,
+  "total_model_layers": 8,
+  "sigma_sweep": [
+    1,
+    5,
+    10,
+    25,
+    50,
+    100,
+    200,
+    500,
+    2000
+  ],
+  "sigma_sweep_hipe_layers": [
+    1,
+    2
+  ],
+  "layer_sweep_sigma": 50,
+  "layer_sweep_hipe_layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "grid_configurations": 24,
+  "new_configurations": 20,
+  "new_full_runs": 60,
+  "reused_configurations": 4,
+  "reused_seed_runs": 12,
+  "reused": [
+    {
+      "sigma": 25,
+      "hipe_layers": 2,
+      "group_id": "7686be283f554d27",
+      "source_commits": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3,
+      "mean_ppl": 245.1784812686391,
+      "sample_std_ppl": 6.5225714033638456
+    },
+    {
+      "sigma": 50,
+      "hipe_layers": 2,
+      "group_id": "600faeec9eae235e",
+      "source_commits": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3,
+      "mean_ppl": 242.6775643124594,
+      "sample_std_ppl": 6.525953134095594
+    },
+    {
+      "sigma": 50,
+      "hipe_layers": 4,
+      "group_id": "d1883a4a309b609a",
+      "source_commits": "ca0e5163a319ae04aa7930e1c5b8de03ae650c84",
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "n": 3,
+      "mean_ppl": 248.15196928953142,
+      "sample_std_ppl": 4.876378846082922
+    },
+    {
+      "sigma": 50,
+      "hipe_layers": 6,
+      "group_id": "73848773e4b8176c",
+      "source_commits": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3,
+      "mean_ppl": 260.1233130320617,
+      "sample_std_ppl": 10.564671407968714
+    }
+  ],
+  "preflight_cases": [
+    {
+      "sigma": 1,
+      "hipe_layers": 1
+    },
+    {
+      "sigma": 2000,
+      "hipe_layers": 1
+    },
+    {
+      "sigma": 2000,
+      "hipe_layers": 2
+    },
+    {
+      "sigma": 50,
+      "hipe_layers": 8
+    }
+  ],
+  "preflight_steps": 2,
+  "max_tokens": 100000000,
+  "global_batch_size": 64,
+  "micro_batch_size": 4,
+  "accumulation_steps": 16,
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "primary_endpoint": "last_interval",
+  "secondary_endpoint": "final",
+  "selection": "Lowest complete three-seed mean at a fixed sigma/layer configuration; no pooling and no best single-seed selection.",
+  "stopping_rule": "Run this bounded grid once; no automatic expansion after viewing results.",
+  "reference_rope_mean": 241.55084316507114,
+  "reference_rope_sample_sd": 12.911822151235153,
+  "previous_best_hipe": {
+    "sigma": 50,
+    "hipe_layers": 2,
+    "mean_ppl": 242.6775643124594,
+    "sample_sd": 6.525953134095594
+  },
+  "publication_scope": "Original Table2 methods; XPos comparisons are local only. Historical Git snapshots are preserved."
+}

@@ -1,0 +1,162 @@
+{
+  "study": "table2_c4_extension_v2",
+  "previous_result_tag": "research/table2-joint-results-v1-20261104",
+  "previous_result_commit": "52d794dae777caf18986dcd24127331d39690290",
+  "previous_training_commit": "5df7693e38ede95a9fa1747207b59fd2c701e75a",
+  "cpu_tests": {
+    "passed": 59,
+    "failed": 0,
+    "log_sha256": "9fbb5c68bc252b7520a39d4fb39d330d7ab02b1f668571e62ac41d4844b3aa81"
+  },
+  "independent_plan_audit": {
+    "scope": "Independent pre-submission audit of bounded C4 60M/L2048 extension",
+    "resolved_plan_sha256": "9eee8a187ccf7d8903c45110abcace60feaf16ad5ab01c60bfe8eaa5f1394d00",
+    "full_runs": 60,
+    "new_fixed_configurations": 20,
+    "all_new_configurations_previously_unrun": true,
+    "reused_fixed_configurations": 4,
+    "reused_seed_runs": 12,
+    "planned_union_fixed_configurations": 24,
+    "complete_H1_to_H8_at_sigma50": true,
+    "all_three_seeds_per_configuration": true,
+    "all_non_tuned_settings_identical_to_completed_H2_sigma50_per_seed": true,
+    "model_layers": 8,
+    "micro_batch": 4,
+    "global_batch": 64,
+    "accumulation_steps": 16,
+    "max_tokens": 100000000,
+    "nominal_steps": 762,
+    "actual_prediction_tokens_per_full_run": 99876864,
+    "uniform_H8_uses_all_layers": true,
+    "sigma_zero_not_used_as_RoPE_alias": true,
+    "no_new_XPos_runs": true,
+    "numerical_extremes": [
+      {
+        "sigma": 1,
+        "float32_mean_spectral_energy": 0.10236537456512451,
+        "finite_normalized_scales": true,
+        "active_frequency_pairs": 32
+      },
+      {
+        "sigma": 2000,
+        "float32_mean_spectral_energy": 5.565097671933472e-05,
+        "finite_normalized_scales": true,
+        "active_frequency_pairs": 14
+      }
+    ],
+    "preflight_cases": [
+      {
+        "sigma": 1,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 2000,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 2000,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 50,
+        "hipe_layers": 8
+      }
+    ],
+    "qualifications": [
+      "Archived RoPE uses its original micro-batch8; HIPE micro-batch4 remains a comparison qualification.",
+      "Sigma/layer tuning is exploratory validation selection; every candidate and every failure should be retained."
+    ],
+    "audited_configurations": [
+      {
+        "sigma": 1.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 1.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 5.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 5.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 10.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 10.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 25.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 50.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 50.0,
+        "hipe_layers": 3
+      },
+      {
+        "sigma": 50.0,
+        "hipe_layers": 5
+      },
+      {
+        "sigma": 50.0,
+        "hipe_layers": 7
+      },
+      {
+        "sigma": 50.0,
+        "hipe_layers": 8
+      },
+      {
+        "sigma": 100.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 100.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 200.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 200.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 500.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 500.0,
+        "hipe_layers": 2
+      },
+      {
+        "sigma": 2000.0,
+        "hipe_layers": 1
+      },
+      {
+        "sigma": 2000.0,
+        "hipe_layers": 2
+      }
+    ]
+  },
+  "preflight": {
+    "cases": 4,
+    "steps_per_case": 2,
+    "status": "not_yet_submitted",
+    "included_in_research_statistics": false
+  },
+  "planned_full_runs": 60,
+  "max_concurrent_gpu_tasks": 2,
+  "gpus_per_task": 1,
+  "publication_scope": "Paper Table2 methods only. XPos PPL comparisons stay in ignored local output; historical Git snapshots retained."
+}

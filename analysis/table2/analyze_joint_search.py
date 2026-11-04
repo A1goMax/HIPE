@@ -1,4 +1,4 @@
-"""Organize completed joint sigma/layer and reference-XPos results without pooling protocols."""
+"""Organize public paper Table 2 results; additional local comparisons require an explicit option."""
 from pathlib import Path
 from collections import defaultdict, Counter
 import csv, hashlib, json, math, statistics
@@ -55,7 +55,7 @@ def csv_file(name,rows):
         writer=csv.DictWriter(f,fieldnames=keys);writer.writeheader()
         for r in rows:writer.writerow({k:canonical(r[k]) if isinstance(r[k],(dict,list)) else r[k] for k in keys})
 
-def main():
+def build_local_comparison():
     OUT.mkdir(parents=True,exist_ok=True)
     records=[];campaigns={};raw_data=[]
     for p in INPUTS:
@@ -272,14 +272,30 @@ def main():
         if r["endpoint"]!="last_interval":continue
         fmt=lambda m:ms(r[m+"_mean"],r[m+"_sd"]) if r[m+"_status"]=="completed" else r[m+"_status"]
         lines.append(f"| {r['dataset']} | {r['model_size']} | {r['length']} | {r['selected_sigma']:g} | {r['hipe_layers']} | {fmt('nope')} | {fmt('alibi')} | {fmt('rope')} | {fmt('xpos')} | {ms(r['hipe_mean'],r['hipe_sd'])} |")
-    lines+=["","XPos has lower mean PPL than RoPE in 11/12 settings. With XPos included, the lowest available primary means belong to ALiBi in six settings, HIPE in three and XPos in three. HIPE-versus-RoPE wins do not imply wins over every baseline.","",
+    lines+=["","Additional-method comparisons in this local report are outside the public Table 2 scope.","",
       "## Protocol and uncertainty","",*["- "+n for n in notes],"",
       "The same selected sigma/layer configurations and win/loss directions hold at the final checkpoint. The workbook retains both endpoint views and all fixed-configuration results, including losing candidates.","",
       "No additional training was launched during this analysis.",""]
     report="\n".join(lines)
     (OUT/"REPORT.md").write_text(report,encoding="utf-8")
-    (ROOT/"analysis/table2/JOINT_SEARCH_REPORT.md").write_text(report,encoding="utf-8")
+    # Full additional-method reports remain in ignored local outputs.
     print(json.dumps(summary,indent=2))
     print("WORKBOOK_INPUT",OUT/"workbook_data.json")
+
+def main():
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--include-local-xpos",action="store_true",
+                        help="Recompute the full local comparison; never publish its extra-method results")
+    args=parser.parse_args()
+    if args.include_local_xpos:
+        build_local_comparison()
+        return
+    if not (OUT/"workbook_data.json").exists():
+        build_local_comparison()
+    import sys
+    sys.path.insert(0,str(Path(__file__).parent))
+    from publish_table2 import publish
+    publish()
 
 if __name__=="__main__":main()

@@ -1,29 +1,22 @@
 {
+  "scope": "Current public Table 2 artifacts; canonical LF text files",
   "files": {
-    "All_Statistics.csv": "83cdb22962afee67dfe36f6cf54607417cce6acc682868d9f1bb8bc7b64a0f16",
-    "Best_vs_Baselines.csv": "e7e75be569f79beb7194de13bd21209b7f1cac05f99bf510009212699e6771c5",
-    "CALCULATION_VERIFICATION.json": "15856c067e5352ba2de99ebc775440bf222a87b190a918d020237afa639e5508",
-    "Exact_Seed_PPL.csv": "ebbd2fd2480bb236e4b4b4aa210f1eeb9ffe0efc4aeb0545b61c4043b66795ef",
-    "Execution_Attempts.csv": "e76511ca9133fd5a378033f9f9af087e9de0661c619ba797025acbe6433fc409",
-    "FIGURE_VERIFICATION.json": "4cd704bdbfeed3a203f567b1fe9f12dbeb6b24f42ace8ef26c3abf3772cfa884",
-    "HIPE_Table2_Joint_Search_Analysis.xlsx": "473fd1eb443ebb2be23e6d301653a96cddf7dc52172fd603a1d2cf8336890180",
-    "HIPE_vs_RoPE_All_Configs.csv": "1898ed296af1d7c1448bbeeb051e5a64fab86f1e23cef108852bb356764e366d",
-    "HIPE_vs_RoPE_overview.pdf": "cc5d17599a2bc7f79313555b2ab883818af90b28f54e14b69d681184661a4474",
-    "HIPE_vs_RoPE_overview.png": "1b8a0ea8a17998111f7641ba00ea9edc9d0cc43cb6017ff9d4aef37c1b420a9a",
-    "INDEPENDENT_AUDIT.json": "eda06a7fb94dad7c8cd177a730ec0daa3f65741e14a5273f81921f6fb5391446",
-    "PROVENANCE_VERIFICATION.json": "81d0e6b0e83f14741dd630b685d1afc1aa88709e06f565431275310caabdd543",
-    "README.txt": "f9867b9842fcf0a9354c997ab03289cd69845c43d80a3d1b9ab1300b1589b395",
-    "REPORT.md": "16738b83549cd075aa177105630af7f75c34a19e3dca66f00376574111a71f02",
-    "summary.json": "7d7f1f7eee3cfa122aaed34b00bf5b26c63df83437f719a9b3251abc21b318ac",
-    "Target_Grid.csv": "ec1ddd841e295fbb0decdec5aa5bc6468422d46f90174d76878b15b383b04214",
-    "Targeted_sigma_layers.pdf": "df8718190ccb5464eeca45a6db24f97256b6fa992d84b9f8a01fbc47ad0b3511",
-    "Targeted_sigma_layers.png": "f9da2b1397451f76b0cb782c3dcda4f02c74ca818903318cf9731d4c357f3a9d",
-    "workbook_data.json": "1fea2d01c079d78503186523561db83bfeebb10f1a6b6c67107d6ad7c4fa9f33",
-    "WORKBOOK_VERIFICATION.json": "f1a9b91bc5ea37cdcbb79ef0cf0a213a4c59f288b7c68c5f0611ef14019bc7c5"
-  },
-  "input_sources": {
-    "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
-    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
-    "E:\\research\\03\\HIPE\\artifacts\\analysis\\joint_sigma_layers_20261104\\raw_runs.json": "910580a5b575df94f187d953c4f444b94c90e581b27f9418cf68ff44415c5ff2"
+    "All_Statistics.csv": "54093eabb1b327bd0c4bbc5dcc2003233951fecc538b23351e9abf4f52059b88",
+    "Best_vs_Baselines.csv": "3676cfb7947baf5520e958b51d02b0c1d78a06fd7b51f54a91656042c88118ed",
+    "CALCULATION_VERIFICATION.json": "6cd6bba1c8c109667cf9053f95856dd5e8a340355d070253bd8f55bb586c2080",
+    "Exact_Seed_PPL.csv": "739fd6f0c6ddbe0213a1a9c78536827770ba23baf9d66164cc44c2c17aa73c2f",
+    "Execution_Attempts.csv": "35e4912b401df4284b779bcba5d71589867bb28bd1112940b4752c794f171425",
+    "FIGURE_VERIFICATION.json": "32fbd941e196215dafa0adbe98912d7e2ee30b36ee50802f7f970ee482ca0474",
+    "HIPE_Table2_Joint_Search_Analysis.xlsx": "ed890c181d2312afcb8eff40889643a98ade732b6732d1630014847bf1c4383a",
+    "HIPE_vs_RoPE_All_Configs.csv": "a3e3ca44ec15758ae1d5bc02ed752ce313a4ad3560947d7522527a9a340a4712",
+    "INDEPENDENT_AUDIT.json": "19de785661a6ed97843062f14a4bda664abc1de84fd3f179aadd1f4b155768c3",
+    "new_run_index.json": "0c204d08249fc5c0ef97e72ff7f7ae934d19e6d434a33ef40266dc8d3d173f9c",
+    "PROVENANCE_VERIFICATION.json": "ddfdaba6e0d116d4bd9b19e64782031c39603d8c9c3f7637d4200cbfbbf9d503",
+    "README.md": "17d4f48dccc0731a5357c3553a782ff789f6501d197181c949a68219331b9f3b",
+    "REPORT.md": "fe3104d3ad4cf220b2b8f8272bab4e7c28dd5f91ff057339f8a4f7f6924f03a9",
+    "snapshot.json": "32f7e5f5126475e45d12c5f12d97d1c686d09ee24c3e69a9f96f90b96531f33c",
+    "summary.json": "6696a56f896bbc9b68bdebafcf65c0a72835e3421f00c60ec6395bdbcbe6861c",
+    "Target_Grid.csv": "4a88d2b3ee4ed03d89ebf27bcd8e714daf035d7e772d5b5e7e636b93316471bd",
+    "WORKBOOK_VERIFICATION.json": "5589db83a27ed62bcfbbb1caa6be8c87227d4fc063b3bf58dfa5a2ae98ff7a1e"
   }
 }

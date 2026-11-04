@@ -77,31 +77,44 @@ The original baseline portion finished with 93 successes and 15 ALiBi OOM failur
 
 ## Completed Table 2 analysis
 
-The main, sigma and joint sigma/layer + XPos campaigns have ended. See
+The main, sigma and joint sigma/layer campaigns have ended. See
 [the latest joint-search report](analysis/table2/JOINT_SEARCH_REPORT.md).
 The formal workbook, exact seed PPLs, figures and verification records are
-under outputs/table2_joint_20261104/. A versioned numerical/source archive
+under outputs/table2_public_20261104/. A versioned numerical/source archive
 is under experiments/results/table2_joint_20261104/.
 
-All 81 new full runs completed. Best observed HIPE has lower three-seed
+All 45 new HIPE runs included in the public tables completed. Best observed HIPE has lower three-seed
 mean PPL than RoPE in 11/12 settings after per-setting sigma/layer selection,
 up from 9/12. The remaining loss is C4 60M/L2048. The new gains are small
 and validation-selected; individual matched seeds are retained.
-Reference XPos wins 11/12 mean comparisons against RoPE. Among available
-methods, ALiBi has the lowest mean in six settings, HIPE in three and XPos
-in three. Earlier reports remain historical records.
+Among the paper Table 2 methods, ALiBi has the lowest mean in six settings,
+HIPE in five and RoPE in one. Additional-method comparisons remain local. Earlier reports remain historical records.
 
-## Joint sigma/layer search and XPos
+## Joint sigma/layer search
 
 The previous code and results are preserved at Git tag
 [research/table2-sigma-v1-20261103](https://github.com/A1goMax/HIPE/tree/research/table2-sigma-v1-20261103).
 The new [bounded protocol](experiments/protocols/table2_sigma_layers_xpos_v1.md)
-defines 45 new HIPE runs across the three mean-loss settings, plus 36 reference
-XPos baseline runs. Nine completed HIPE control runs are reused. Total decoder
+defines 45 new HIPE runs across the three mean-loss settings. Nine completed HIPE control runs are reused. Total decoder
 depth remains eight; two, four or six final layers use HIPE.
 
-Use the shared launcher with --suite table2_sigma_layers_xpos --array --gpus 2
+Use the shared launcher with --suite table2_sigma_layers_xpos --method hipe --array --gpus 2
 --require-published. Commit and push before --execute. XPos defaults to the
 TorchScale reference formulation without absolute embeddings; the inherited
 implementation is explicitly xpos_variant=legacy. New run manifests include
 effective layer layouts, code/config hashes and the verified publication receipt.
+
+Public reports follow the paper Table 2 method set. XPos comparison results stay in ignored local outputs. Run the joint analysis normally for the public projection; --include-local-xpos explicitly recomputes the private local comparison. Historical Git snapshots are preserved.
+
+## C4 60M/L2048 extension
+
+The [next bounded protocol](experiments/protocols/table2_c4_extension_v2.md)
+sweeps sigma 1, 5, 10, 25, 50, 100, 200, 500 and 2000 at one/two HIPE layers,
+and completes one-through-eight HIPE-layer coverage at sigma 50.
+Four complete configurations are reused. The remaining 20 configurations
+require 60 full runs across the original three seeds.
+
+Use --suite table2_c4_extension_check --preflight for the four GPU checks,
+then --suite table2_c4_extension --afterok CHECK_JOB_ID for the full array.
+Both use --array --gpus 2 --require-published --execute after commit/push.
+All full runs retain micro-batch 4, global batch 64 and the 100M-token cap.
