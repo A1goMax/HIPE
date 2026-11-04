@@ -104,3 +104,10 @@ coverage at sigma 50. All 59 CPU tests passed, including spectral extremes
 and actual effective layer counts. The independent audit confirms that
 non-tuned settings match the completed C4 60M/L2048 reference.
 Commit and publish this version before GPU submission.
+
+The C4 extension is submitted from published commit c44c207:
+GPU-check array 42038 has four tasks; full array 42039 has 60 tasks and waits
+on afterok:42038. Initial scheduler states are pending priority and pending
+dependency, respectively. Both use one GPU per task and a two-task cap.
+Exact source/configuration receipts are in
+experiments/campaigns/20261104-C4-extension/LAUNCH.json.

@@ -152,11 +152,20 @@
   "preflight": {
     "cases": 4,
     "steps_per_case": 2,
-    "status": "not_yet_submitted",
-    "included_in_research_statistics": false
+    "status": "submitted_pending_priority",
+    "included_in_research_statistics": false,
+    "job": "42038",
+    "source_commit": "c44c207b83bf4140ec462bd727b1c5e6fc946613"
   },
   "planned_full_runs": 60,
   "max_concurrent_gpu_tasks": 2,
   "gpus_per_task": 1,
-  "publication_scope": "Paper Table2 methods only. XPos PPL comparisons stay in ignored local output; historical Git snapshots retained."
+  "publication_scope": "Paper Table2 methods only. XPos PPL comparisons stay in ignored local output; historical Git snapshots retained.",
+  "full_campaign": {
+    "job": "42039",
+    "status_at_recording": "pending_dependency",
+    "afterok": "42038",
+    "source_commit": "c44c207b83bf4140ec462bd727b1c5e6fc946613",
+    "conditions": 60
+  }
 }
