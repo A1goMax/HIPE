@@ -1,0 +1,41 @@
+{
+  "study": "table2_budget_steps_v1",
+  "source_result_tag": "research/table2-c4-results-v2-20261105",
+  "source_result_commit": "ff82facac1a34057d988a64e91abbe0829f69327",
+  "pinned_result_snapshot_sha256": "ea16335aacb67ec07f870097edd85074dc6f35551d84e452e51b6cf5d4e3b51e",
+  "pinned_result_workbook_sha256": "be3762948a0aa22b95d496fd619e8ff8dd79167b18d6c7c72596e3a8e7078e32",
+  "cpu_tests": {
+    "passed": 66,
+    "failed": 0,
+    "log_sha256": "cffacbd9fe1387b1505e12636e12355b0516d34478b011b7b737ed518bbfa2fc"
+  },
+  "resolved_configuration_audit": {
+    "plan_sha256": "f029593c10c994eeff82ab68f5e5b1ef70fbd06cb0ca07cf57d9f4cbc6ae41c2",
+    "resolved_new_runs_checked": 264,
+    "exact100M_control_contrasts": 216,
+    "new_L1024_layout_runs_without100M_controls": 48,
+    "reused_L512_runs_checked": 63,
+    "all_original_micro_batches_and_backends_retained": true,
+    "all_nominal_optimizer_steps": 3051,
+    "feasible_ALiBi_configurations": 4,
+    "known_OOM_configurations_excluded": 4,
+    "actual_token_counts_must_be_logged": true,
+    "resuming_old100Mcosine_checkpoints_forbidden": true
+  },
+  "gpu_checks": {
+    "configurations": 8,
+    "steps": 2,
+    "status": "not_yet_submitted",
+    "excluded_from_research_statistics": true
+  },
+  "full_campaign": {
+    "configurations": 88,
+    "seed_runs": 264,
+    "status": "planned_before_training"
+  },
+  "preserved_controls": {
+    "L512_seed_runs": 63,
+    "long_budget_configs_with100M_counterparts": 72
+  },
+  "public_scope": "Original Table2 methods; supplementary comparisons remain local."
+}

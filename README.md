@@ -120,3 +120,19 @@ Use --suite table2_c4_extension_check --preflight for the four GPU checks,
 then --suite table2_c4_extension --afterok CHECK_JOB_ID for the full array.
 Both use --array --gpus 2 --require-published --execute after commit/push.
 All full runs retain micro-batch 4, global batch 64 and the 100M-token cap.
+
+## Exploratory length/token budgets
+
+The [prospective budget study](experiments/protocols/table2_budget_steps_v1.md)
+uses L512/100M, L1024/200M and L2048/400M, giving 3051 nominal optimizer steps
+at global batch 64. It reuses 63 completed L512 runs and queues 264 longer-budget
+runs across 88 fixed configurations, with three seeds. All observed L2048 HIPE
+variants and H1/H2/H4/H6/H8 at paper L1024 sigmas are included.
+Known infeasible ALiBi shapes remain recorded unavailable under original
+batch settings. The public method set is unchanged.
+
+Use --suite table2_budget_steps_check --preflight for the eight short checks,
+then --suite table2_budget_steps --afterok CHECK_JOB_ID for the full array.
+Both use --array --gpus 2 --require-published --execute after commit and push.
+Runs start fresh with the full-budget cosine schedule. Never pool this
+exploration with the paper 100M means.

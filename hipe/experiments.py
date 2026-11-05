@@ -84,7 +84,7 @@ def resolve_suite(suite, *, data_root, artifacts_root, datasets=None, models=Non
             if correct_nope:
                 item["legacy_absolute_positions"] = False
         if item["method"] == "alibi":
-            item["attention_backend"] = "sdpa"
+            item["attention_backend"] = case.get("attention_backend", "sdpa")
         if item.get("attention_pattern", "global") != "global":
             item["attention_backend"] = "math"
         tag = case.get("case_name", item["method"])

@@ -1,0 +1,2099 @@
+{
+  "schema_version": 1,
+  "study": "table2_budget_steps_v1",
+  "status": "planned_before_training",
+  "previous_result_tag": "research/table2-c4-results-v2-20261105",
+  "previous_result_commit": "ff82facac1a34057d988a64e91abbe0829f69327",
+  "interpreted_lengths": {
+    "L0124": 1024,
+    "L2028": 2048
+  },
+  "budgets": {
+    "512": 100000000,
+    "1024": 200000000,
+    "2048": 400000000
+  },
+  "nominal_steps": 3051,
+  "primary_validation_step": 3000,
+  "nominal_final_tokens": {
+    "512": 99975168,
+    "1024": 199950336,
+    "2048": 399900672
+  },
+  "nominal_primary_tokens": {
+    "512": 98304000,
+    "1024": 196608000,
+    "2048": 393216000
+  },
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "global_batch": 64,
+  "new_fixed_configurations": 88,
+  "new_full_runs": 264,
+  "new_HIPE_configs": 68,
+  "new_baseline_configs": 20,
+  "long_budget_configs_with_exact100M_controls": 72,
+  "new_layouts_without100M_control": 16,
+  "reused_L512_configs": 21,
+  "reused_L512_seed_runs": 63,
+  "reused_L512": [
+    {
+      "group_id": "70834d4425877d9d",
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "f73d672b26050d52",
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "e73894eed5a3446f",
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L512_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "4ac3224c4c5f7d6b",
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "3f5af3bf61aed5a0",
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "2317af4d5dbeb0be",
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L512_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "a78e7caf3b918796",
+      "dataset": "c4",
+      "model_size": "20M",
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "6a23a5cbbeeb51b5",
+      "dataset": "c4",
+      "model_size": "20M",
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "198f6090bd74bb8e",
+      "dataset": "c4",
+      "model_size": "20M",
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L512_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "d1c009bd263e542f",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "6dc7895a8ded6a82",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "be031187a22b1cfd",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L512_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "e86b085155f4476a",
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 4,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L512_hipe_s200_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L512_hipe_s200_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L512_hipe_s200_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "edbe5f51de92ba4a",
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 4,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L512_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L512_hipe_s300_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L512_hipe_s300_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "0880729f0f14c2c8",
+      "dataset": "c4",
+      "model_size": "20M",
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 4,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L512_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L512_hipe_s300_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L512_hipe_s300_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "1ad34d18c80f4a98",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 4,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L512_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L512_hipe_s500_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L512_hipe_s500_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "97fa5be2580c3f30",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 2,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "4edee2f1c13b409c",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 2,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "5e5528f2caed8a13",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 4,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t3_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t3_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t3_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "d269a0f043f3023d",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 6,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s200_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3
+    },
+    {
+      "group_id": "25119a6d20b291be",
+      "dataset": "c4",
+      "model_size": "60M",
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 6,
+      "run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L512_hipe_s500_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "n": 3
+    }
+  ],
+  "new_configuration_mapping": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "de09b6464e9af54b",
+      "parent_reference_group_id": "de09b6464e9af54b",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "848c2a82917289c6",
+      "parent_reference_group_id": "848c2a82917289c6",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "01c77403a8b1ec23",
+      "parent_reference_group_id": "01c77403a8b1ec23",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "e85bd3c733e25d53",
+      "parent_reference_group_id": "e85bd3c733e25d53",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_20M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "ed3734ce405595bb",
+      "parent_reference_group_id": "ed3734ce405595bb",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "8087df0528da20cf",
+      "parent_reference_group_id": "8087df0528da20cf",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_alibi_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "math",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "6abe7ff0cfc3d6fb",
+      "parent_reference_group_id": "6abe7ff0cfc3d6fb",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f30efdfce3312803",
+      "parent_reference_group_id": "f30efdfce3312803",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "d0fcbf7bbf8f926e",
+      "parent_reference_group_id": "d0fcbf7bbf8f926e",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_alibi_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "math",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "46e3d8069d9844a6",
+      "parent_reference_group_id": "46e3d8069d9844a6",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_wikitext103_60M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "a6e383cb91d2d1a4",
+      "parent_reference_group_id": "a6e383cb91d2d1a4",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "dd3ed17c51fa1e77",
+      "parent_reference_group_id": "dd3ed17c51fa1e77",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "27e5b32d25bf5d6a",
+      "parent_reference_group_id": "27e5b32d25bf5d6a",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "c8f61b09e8c51d58",
+      "parent_reference_group_id": "c8f61b09e8c51d58",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_20M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f97a4564fedcf8f5",
+      "parent_reference_group_id": "f97a4564fedcf8f5",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "0601feba62898dc5",
+      "parent_reference_group_id": "0601feba62898dc5",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_alibi_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_alibi_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_alibi_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_alibi_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "math",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "e253c4dffefa127a",
+      "parent_reference_group_id": "e253c4dffefa127a",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L1024_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "nope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "6788455544089835",
+      "parent_reference_group_id": "6788455544089835",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_nope_legacyAPE_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_nope_legacyAPE_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_nope_legacyAPE_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "rope",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "38e4e6507d3c3817",
+      "parent_reference_group_id": "38e4e6507d3c3817",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_rope_seed1024_20261102T163208Z-502ddcd1",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_rope_seed7_20261102T163208Z-502ddcd1"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_rope_seed6198_20261102T163208Z-502ddcd1",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 1,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "a927bfcee5836fdc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 2,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "a927bfcee5836fdc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 4,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "a927bfcee5836fdc",
+      "parent_reference_group_id": "a927bfcee5836fdc",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 6,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "a927bfcee5836fdc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 8,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "a927bfcee5836fdc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 32
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "d5391f9a9f1ff0b4",
+      "parent_reference_group_id": "d5391f9a9f1ff0b4",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L2048_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L2048_hipe_s500_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L2048_hipe_s500_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L2048_hipe_s500_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 1,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "132fb6fe2304189f",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 2,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "132fb6fe2304189f",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 4,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "132fb6fe2304189f",
+      "parent_reference_group_id": "132fb6fe2304189f",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 6,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "132fb6fe2304189f",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 8,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "132fb6fe2304189f",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "95eea3b535950793",
+      "parent_reference_group_id": "95eea3b535950793",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_60M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 1,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "c5edd3a3564882cc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 2,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "c5edd3a3564882cc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 4,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "c5edd3a3564882cc",
+      "parent_reference_group_id": "c5edd3a3564882cc",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 6,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "c5edd3a3564882cc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 8,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "c5edd3a3564882cc",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "fb082b02489f020e",
+      "parent_reference_group_id": "fb082b02489f020e",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_20M_L2048_hipe_s700_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 1,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "3c4734a3cd201bcd",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 2,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "3c4734a3cd201bcd",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 4,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "3c4734a3cd201bcd",
+      "parent_reference_group_id": "3c4734a3cd201bcd",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 6,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "3c4734a3cd201bcd",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 1024,
+      "method": "hipe",
+      "sigma": 300,
+      "hipe_layers": 8,
+      "budget": 200000000,
+      "matched_100M_configuration": false,
+      "reference_group_id": null,
+      "parent_reference_group_id": "3c4734a3cd201bcd",
+      "reference_run_paths": [],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L1024_hipe_s300_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "d1883a4a309b609a",
+      "parent_reference_group_id": "d1883a4a309b609a",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_c4_60M_L2048_hipe_s50_bipartite_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "alibi",
+      "sigma": null,
+      "hipe_layers": 0,
+      "budget": 200000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "498cd120858846e7",
+      "parent_reference_group_id": "498cd120858846e7",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_alibi_seed6198_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_alibi_seed1024_20261103T021619Z-ffc8f29b",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_alibi_seed7_20261103T021619Z-ffc8f29b"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_remaining_wikitext103_20M_L1024_alibi_seed6198_20261103T021619Z-ffc8f29b",
+      "attention_backend": "sdpa",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "d05e2e3a1621cf0f",
+      "parent_reference_group_id": "d05e2e3a1621cf0f",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s700_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s700_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s700_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s700_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "9dc0faeb6948cdd0",
+      "parent_reference_group_id": "9dc0faeb6948cdd0",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s800_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s800_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "87a3e00785529c38",
+      "parent_reference_group_id": "87a3e00785529c38",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s900_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s900_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "6eded6bef267b6b0",
+      "parent_reference_group_id": "6eded6bef267b6b0",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s1000_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s1000_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_20M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 16
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "2f7fe4231303b54a",
+      "parent_reference_group_id": "2f7fe4231303b54a",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s800_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s800_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f84567c8c26c9a6c",
+      "parent_reference_group_id": "f84567c8c26c9a6c",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s900_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s900_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f36885f66ed7d3fa",
+      "parent_reference_group_id": "f36885f66ed7d3fa",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s1000_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s1000_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_wikitext103_60M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "2b1ae31802388df1",
+      "parent_reference_group_id": "2b1ae31802388df1",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s800_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s800_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "1bb7e52458b21f5b",
+      "parent_reference_group_id": "1bb7e52458b21f5b",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s900_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s900_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "ef5526e82d70a12f",
+      "parent_reference_group_id": "ef5526e82d70a12f",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s1000_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s1000_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_20M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 700,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "019d97c6724ce8f2",
+      "parent_reference_group_id": "019d97c6724ce8f2",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s700_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s700_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s700_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s700_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "e1e4f7ae69428137",
+      "parent_reference_group_id": "e1e4f7ae69428137",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s800_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s800_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s800_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 900,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "91fc5ac87ec41bf9",
+      "parent_reference_group_id": "91fc5ac87ec41bf9",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s900_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s900_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s900_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1000,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "4cc5f71805cf5d2e",
+      "parent_reference_group_id": "4cc5f71805cf5d2e",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s1000_bipartite_seed1024_20261103T083710Z-1db4674c",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s1000_bipartite_seed7_20261103T083710Z-1db4674c"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_L2048_sigma_c4_60M_L2048_hipe_s1000_bipartite_seed6198_20261103T083710Z-1db4674c",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "cc81914d106bf99f",
+      "parent_reference_group_id": "cc81914d106bf99f",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "b8472b4581d97be2",
+      "parent_reference_group_id": "b8472b4581d97be2",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "3b7c9c292d2dde31",
+      "parent_reference_group_id": "3b7c9c292d2dde31",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t3_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t3_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t3_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t3_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 6,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "2c5110af5c97dc71",
+      "parent_reference_group_id": "2c5110af5c97dc71",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s500_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "wikitext103",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 800,
+      "hipe_layers": 6,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "96bbae2bde608e91",
+      "parent_reference_group_id": "96bbae2bde608e91",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 8
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "7686be283f554d27",
+      "parent_reference_group_id": "7686be283f554d27",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "600faeec9eae235e",
+      "parent_reference_group_id": "600faeec9eae235e",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t5_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "hipe_layers": 4,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f623d412dcfc5259",
+      "parent_reference_group_id": "f623d412dcfc5259",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t3_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t3_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t3_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t3_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "hipe_layers": 6,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "1b19e945bee33f10",
+      "parent_reference_group_id": "1b19e945bee33f10",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s25_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 6,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "73848773e4b8176c",
+      "parent_reference_group_id": "73848773e4b8176c",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed1024_20261103T143137Z-a0447d20",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed7_20261103T143137Z-a0447d20"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_c4_60M_L2048_hipe_s50_bipartite_t1_seed6198_20261103T143137Z-a0447d20",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "0035f70d81849fd9",
+      "parent_reference_group_id": "0035f70d81849fd9",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 5,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "b4361a03945ba265",
+      "parent_reference_group_id": "b4361a03945ba265",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s5_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s5_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s5_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s5_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 10,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "97f6cedef48f5980",
+      "parent_reference_group_id": "97f6cedef48f5980",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s10_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s10_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s10_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s10_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 25,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "1d38bead73bb72b9",
+      "parent_reference_group_id": "1d38bead73bb72b9",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s25_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s25_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s25_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s25_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "5d1fd104140ea668",
+      "parent_reference_group_id": "5d1fd104140ea668",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s50_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s50_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s50_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s50_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 100,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "91ab722e2328eeb6",
+      "parent_reference_group_id": "91ab722e2328eeb6",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s100_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s100_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s100_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s100_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "37e005d588a7f6dc",
+      "parent_reference_group_id": "37e005d588a7f6dc",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s200_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s200_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s200_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s200_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "0e4ec0132e7ec6bf",
+      "parent_reference_group_id": "0e4ec0132e7ec6bf",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s500_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s500_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s500_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s500_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 2000,
+      "hipe_layers": 1,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "88880490d86c70b9",
+      "parent_reference_group_id": "88880490d86c70b9",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s2000_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s2000_bipartite_t6_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s2000_bipartite_t6_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H1_s2000_bipartite_t6_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 1,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "97c73aa5962341db",
+      "parent_reference_group_id": "97c73aa5962341db",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s1_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s1_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s1_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s1_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 5,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "833c217fd6edd58d",
+      "parent_reference_group_id": "833c217fd6edd58d",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s5_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s5_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s5_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s5_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 10,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "facb029acb1ba5aa",
+      "parent_reference_group_id": "facb029acb1ba5aa",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s10_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s10_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s10_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s10_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 100,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "3d5a1bc523b5b8e0",
+      "parent_reference_group_id": "3d5a1bc523b5b8e0",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s100_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s100_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s100_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s100_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 200,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "faf6c881b219a832",
+      "parent_reference_group_id": "faf6c881b219a832",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s200_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s200_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s200_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s200_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 500,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "f93e24509e1d48e2",
+      "parent_reference_group_id": "f93e24509e1d48e2",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s500_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s500_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s500_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s500_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 2000,
+      "hipe_layers": 2,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "0464c9d0e74d09fd",
+      "parent_reference_group_id": "0464c9d0e74d09fd",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s2000_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s2000_bipartite_t5_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s2000_bipartite_t5_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H2_s2000_bipartite_t5_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 3,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "8185e3a1c3d7aa5b",
+      "parent_reference_group_id": "8185e3a1c3d7aa5b",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 5,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "013208b05630b0df",
+      "parent_reference_group_id": "013208b05630b0df",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H5_s50_bipartite_t2_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H5_s50_bipartite_t2_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H5_s50_bipartite_t2_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H5_s50_bipartite_t2_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 7,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "1da8a1902e80ebce",
+      "parent_reference_group_id": "1da8a1902e80ebce",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H7_s50_bipartite_t0_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H7_s50_bipartite_t0_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H7_s50_bipartite_t0_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H7_s50_bipartite_t0_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "hipe",
+      "sigma": 50,
+      "hipe_layers": 8,
+      "budget": 400000000,
+      "matched_100M_configuration": true,
+      "reference_group_id": "0019e9cd157e10d9",
+      "parent_reference_group_id": "0019e9cd157e10d9",
+      "reference_run_paths": [
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H8_s50_uniform_seed6198_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H8_s50_uniform_seed1024_20261104T070702Z-e6cc1493",
+        "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H8_s50_uniform_seed7_20261104T070702Z-e6cc1493"
+      ],
+      "template_run_path": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H8_s50_uniform_seed6198_20261104T070702Z-e6cc1493",
+      "attention_backend": "flash",
+      "micro_batch": 4
+    }
+  ],
+  "known_unavailable_ALiBi_configs": [
+    {
+      "dataset": "wikitext103",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "alibi",
+      "status": "prior_OOM_original_batch",
+      "planned_budget": 400000000,
+      "seeds": [
+        6198,
+        1024,
+        7
+      ]
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 1024,
+      "method": "alibi",
+      "status": "prior_OOM_original_batch",
+      "planned_budget": 200000000,
+      "seeds": [
+        6198,
+        1024,
+        7
+      ]
+    },
+    {
+      "dataset": "c4",
+      "model_size": "20M",
+      "length": 2048,
+      "method": "alibi",
+      "status": "prior_OOM_original_batch",
+      "planned_budget": 400000000,
+      "seeds": [
+        6198,
+        1024,
+        7
+      ]
+    },
+    {
+      "dataset": "c4",
+      "model_size": "60M",
+      "length": 2048,
+      "method": "alibi",
+      "status": "prior_OOM_original_batch",
+      "planned_budget": 400000000,
+      "seeds": [
+        6198,
+        1024,
+        7
+      ]
+    }
+  ],
+  "known_unavailable_seed_runs": 12,
+  "preflight_configurations": 8,
+  "preflight_steps": 2,
+  "initialization": "fresh seeded training; do not resume completed100Mcheckpoints",
+  "learning_rate_schedule": "CosineAnnealingLR T_max3051; original initialLR6e-4, no warmup",
+  "selection": "Each fixed length/budget/sigma/layer protocol has its own complete3seedmean/sampleSD. Never poolbudgets.",
+  "interpretation": "Matched optimizersteps, notmatchedtokens/FLOPs/uniqueexamples. Longer WikiText budgets repeat fixedtrainingdata. NewL1024layouts are notpurebudgetcontrasts without100Mcounterparts.",
+  "stopping_rule": "Run this prespecified boundedgrid once; do notaddcasesbasedoninterimoutcomes.",
+  "public_scope": "PaperTable2 methods; supplementarycomparisons remainlocal."
+}

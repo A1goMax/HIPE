@@ -80,3 +80,20 @@ and use independent evaluation before journal superiority claims.
 Keep true position-free NoPE distinct from the legacy NoPE+APE baseline.
 Table 1 retrieval, Table 3 larger-model specifications and Table 4 LoRA
 integration remain pending.
+
+## Prepared matched-step budget exploration
+
+A separate prospective exploration uses L512/100M (63 existing runs reused),
+L1024/200M and L2048/400M. It contains 264 new full runs: 68 HIPE configurations
+and 20 feasible baseline configurations, each with seeds 6198,1024,7.
+The grid retains all 48 observed L2048 HIPE variants and tests H1/H2/H4/H6/H8
+at the paper's per-setting L1024 sigma. Four known ALiBi OOM configurations
+are retained as unavailable. No new L512 or XPos job is planned.
+
+All full budgets give 3051 nominal optimizer steps at global 64.
+Runs start fresh using the full-budget cosine schedule; 100M checkpoints
+are not resumed. Original batches, data/evaluation settings and successful
+baseline backends are preserved. The launcher now honors explicitly recorded
+ALiBi backends. All 66 CPU checks passed. Exact plan and reused controls are
+recorded in experiments/protocols/table2_budget_steps_v1.json.
+Commit and push this source before SLURM submission.
