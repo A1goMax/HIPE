@@ -25,13 +25,18 @@
   "gpu_checks": {
     "configurations": 8,
     "steps": 2,
-    "status": "not_yet_submitted",
-    "excluded_from_research_statistics": true
+    "status": "submitted_pending_priority",
+    "excluded_from_research_statistics": true,
+    "job": "42168",
+    "source_commit": "12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6"
   },
   "full_campaign": {
     "configurations": 88,
     "seed_runs": 264,
-    "status": "planned_before_training"
+    "status": "submitted_pending_dependency",
+    "job": "42169",
+    "afterok": "42168",
+    "source_commit": "12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6"
   },
   "preserved_controls": {
     "L512_seed_runs": 63,

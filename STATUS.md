@@ -97,3 +97,9 @@ baseline backends are preserved. The launcher now honors explicitly recorded
 ALiBi backends. All 66 CPU checks passed. Exact plan and reused controls are
 recorded in experiments/protocols/table2_budget_steps_v1.json.
 Commit and push this source before SLURM submission.
+
+The budget exploration is submitted from published commit 12ebc71:
+GPU-check array 42168 has eight tasks; full array 42169 has 264 tasks and
+waits on afterok:42168. Initial states are pending scheduler priority and
+pending dependency. Exact source/configuration receipts are in
+experiments/campaigns/20261105-budget-steps/LAUNCH.json.
