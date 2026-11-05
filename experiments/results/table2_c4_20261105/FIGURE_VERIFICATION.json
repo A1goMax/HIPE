@@ -1,0 +1,10 @@
+{
+  "input_sha256": "4c73e96b22aad97a31ea0d9f0bdcf6e866bff196102438824f8d8392f7d566a8",
+  "files": {
+    "C4_sigma_layer_effects.png": "6d9a7b793bf5dfc495a0f7a8a4aae0bb196a6db5254fba9efb50bbd208b1a796",
+    "C4_sigma_layer_effects.svg": "7fc2a9cc452ae563ca5989d3ece4513d7bb7bc00616502b14ce273805de0a220"
+  },
+  "unique_fixed_groups_in_figure": 24,
+  "plotted_series_points": 26,
+  "visually_reviewed": true
+}

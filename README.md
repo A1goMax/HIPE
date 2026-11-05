@@ -77,18 +77,20 @@ The original baseline portion finished with 93 successes and 15 ALiBi OOM failur
 
 ## Completed Table 2 analysis
 
-The main, sigma and joint sigma/layer campaigns have ended. See
-[the latest joint-search report](analysis/table2/JOINT_SEARCH_REPORT.md).
-The formal workbook, exact seed PPLs, figures and verification records are
-under outputs/table2_public_20261104/. A versioned numerical/source archive
-is under experiments/results/table2_joint_20261104/.
+The main, joint sigma/layer and wider C4 campaigns have ended. See
+[the latest C4 extension report](analysis/table2/C4_EXTENSION_REPORT.md).
+The verified workbook and all numerical/figure outputs are in
+outputs/table2_c4_20261105/. The code-linked public result archive is
+experiments/results/table2_c4_20261105/.
 
-All 45 new HIPE runs included in the public tables completed. Best observed HIPE has lower three-seed
-mean PPL than RoPE in 11/12 settings after per-setting sigma/layer selection,
-up from 9/12. The remaining loss is C4 60M/L2048. The new gains are small
-and validation-selected; individual matched seeds are retained.
-Among the paper Table 2 methods, ALiBi has the lowest mean in six settings,
-HIPE in five and RoPE in one. Additional-method comparisons remain local. Earlier reports remain historical records.
+All 60 latest full runs completed. Best C4 60M/L2048 HIPE is sigma 500/H2:
+242.321885 +/- 7.337535 versus RoPE 241.550843 +/- 12.911822.
+No new configuration beats RoPE's mean; the overall best-observed count
+remains 11/12 settings. The final-checkpoint view selects the same configuration
+and retains the higher HIPE mean. These are validation-selected results.
+
+Current public outputs follow the paper's Table 2 method set. Supplementary
+comparison results remain local; historical snapshots are preserved.
 
 ## Joint sigma/layer search
 
@@ -108,7 +110,7 @@ Public reports follow the paper Table 2 method set. XPos comparison results stay
 
 ## C4 60M/L2048 extension
 
-The [next bounded protocol](experiments/protocols/table2_c4_extension_v2.md)
+The [completed bounded protocol](experiments/protocols/table2_c4_extension_v2.md)
 sweeps sigma 1, 5, 10, 25, 50, 100, 200, 500 and 2000 at one/two HIPE layers,
 and completes one-through-eight HIPE-layer coverage at sigma 50.
 Four complete configurations are reused. The remaining 20 configurations

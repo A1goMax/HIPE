@@ -1,0 +1,28 @@
+{
+  "files": {
+    "All_Statistics.csv": "29a4991c1c6882d9045d162a82a28391d6f25c8a2921504f96428192a48e0e8e",
+    "Best_vs_Baselines.csv": "edd7dac813e7b0c590cd3d1c7d831917a7041e307f2e84e7532f18f31ed02505",
+    "C4_All_Configurations.csv": "bc1fe15c546d074352890dc8d1f4845f58a3474f68628c7c1c353d18f3a05c6f",
+    "C4_sigma_layer_effects.png": "6d9a7b793bf5dfc495a0f7a8a4aae0bb196a6db5254fba9efb50bbd208b1a796",
+    "C4_sigma_layer_effects.svg": "7fc2a9cc452ae563ca5989d3ece4513d7bb7bc00616502b14ce273805de0a220",
+    "CALCULATION_VERIFICATION.json": "da62a9db2b73202717fcb4aee809f598e7e8ba1756679d35b93e19b7449b1caf",
+    "Exact_Seed_PPL.csv": "2a478ba59dcb642a334e4e0c092877178ca09328f6bad6a5b9f6d20e5db9bf5d",
+    "Execution_Attempts.csv": "813ff9d55552839b49e6c3df3eb19e0307fe20c6f3566f60ad14e332b61f0943",
+    "FIGURE_VERIFICATION.json": "ee8c548fd5e79af302534f6f2a3568aedfd616685e54935af5cef9d9d4290ac5",
+    "HIPE_Table2_C4_Extension_Analysis.xlsx": "be3762948a0aa22b95d496fd619e8ff8dd79167b18d6c7c72596e3a8e7078e32",
+    "HIPE_vs_RoPE_All_Configs.csv": "cfc8e415cc9c5008cdad722e8dd0982dc6e9349cc001bfaebf26bff4fd3f06eb",
+    "PROVENANCE_VERIFICATION.json": "07b47bd4a331f529305936302ba2bc1afa7ca8a26c5e685eb0525c75bf1ab7ea",
+    "RAW_RECONSTRUCTION_AUDIT.json": "a2a72f1b6d851ef57149f220790f22ae36b12de3b4be04f75adfada7e283f6d8",
+    "README.txt": "6444a3e88a5143c7808b00b70e05596ef34f301a06f64fc07af3eba9bf0180e7",
+    "REPORT.md": "0fb189019aaeb5091e698758ff055b46693aef0b14447b53349afb3f783ba651",
+    "summary.json": "934fe3bfcfcc7f06e4798be977ceaacbea862cbbceb9b911b2aa0ff8403b56a1",
+    "workbook_data.json": "4c73e96b22aad97a31ea0d9f0bdcf6e866bff196102438824f8d8392f7d566a8",
+    "WORKBOOK_VERIFICATION.json": "3d110f1b3a2f6560888103b0cd2b05f2549057f9ac38249edc8f06f2395882ac"
+  },
+  "source_inputs": {
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\joint_sigma_layers_20261104\\raw_runs.json": "910580a5b575df94f187d953c4f444b94c90e581b27f9418cf68ff44415c5ff2",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\c4_extension_20261105\\raw_runs.json": "dda180e67c9800d4ff0b61e1ef4d0eaea575d28ae0a69ce9f011ac9e3c53aa38"
+  }
+}

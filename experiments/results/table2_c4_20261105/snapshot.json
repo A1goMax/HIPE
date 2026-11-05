@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "result_tag": "research/table2-c4-results-v2-20261105",
+  "training_commit": "c44c207b83bf4140ec462bd727b1c5e6fc946613",
+  "pinned_training_tag": "research/table2-before-c4-extension-v2-20261104",
+  "publication_scope": "Paper Table2 methods only",
+  "input_sha256": {
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\joint_sigma_layers_20261104\\raw_runs.json": "910580a5b575df94f187d953c4f444b94c90e581b27f9418cf68ff44415c5ff2",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\c4_extension_20261105\\raw_runs.json": "dda180e67c9800d4ff0b61e1ef4d0eaea575d28ae0a69ce9f011ac9e3c53aa38"
+  },
+  "additional_input_sha256": {
+    "E:\\research\\03\\HIPE\\outputs\\table2_public_20261104\\workbook_data.json": "b1ad6439a4f7a89a8dbbb09c08bea5dcf921b451fdc43b2a75466d3b60b9c7e1",
+    "E:\\research\\03\\HIPE\\experiments\\protocols\\table2_c4_extension_v2.json": "9eb37e571ff77d1303fe7faa57b156dad28a5081da7cd62c2419e17e28dbd10c"
+  },
+  "summary": {
+    "new_runs": 60,
+    "new_successful": 60,
+    "new_hipe_runs": 60,
+    "reused_grid_seed_runs": 12,
+    "execution_attempts": 297,
+    "completed_unique_seed_runs": 279,
+    "failed_attempts": 18,
+    "fixed_configurations": 93,
+    "hipe_configurations": 61,
+    "c4_60m_l2048_configurations": 30,
+    "planned_grid_configurations": 24,
+    "earlier_out_of_grid_configurations": 6,
+    "primary_endpoint": "last_interval",
+    "seeds": [
+      6198,
+      1024,
+      7
+    ],
+    "max_tokens": 100000000,
+    "global_batch": 64,
+    "previous_primary_wins_vs_rope": 11,
+    "last_interval": {
+      "wins_vs_rope": 11,
+      "losses_vs_rope": 1,
+      "new_winning_configurations": 0,
+      "converted_settings": 0,
+      "paired_seed_wins_selected": 28,
+      "best_methods": {
+        "hipe": 5,
+        "alibi": 6,
+        "rope": 1
+      }
+    },
+    "final": {
+      "wins_vs_rope": 11,
+      "losses_vs_rope": 1,
+      "new_winning_configurations": 0,
+      "converted_settings": 0,
+      "paired_seed_wins_selected": 28,
+      "best_methods": {
+        "hipe": 5,
+        "alibi": 6,
+        "rope": 1
+      }
+    }
+  },
+  "analysis_script_sha256": {
+    "analysis/table2/analyze_c4_extension.py": "fb8ee54d7d1dc11614d135740773b74298f223ae96ec10890db7eb1519058f47",
+    "analysis/table2/plot_c4_extension.py": "a5ca609c812ae52cc88275849a208da359d6383ffda4105528ba47592db82d5d"
+  },
+  "workbook_sha256": "be3762948a0aa22b95d496fd619e8ff8dd79167b18d6c7c72596e3a8e7078e32",
+  "locations": {
+    "workspace": "E:\\research\\03\\HIPE\\outputs\\table2_c4_20261105",
+    "server": "/home/qijunrong/03-proj/HIPE/outputs/table2_c4_20261105"
+  },
+  "text_export_encoding": "UTF-8, canonical LF"
+}

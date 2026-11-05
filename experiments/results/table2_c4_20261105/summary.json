@@ -1,0 +1,47 @@
+{
+  "new_runs": 60,
+  "new_successful": 60,
+  "new_hipe_runs": 60,
+  "reused_grid_seed_runs": 12,
+  "execution_attempts": 297,
+  "completed_unique_seed_runs": 279,
+  "failed_attempts": 18,
+  "fixed_configurations": 93,
+  "hipe_configurations": 61,
+  "c4_60m_l2048_configurations": 30,
+  "planned_grid_configurations": 24,
+  "earlier_out_of_grid_configurations": 6,
+  "primary_endpoint": "last_interval",
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "max_tokens": 100000000,
+  "global_batch": 64,
+  "previous_primary_wins_vs_rope": 11,
+  "last_interval": {
+    "wins_vs_rope": 11,
+    "losses_vs_rope": 1,
+    "new_winning_configurations": 0,
+    "converted_settings": 0,
+    "paired_seed_wins_selected": 28,
+    "best_methods": {
+      "hipe": 5,
+      "alibi": 6,
+      "rope": 1
+    }
+  },
+  "final": {
+    "wins_vs_rope": 11,
+    "losses_vs_rope": 1,
+    "new_winning_configurations": 0,
+    "converted_settings": 0,
+    "paired_seed_wins_selected": 28,
+    "best_methods": {
+      "hipe": 5,
+      "alibi": 6,
+      "rope": 1
+    }
+  }
+}

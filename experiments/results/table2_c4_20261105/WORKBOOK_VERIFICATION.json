@@ -1,0 +1,32 @@
+{
+  "sheet_count": 5,
+  "exact_PPL_observations_checked": 558,
+  "fixed_configuration_endpoint_stats_checked": 186,
+  "target_grid_endpoint_comparisons_checked": 60,
+  "best_comparison_rows_checked": 24,
+  "execution_attempts_checked": 297,
+  "all_exported_formula_caches_match_inputs": true,
+  "exact_logged_decimal_text_preserved": true,
+  "endpoint_specific_join_keys_verified": true,
+  "source_checksums_unchanged": true,
+  "all_five_tabs_visually_reviewed": true,
+  "formula_cells": 2372,
+  "xlsx_sha256": "be3762948a0aa22b95d496fd619e8ff8dd79167b18d6c7c72596e3a8e7078e32",
+  "calculation_engine": {
+    "input_sha256": "4c73e96b22aad97a31ea0d9f0bdcf6e866bff196102438824f8d8392f7d566a8",
+    "stats_rows_checked": 186,
+    "comparison_rows_checked": 60,
+    "best_rows_checked": 24,
+    "raw_PPL_records": 558,
+    "attempts": 297,
+    "sheet_count": 5,
+    "all_seed_mean_SD_and_contrasts_match": true,
+    "dynamic_sigma_and_layer_selection_verified": true,
+    "dynamic_new_win_status_verified": true,
+    "missing_seed_remains_unavailable": true,
+    "temporary_inputs_restored": true,
+    "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "note": "Artifact Tool calculation and exported caches checked. Native Excel recalculation was not exercised."
+  },
+  "limitation": "Artifact Tool calculation and exported caches verified; native Microsoft Excel recalculation was not exercised."
+}

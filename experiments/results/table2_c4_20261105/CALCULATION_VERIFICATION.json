@@ -1,0 +1,16 @@
+{
+  "input_sha256": "4c73e96b22aad97a31ea0d9f0bdcf6e866bff196102438824f8d8392f7d566a8",
+  "stats_rows_checked": 186,
+  "comparison_rows_checked": 60,
+  "best_rows_checked": 24,
+  "raw_PPL_records": 558,
+  "attempts": 297,
+  "sheet_count": 5,
+  "all_seed_mean_SD_and_contrasts_match": true,
+  "dynamic_sigma_and_layer_selection_verified": true,
+  "dynamic_new_win_status_verified": true,
+  "missing_seed_remains_unavailable": true,
+  "temporary_inputs_restored": true,
+  "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "note": "Artifact Tool calculation and exported caches checked. Native Excel recalculation was not exercised."
+}
