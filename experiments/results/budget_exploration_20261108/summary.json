@@ -1,0 +1,67 @@
+{
+  "planned_new_runs": 264,
+  "new_runs": 264,
+  "new_successful": 262,
+  "new_interrupted": 2,
+  "new_hipe_runs": 204,
+  "new_baseline_runs": 60,
+  "reused_L512_runs": 63,
+  "study_expected_seed_runs": 327,
+  "study_completed_seed_runs": 325,
+  "all_input_attempts": 561,
+  "execution_attempts": 561,
+  "completed_unique_seed_runs": 541,
+  "failed_attempts": 20,
+  "all_fixed_protocols": 181,
+  "fixed_configurations": 181,
+  "study_fixed_configurations": 109,
+  "study_complete_configurations": 107,
+  "study_incomplete_configurations": 2,
+  "control_only_configurations": 72,
+  "exact100M_control_pairs": 72,
+  "complete100M_control_pairs": 71,
+  "new_layouts_without100M_control": 16,
+  "primary_endpoint": "last_interval",
+  "nominal_steps": 3051,
+  "nominal_primary_step": 3000,
+  "seeds": [
+    6198,
+    1024,
+    7
+  ],
+  "previous_paper100M_wins_vs_rope": 11,
+  "last_interval": {
+    "wins_vs_rope": 12,
+    "losses_vs_rope": 0,
+    "wins_by_length": {
+      "512": 4,
+      "1024": 4,
+      "2048": 4
+    },
+    "paired_seed_wins_selected": 31,
+    "best_methods": {
+      "hipe": 7,
+      "alibi": 5
+    },
+    "complete_HIPE_fixed_configs": 75,
+    "HIPE_fixed_config_wins": 32,
+    "complete100M_control_improvements": 71
+  },
+  "final": {
+    "wins_vs_rope": 12,
+    "losses_vs_rope": 0,
+    "wins_by_length": {
+      "512": 4,
+      "1024": 4,
+      "2048": 4
+    },
+    "paired_seed_wins_selected": 31,
+    "best_methods": {
+      "hipe": 7,
+      "alibi": 5
+    },
+    "complete_HIPE_fixed_configs": 75,
+    "HIPE_fixed_config_wins": 32,
+    "complete100M_control_improvements": 71
+  }
+}

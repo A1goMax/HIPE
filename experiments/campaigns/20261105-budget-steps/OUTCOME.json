@@ -1,0 +1,20 @@
+{
+  "snapshot_date": "2026-11-08 Asia/Shanghai",
+  "full_job": "42169",
+  "planned_tasks": 264,
+  "completed_tasks": 262,
+  "node_failed_tasks": [
+    110,
+    111
+  ],
+  "preflight_job": "42168",
+  "preflight_completed": 8,
+  "preflight_in_results": false,
+  "training_commit": "12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6",
+  "result_tag": "research/budget-results-v1-20261108",
+  "report": "analysis/table2/BUDGET_EXPLORATION_REPORT.md",
+  "recovery_submitted": false,
+  "selection_policy": "Only complete n3 study configurations; no historical100Mcontrol candidates.",
+  "best_complete_HIPE_mean_wins_vs_RoPE": 12,
+  "original100M_mean_wins_vs_RoPE": 11
+}

@@ -123,16 +123,21 @@ All full runs retain micro-batch 4, global batch 64 and the 100M-token cap.
 
 ## Exploratory length/token budgets
 
-The [prospective budget study](experiments/protocols/table2_budget_steps_v1.md)
-uses L512/100M, L1024/200M and L2048/400M, giving 3051 nominal optimizer steps
-at global batch 64. It reuses 63 completed L512 runs and queues 264 longer-budget
-runs across 88 fixed configurations, with three seeds. All observed L2048 HIPE
-variants and H1/H2/H4/H6/H8 at paper L1024 sigmas are included.
-Known infeasible ALiBi shapes remain recorded unavailable under original
-batch settings. The public method set is unchanged.
+The [formal budget-exploration report](analysis/table2/BUDGET_EXPLORATION_REPORT.md)
+covers L512/100M (63 reused runs), L1024/200M and L2048/400M.
+Of 264 new tasks, 262 completed and two ended NODE_FAIL. Incomplete seed groups
+remain visible and are excluded from selection. All means use three seeds at
+one fixed budget/sigma/layer setting.
 
-Use --suite table2_budget_steps_check --preflight for the eight short checks,
-then --suite table2_budget_steps --afterok CHECK_JOB_ID for the full array.
-Both use --array --gpus 2 --require-published --execute after commit and push.
-Runs start fresh with the full-budget cosine schedule. Never pool this
-exploration with the paper 100M means.
+Best complete HIPE has lower mean PPL than RoPE in all 12 study settings;
+the original all-100M experiment remains 11/12 and is kept separate.
+Among available public methods, HIPE has the lowest selected mean in seven
+settings and ALiBi in five. These are validation-selected exploratory outcomes.
+
+The six-tab workbook, exact seeds, budget contrasts, figures and audits are
+under outputs/budget_exploration_20261108/. The versioned public archive is
+experiments/results/budget_exploration_20261108/.
+Training source was published before submission at
+research/token-budget-steps-v1-20261105 (12ebc71).
+The result snapshot is research/budget-results-v1-20261108.
+Supplementary comparisons stay local; historical snapshots are preserved.

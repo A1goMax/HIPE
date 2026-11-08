@@ -1,0 +1,18 @@
+{
+  "input_sha256": "5a461e1d000ff3620e6c0a777e8be10b9e8667e4b45fb5c6669b8729c5046eeb",
+  "sheet_count": 6,
+  "fixed_stats_rows": 362,
+  "hipe_vs_rope_rows": 154,
+  "best_rows": 24,
+  "budget_change_rows": 176,
+  "raw_observations": 1082,
+  "attempts": 561,
+  "dynamic_sigma_layer_selection_verified": true,
+  "incomplete_candidate_excluded": true,
+  "endpoint_specific_join_verified": true,
+  "temporary_inputs_restored": true,
+  "study_group_ids_verified": true,
+  "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "all_fixed_seed_stats_match": true,
+  "limitations": "Artifact Tool recalculation and saved caches checked. Native Microsoft Excel recalculation was not exercised."
+}

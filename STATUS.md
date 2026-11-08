@@ -1,105 +1,69 @@
 # HIPE Research Status
 
-Updated 5 November 2026, Asia/Shanghai.
+Updated 8 November 2026, Asia/Shanghai.
 
-## Latest completed C4 extension
+## Latest matched-step exploration
 
-GPU checks 42038 (four two-step tasks) and full array 42039 (60 runs) completed
-successfully. The full campaign used the published source
-c44c207b83bf4140ec462bd727b1c5e6fc946613, pinned before execution under
-research/table2-before-c4-extension-v2-20261104.
+All 264 submitted tasks have ended: 262 completed and two ended NODE_FAIL.
+All eight GPU checks completed. The study combines those 262 completed new
+runs with 63 reused L512/100M runs. No recovery or additional training was
+submitted during this analysis.
 
-The wider search does not produce a lower mean PPL than RoPE for C4 60M/L2048.
-Best observed HIPE is sigma 500 with two final HIPE layers:
-242.321885 +/- 7.337535, versus RoPE 241.550843 +/- 12.911822.
-The difference is +0.771042 PPL (+0.319205%).
-The earlier best was sigma 50/H2 at 242.677564 +/- 6.525953.
-The selected result improves in two of three paired seeds but retains a
-higher mean. The final-checkpoint view selects the same configuration and
-also trails RoPE.
+Best complete three-seed HIPE has lower mean PPL than RoPE in all 12 study
+settings: 4/4 per length and 31/36 paired seeds. Budgets are L512/100M,
+L1024/200M and L2048/400M, each with 3051 nominal optimizer steps.
+The original all-100M experiment remains 11/12 and is kept separate.
+Only 32/75 complete study HIPE configurations beat RoPE. Lowest available
+public-method means belong to HIPE in seven settings and ALiBi in five.
 
-Read [the completed extension report](analysis/table2/C4_EXTENSION_REPORT.md).
-The verified workbook, every fixed-configuration result, exact seed PPLs,
-figures and audits are in outputs/table2_c4_20261105/.
-The versioned result archive is experiments/results/table2_c4_20261105/.
+C4 60M/L2048 at 400M selects sigma 200/H2:
+66.056620 +/- 1.137437 versus RoPE 66.298782 +/- 1.491717 (0.365259% lower).
+The final checkpoint selects the same configuration and also favors HIPE.
 
-## Current Table 2 evidence
+Read [the formal report](analysis/table2/BUDGET_EXPLORATION_REPORT.md).
+Workbook, exact seeds, all candidates, budget contrasts, figures and audits:
+outputs/budget_exploration_20261108/.
+Versioned public archive: experiments/results/budget_exploration_20261108/.
 
-Best observed HIPE has lower three-seed mean PPL than RoPE in 11/12 settings.
-This count is unchanged after the extension. Among the paper's Table 2
-methods, lowest available primary means belong to HIPE in five settings,
-ALiBi in six and RoPE in one.
+## Coverage and missing seeds
 
-The public evidence contains 297 full execution attempts, 279 completed unique
-seed-runs and 18 earlier failures. All 93 completed configurations have three
-seeds; 61 configurations use HIPE. Four ALiBi settings remain unavailable due
-to OOM. The latest C4 comparison retains 30 observed sigma/layer configurations:
-24 in the new planned grid and six earlier out-of-grid configurations.
+42169_110: C4 20M L2048/400M sigma 700/H4, seed 7, has a step 1000 checkpoint
+and partial validation. 42169_111: C4 60M L1024/200M sigma 300/H1, seed 6198,
+has no checkpoint or metrics. Both ended NODE_FAIL on cccl2; underlying cause
+is not established. Their available n=2 seeds stay visible, with null aggregate
+mean/SD and exclusion from selection. Original failed outputs remain intact.
 
-All means and sample SDs use seeds 6198, 1024 and 7 at one fixed configuration.
-Sigma/layer settings are never pooled. Last regular validation is primary;
-final-checkpoint values are kept separate. Twelve earlier seed-runs complete
-the new grid, and all four GPU checks are excluded from research statistics.
+107/109 study configurations have all three seeds. Of 72 exact 100M control
+pairs, 71 are complete and all 71 improve at both endpoints. Sixteen new
+L1024 layouts lack exact 100M controls. All 181 fixed protocols and 1082
+endpoint observations are retained; historical controls never enter new-budget
+selection.
 
-## Interpretation and limitations
+## Interpretation and provenance
 
-At sigma 50, two final HIPE layers give the lowest observed mean over H1-H8.
-Increasing the count beyond two worsens the observed mean. One HIPE layer
-does not uniformly outperform two. Both very small sigmas and sigma 2000
-underperform the selected sigma 500/H2 configuration.
+Budget, sigma, layer count and endpoints are never pooled in seed means.
+All available methods within each study setting match actual training and
+validation exposures. Partial WikiText micro-batches explain small token
+shortfalls. Equal optimizer steps do not mean equal tokens, compute or unique
+data. Longer WikiText budgets repeat a fixed corpus.
 
-These are validation-selected tuning outcomes. Sample SD describes conditional
-seed variation and does not include hyperparameter-selection uncertainty.
-The wider search narrows the mean gap but does not demonstrate a C4
-60M/L2048 advantage over RoPE or a statistical significance result.
+These are validation-selected outcomes. Three-seed SD does not account for
+selection uncertainty or establish significance. Original method batches and
+Legacy NoPE+APE behavior remain explicit qualifications.
 
-C4 retains its original HIPE/RoPE micro-batches (4 versus 8 at L2048 for 60M),
-with global batch 64 unchanged. Data, tokenizer/vocabulary identities, Python,
-CUDA/package versions, GPU type and both endpoint exposures match archived
-RoPE controls. The legacy NoPE baseline includes learned absolute embeddings.
-Historical paper-log population and layer-split differences remain separate
-qualifications for absolute reproduction of paper values.
-
-## Provenance and publication
-
-All 60 frozen configurations, run configurations and source archives were
-verified; all 300 core source entries inside the archives matched their
-recorded checksums. The new training core is byte-identical to the previous
-joint-study core. Result records retain commit, resolved configuration,
-effective layer vector, runtime/data identities, metrics and checkpoint hashes.
-
-Current public outputs follow the paper's Table 2 method set. XPos comparison
-results remain in ignored local outputs. Historical Git snapshots are preserved.
-The new result archive is tagged research/table2-c4-results-v2-20261105.
-No training was launched during this analysis.
+Training source was published before GPU submission:
+12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6,
+tag research/token-budget-steps-v1-20261105.
+All 264 configs, run configs and source archives were verified, including
+1320 core source entries. Current result tag:
+research/budget-results-v1-20261108.
+Current public methods follow Table 2; supplementary comparisons stay local
+and historical snapshots remain intact.
 
 ## Next priorities
 
-Resolve the remaining evaluation, micro-batch and layer-split qualifications,
-and use independent evaluation before journal superiority claims.
-Keep true position-free NoPE distinct from the legacy NoPE+APE baseline.
-Table 1 retrieval, Table 3 larger-model specifications and Table 4 LoRA
-integration remain pending.
-
-## Prepared matched-step budget exploration
-
-A separate prospective exploration uses L512/100M (63 existing runs reused),
-L1024/200M and L2048/400M. It contains 264 new full runs: 68 HIPE configurations
-and 20 feasible baseline configurations, each with seeds 6198,1024,7.
-The grid retains all 48 observed L2048 HIPE variants and tests H1/H2/H4/H6/H8
-at the paper's per-setting L1024 sigma. Four known ALiBi OOM configurations
-are retained as unavailable. No new L512 or XPos job is planned.
-
-All full budgets give 3051 nominal optimizer steps at global 64.
-Runs start fresh using the full-budget cosine schedule; 100M checkpoints
-are not resumed. Original batches, data/evaluation settings and successful
-baseline backends are preserved. The launcher now honors explicitly recorded
-ALiBi backends. All 66 CPU checks passed. Exact plan and reused controls are
-recorded in experiments/protocols/table2_budget_steps_v1.json.
-Commit and push this source before SLURM submission.
-
-The budget exploration is submitted from published commit 12ebc71:
-GPU-check array 42168 has eight tasks; full array 42169 has 264 tasks and
-waits on afterok:42168. Initial states are pending scheduler priority and
-pending dependency. Exact source/configuration receipts are in
-experiments/campaigns/20261105-budget-steps/LAUNCH.json.
+Recover the two interrupted seeds with recorded provenance before calling
+the planned grid complete. Use independent evaluation before journal claims.
+Keep this exploration separate from the original 100M reproduction results.
+Table 1 retrieval, Table 3 larger-model specifications and Table 4 LoRA remain
+pending.

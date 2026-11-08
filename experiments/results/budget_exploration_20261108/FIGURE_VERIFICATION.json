@@ -1,0 +1,234 @@
+{
+  "created_utc": "2026-11-08T09:05:10.485261+00:00",
+  "input": {
+    "path": "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\workbook_data.json",
+    "sha256": "5a461e1d000ff3620e6c0a777e8be10b9e8667e4b45fb5c6669b8729c5046eeb"
+  },
+  "source": {
+    "path": "E:\\research\\03\\HIPE\\analysis\\table2\\plot_budget_exploration.py",
+    "sha256": "61a60757d3e94bbd077734fa1b7ad7523e9051d560058b77864b1f62119841b0"
+  },
+  "runtime": {
+    "python": "D:\\envs\\anaconda3\\python.exe",
+    "matplotlib": "3.10.0"
+  },
+  "endpoint": "last_interval",
+  "selection": {
+    "complete_seed_count": 3,
+    "selected_cells": 12,
+    "selected_mean_wins_vs_rope": 12,
+    "selected_paired_seed_wins_vs_rope": 31,
+    "selected_paired_seed_comparisons": 36,
+    "lowest_available_method_counts": {
+      "hipe": 7,
+      "alibi": 5
+    },
+    "complete_HIPE_configurations": 75,
+    "HIPE_configurations_beating_rope": 32,
+    "selected_group_ids": [
+      "e86b085155f4476a",
+      "edbe5f51de92ba4a",
+      "0880729f0f14c2c8",
+      "97fa5be2580c3f30",
+      "b1b853d4fed6535a",
+      "adbab3025ae67aa3",
+      "cf7d9139ec454a92",
+      "66eecc10248b8da2",
+      "4e001b13451b3d1d",
+      "c79a331cce7d788f",
+      "0c812c528d249156",
+      "d8fdf20ef3a87800"
+    ]
+  },
+  "matched_controls": {
+    "complete_configuration_pairs": 71,
+    "all_improve": true,
+    "group_ids": [
+      "623abb11872ef81d",
+      "fa54bfdb7a6656ec",
+      "8104e8e6646d40dc",
+      "a4ef3be835ff6dd4",
+      "413a33008681a1d5",
+      "d5424e6bb14ef78f",
+      "9a88f4bd8102d30a",
+      "bc64a8ab44934592",
+      "b74f8ac6b3f5f1dd",
+      "7070385dcaea69cc",
+      "e4d2bd6858211ae2",
+      "bd424cc2f1552abd",
+      "e7eb73bc5a3022f5",
+      "d3b3c3e788c8ea05",
+      "0fdf2cb752e0fb77",
+      "66e66391ada8ea54",
+      "d1673427e400f979",
+      "7f138be518111e82",
+      "6442c2a9414e4b1e",
+      "b1b853d4fed6535a",
+      "4e001b13451b3d1d",
+      "34d260b0a75eb8d7",
+      "a98ea94ea296b9dc",
+      "cf7d9139ec454a92",
+      "5a7196969340808f",
+      "6cfa758aeb2f49f5",
+      "e094358e9d839b21",
+      "4e9f2d0c62bcaf4a",
+      "3896aecef7fb06f1",
+      "cd198191f628fc73",
+      "e9e06fdad596cbd8",
+      "9feca02a56d3df13",
+      "0d8a27d4237514de",
+      "a5b3b4f248801d5f",
+      "0c812c528d249156",
+      "2f5b44b7bdc2946c",
+      "1a80ee27134407cd",
+      "5ef53300981e7d49",
+      "03195bf0371809c1",
+      "4ecb17c32fa0ed01",
+      "17948b6c8c4c6387",
+      "7e9fcae8fdb3ce2e",
+      "c79a331cce7d788f",
+      "ae6a197039f4cf5f",
+      "2c848a963c4552a0",
+      "00c1f9690c8412dd",
+      "fa9efa91cd9dda8f",
+      "a18a6e6329aca558",
+      "f313b9044a57bad1",
+      "9c72674e554ab8d2",
+      "6f1b71284fd91396",
+      "4cbe9ba418765d65",
+      "9b7ba20a5860e008",
+      "6b9de466eb2d5f81",
+      "f102f689439f853a",
+      "8e886ff1c4295792",
+      "f698fc80707e27a5",
+      "874292a16d76e0ff",
+      "940e73f89f8722f4",
+      "202638bf7a694a36",
+      "f15b143b5bd15f60",
+      "e6c084edb62587fa",
+      "bf694612435e060d",
+      "41a7b526b20e986d",
+      "d8fdf20ef3a87800",
+      "61262b6b696d291b",
+      "be8b73be4bceaa11",
+      "cd77c5b7ac5be6bc",
+      "afed6d928bf1fd64",
+      "d14bf16ce3b4372b",
+      "1568e06620b34d77"
+    ],
+    "panels": [
+      {
+        "dataset": "wikitext103",
+        "length": 1024,
+        "n": 8,
+        "method_counts": {
+          "nope": 2,
+          "rope": 2,
+          "alibi": 2,
+          "hipe": 2
+        }
+      },
+      {
+        "dataset": "c4",
+        "length": 1024,
+        "n": 7,
+        "method_counts": {
+          "nope": 2,
+          "rope": 2,
+          "alibi": 1,
+          "hipe": 2
+        }
+      },
+      {
+        "dataset": "wikitext103",
+        "length": 2048,
+        "n": 19,
+        "method_counts": {
+          "nope": 2,
+          "rope": 2,
+          "alibi": 1,
+          "hipe": 14
+        }
+      },
+      {
+        "dataset": "c4",
+        "length": 2048,
+        "n": 37,
+        "method_counts": {
+          "nope": 2,
+          "rope": 2,
+          "hipe": 33
+        }
+      }
+    ],
+    "exclusions": {
+      "total_new_configurations": 88,
+      "unique_excluded_configurations": 17,
+      "no_exact_100M_control_layouts": 16,
+      "incomplete_groups_total": 2,
+      "incomplete_groups_without_exact_control": 1,
+      "additional_incomplete_matched_configurations": 1
+    },
+    "uncertainty": "Mean and sample SD of three original seeds, separately per fixed configuration; no pooling or significance claim"
+  },
+  "automated_checks": {
+    "input_unchanged": true,
+    "complete_groups_only": true,
+    "all_selected_data_match_all_rows": true,
+    "exact_control_means_verified": true,
+    "gain_formula_verified": true,
+    "all_output_hashes_rechecked": true,
+    "png_integrity_and_svg_xml_verified": true,
+    "heatmap_unchanged_after_scatter_revision": true
+  },
+  "visual_review": {
+    "status": "passed",
+    "reviewed_utc": "2026-11-08T09:05:42.756239+00:00",
+    "reviewer": "Codex visual inspection using view_image",
+    "files": [
+      "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_selected_gain.png",
+      "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_vs_100M.png"
+    ],
+    "observations": [
+      "Both PNGs originally inspected in full: titles, labels, legends, ticks and footnotes visible without overlap or clipping.",
+      "Heatmap is byte for byte unchanged following the scatter caption clarification; its prior visual review remains valid.",
+      "Regenerated scatter reinspected in full: revised footnote is readable and now states 71 of 88 new configurations included, 16 lacking exact controls and one additional incomplete matched configuration.",
+      "The two incompleteness exclusions overlap one of the 16 no-control layouts: 17 unique configurations excluded, not 18.",
+      "All methods, raw PPL axes, sample-SD error bars, log-scale disclosure, y=x reference, exploratory scope and absence of a significance claim remain visible."
+    ]
+  },
+  "outputs": [
+    {
+      "path": "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_selected_gain.png",
+      "bytes": 622295,
+      "sha256": "f7ed20300178463a5c4b1a9c4a8305381c8a97feb7231b399fe54b247f319bdc",
+      "dimensions_px": [
+        2976,
+        2184
+      ]
+    },
+    {
+      "path": "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_selected_gain.svg",
+      "bytes": 60950,
+      "sha256": "a8369476a1c394efb94432e6c30334c609eef4164303b850f00370b74c20aba9",
+      "valid_svg_xml": true,
+      "viewBox": "0 0 892.8 655.2"
+    },
+    {
+      "path": "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_vs_100M.png",
+      "bytes": 441793,
+      "sha256": "ee7b2c07f5b7cf3867df7838ed394c72e7f212e738d93a93b06283b2c2e54abf",
+      "dimensions_px": [
+        2784,
+        2592
+      ]
+    },
+    {
+      "path": "E:\\research\\03\\HIPE\\outputs\\budget_exploration_20261108\\fig_budget_vs_100M.svg",
+      "bytes": 128140,
+      "sha256": "e87e489ed3834735b7db9f8fcb8f148fe507ca71a07ad038d27d308fee70fff6",
+      "valid_svg_xml": true,
+      "viewBox": "0 0 835.2 777.6"
+    }
+  ]
+}

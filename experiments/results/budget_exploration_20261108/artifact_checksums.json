@@ -1,0 +1,32 @@
+{
+  "files": {
+    "All_Statistics.csv": "bfab37299b5a7c763609876c7287a04b6b9546ec0757e331d4d3b848a6996fc1",
+    "Attempts.csv": "d46b5cb8203c294dbb46805a6794f0ba3ec418f7d2e54a1ddff1eedbd2d57da0",
+    "Best_vs_Baselines.csv": "343914cc1be60bd475df640bf6cf055f04d9ce65937cc7d72426be0d1c0c2e24",
+    "Budget_Changes.csv": "b9b0650996c5c67a17925be1da4e162c2a47d84fa8bc00656b412d4781cf6af3",
+    "CALCULATION_VERIFICATION.json": "d0df70c6cff8cf2a9af461d9674874fc2926f141badf08305b86a77a1d2d5222",
+    "Exact_Seed_PPL.csv": "74252b881b1e80355ad0a594eb58f36ded9dae18f89a97a09bbe3d66ca22ef54",
+    "fig_budget_selected_gain.png": "f7ed20300178463a5c4b1a9c4a8305381c8a97feb7231b399fe54b247f319bdc",
+    "fig_budget_selected_gain.svg": "3077ff9220f8e16f17e611190698ded568fe9ac44099ae6fc74ef8ed4de8bf2c",
+    "fig_budget_vs_100M.png": "ee7b2c07f5b7cf3867df7838ed394c72e7f212e738d93a93b06283b2c2e54abf",
+    "fig_budget_vs_100M.svg": "7b67af2c6b61bbc3fd0e5aa3c87d5cfcfaed389a28deeb09ddd9036e8a6b7b23",
+    "FIGURE_VERIFICATION.json": "b97eb1d922370f0102ec4167f8358eddbd900ad71137949411a9efc766a8ba07",
+    "HIPE_Token_Budget_Exploration.xlsx": "157f92c195a6be64b939b86db8b3aab2f63c179529b4956a768df3428bdd80f0",
+    "HIPE_vs_RoPE.csv": "ea72d6ccae224ccdbed5d236156d75b02ff172317030404dbe7eb12701d409ce",
+    "INDEPENDENT_STATISTICAL_AUDIT.json": "bdbe8354dfbd7c5aead97f7a6795c32be5ccfb3b53b8cc889c6dc479518861c9",
+    "NODE_FAILURE_AUDIT.json": "b8654679e7e33655897ec176722cc5538d9ed61242c8c7f47adb3040ec476f58",
+    "PROVENANCE_VERIFICATION.json": "f4b30c4585e06e7a8196ebab493ecd34524f4bafa35da77af73e12031ab1132d",
+    "README.txt": "0247a196a9ad4af3ea0841b9149db5d8d438d2048153ecdfcffc8ef73bc343a3",
+    "REPORT.md": "53f16d5d16c93b91c7192ab577a7dc9dd7fedbc3aac1037e937d7958c1457afc",
+    "summary.json": "7b8dda18a41ffe9aeb2b263d1757bbfdf850da58aee342d5609a7802dba47b67",
+    "workbook_data.json": "5a461e1d000ff3620e6c0a777e8be10b9e8667e4b45fb5c6669b8729c5046eeb",
+    "WORKBOOK_VERIFICATION.json": "881864f2dc436d7ac237bdd4237abaf19daad9628aa05cc098f74d08cdce153a"
+  },
+  "source_inputs": {
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\table2_20261103\\raw_runs.json": "c934f553e518ed674d0b586b31aed60a10549919b6a1726cbe6b64be6d55640f",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\L2048_sigma_41695\\completed\\new_sigma_runs.json": "bfe8923aea08b5330dc01695b716c373bd2d679f46997b76354b9dad0f45f2ba",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\joint_sigma_layers_20261104\\raw_runs.json": "910580a5b575df94f187d953c4f444b94c90e581b27f9418cf68ff44415c5ff2",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\c4_extension_20261105\\raw_runs.json": "dda180e67c9800d4ff0b61e1ef4d0eaea575d28ae0a69ce9f011ac9e3c53aa38",
+    "E:\\research\\03\\HIPE\\artifacts\\analysis\\budget_steps_20261108\\raw_runs.json": "1e29c91729949fcd707bc081e981f39f319eeec330da8b64529da4946d722c60"
+  }
+}
