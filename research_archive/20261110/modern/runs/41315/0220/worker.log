@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 289, in <module>
+    run(spec, resume_path)
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 251, in run
+    tokens = train_steps(model, stream, optimizer, scheduler, config, device, start_step, tokens, on_step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 145, in train_steps
+    logits = model(input_ids=inputs).logits
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qijunrong/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qijunrong/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/olmo/model.py", line 2464, in forward
+    x, cache = block(
+               ^^^^^^
+  File "/home/qijunrong/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qijunrong/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/olmo/model.py", line 1831, in forward
+    att, cache = self.attention(
+                 ^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/olmo/model.py", line 1699, in attention
+    att = self._scaled_dot_product_attention(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/olmo/model.py", line 1558, in _scaled_dot_product_attention
+    return F.scaled_dot_product_attention(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1024.00 MiB. GPU 0 has a total capacity of 31.36 GiB of which 416.69 MiB is free. Including non-PyTorch memory, this process has 30.94 GiB memory in use. Of the allocated memory 30.09 GiB is allocated by PyTorch, and 244.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

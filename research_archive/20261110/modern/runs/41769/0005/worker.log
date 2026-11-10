@@ -1,0 +1,9 @@
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+{"step": 2, "train_loss": 10.36832070350647, "validation": {"loss_sum": 62157.40625, "loss": 10.116765340169271, "ppl": 24754.56858287143, "tokens": 6144}, "actual_prediction_tokens": 180224, "regular_validation": true, "final": true, "lr": 0.0}

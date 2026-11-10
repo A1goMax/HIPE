@@ -1,0 +1,125 @@
+{
+  "job": "41769",
+  "campaign": "20261103T142743Z-5c66b2fe",
+  "source_commit": "f304bce6f2aadb98ab2344ac548bd5d9e361a6f2",
+  "frozen_head": "f304bce6f2aadb98ab2344ac548bd5d9e361a6f2",
+  "source_fingerprint": "cfaec9a4cdb95710e35e95f2534c4f9f77cc148b1025620f798eaba00044be84",
+  "source_status": "",
+  "public_tasks": 10,
+  "original_manifest_sha256": "e7cb46cea2492b967b6e983ddc980cb2bd02caa8d4f81fa00e03d3d18c8ed5ec",
+  "original_submission_sha256": "e77a4ddb4cb611179a8574b3694388253747b2fcd8ec1c82d1e7c6c0dd13ca3c",
+  "tasks": [
+    "41769_2",
+    "41769_3",
+    "41769_4",
+    "41769_5",
+    "41769_6",
+    "41769_7",
+    "41769_8",
+    "41769_9",
+    "41769_10",
+    "41769_11"
+  ],
+  "scheduler_records": [
+    {
+      "task_index": 2,
+      "job_id": "41769_2",
+      "raw_job_id": "41821",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-04T01:25:23",
+      "end": "2026-11-04T01:25:33"
+    },
+    {
+      "task_index": 3,
+      "job_id": "41769_3",
+      "raw_job_id": "41822",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-04T01:25:33",
+      "end": "2026-11-04T01:25:43"
+    },
+    {
+      "task_index": 4,
+      "job_id": "41769_4",
+      "raw_job_id": "41823",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-04T01:25:33",
+      "end": "2026-11-04T01:25:43"
+    },
+    {
+      "task_index": 5,
+      "job_id": "41769_5",
+      "raw_job_id": "41824",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-04T01:25:43",
+      "end": "2026-11-04T01:25:53"
+    },
+    {
+      "task_index": 6,
+      "job_id": "41769_6",
+      "raw_job_id": "41825",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-04T01:25:43",
+      "end": "2026-11-04T01:25:53"
+    },
+    {
+      "task_index": 7,
+      "job_id": "41769_7",
+      "raw_job_id": "41826",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:12",
+      "start": "2026-11-04T01:25:53",
+      "end": "2026-11-04T01:26:05"
+    },
+    {
+      "task_index": 8,
+      "job_id": "41769_8",
+      "raw_job_id": "41827",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:12",
+      "start": "2026-11-04T01:25:53",
+      "end": "2026-11-04T01:26:05"
+    },
+    {
+      "task_index": 9,
+      "job_id": "41769_9",
+      "raw_job_id": "41828",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:32",
+      "start": "2026-11-04T01:26:06",
+      "end": "2026-11-04T01:26:38"
+    },
+    {
+      "task_index": 10,
+      "job_id": "41769_10",
+      "raw_job_id": "41829",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:31",
+      "start": "2026-11-04T01:26:06",
+      "end": "2026-11-04T01:26:37"
+    },
+    {
+      "task_index": 11,
+      "job_id": "41769_11",
+      "raw_job_id": "41769",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:20",
+      "start": "2026-11-04T01:26:37",
+      "end": "2026-11-04T01:26:57"
+    }
+  ]
+}

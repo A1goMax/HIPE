@@ -1,0 +1,59 @@
+{
+  "job": "42038",
+  "campaign": "20261104T070626Z-19a44f29",
+  "source_commit": "c44c207b83bf4140ec462bd727b1c5e6fc946613",
+  "frozen_head": "c44c207b83bf4140ec462bd727b1c5e6fc946613",
+  "source_fingerprint": "c961a26889e6a68d21a283551b5bebce9a8388e91babdeb4500406d60249c9a5",
+  "source_status": "",
+  "public_tasks": 4,
+  "original_manifest_sha256": "0279ee916545ae736fab63328a152974c9cd9eb8bd58af9a0a24fc7ecd81d014",
+  "original_submission_sha256": "2895bbfa2d23481b8f02cb902dd5828f47562490fb031822f45a8de072bee7ba",
+  "tasks": [
+    "42038_0",
+    "42038_1",
+    "42038_2",
+    "42038_3"
+  ],
+  "scheduler_records": [
+    {
+      "task_index": 0,
+      "job_id": "42038_0",
+      "raw_job_id": "42050",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:38",
+      "start": "2026-11-04T16:29:26",
+      "end": "2026-11-04T16:31:04"
+    },
+    {
+      "task_index": 1,
+      "job_id": "42038_1",
+      "raw_job_id": "42051",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:02",
+      "start": "2026-11-04T16:30:02",
+      "end": "2026-11-04T16:31:04"
+    },
+    {
+      "task_index": 2,
+      "job_id": "42038_2",
+      "raw_job_id": "42053",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:26",
+      "start": "2026-11-04T16:31:04",
+      "end": "2026-11-04T16:31:30"
+    },
+    {
+      "task_index": 3,
+      "job_id": "42038_3",
+      "raw_job_id": "42038",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:26",
+      "start": "2026-11-04T16:31:04",
+      "end": "2026-11-04T16:31:30"
+    }
+  ]
+}

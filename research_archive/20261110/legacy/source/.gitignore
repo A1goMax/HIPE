@@ -1,0 +1,3 @@
+# Include the archived OLMo Python data-loading package.
+!*/OLMo/olmo/data/
+!*/OLMo/olmo/data/**

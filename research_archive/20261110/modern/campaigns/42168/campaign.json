@@ -1,0 +1,103 @@
+{
+  "job": "42168",
+  "campaign": "20261105T021256Z-15a5c826",
+  "source_commit": "12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6",
+  "frozen_head": "12ebc719d980d8dd4fdf7a7bef6cf2ead40719b6",
+  "source_fingerprint": "1110c0eedeb8cec0b6d8d753b2cd01d6d7e6b54f47d1cf2a5bbcf0eb5d8c9b3f",
+  "source_status": "",
+  "public_tasks": 8,
+  "original_manifest_sha256": "b810368b359d791ae7f7337a1d536da7edf248dfa9d01cf3ecf7a043cfdb0588",
+  "original_submission_sha256": "256a24d4daa6b64ed3b52533f30bc23a87e7e03cb5ef6f35df254a9400825059",
+  "tasks": [
+    "42168_0",
+    "42168_1",
+    "42168_2",
+    "42168_3",
+    "42168_4",
+    "42168_5",
+    "42168_6",
+    "42168_7"
+  ],
+  "scheduler_records": [
+    {
+      "task_index": 0,
+      "job_id": "42168_0",
+      "raw_job_id": "42182",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:07",
+      "start": "2026-11-05T16:18:11",
+      "end": "2026-11-05T16:19:18"
+    },
+    {
+      "task_index": 1,
+      "job_id": "42168_1",
+      "raw_job_id": "42232",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:11",
+      "start": "2026-11-05T16:19:19",
+      "end": "2026-11-05T16:19:30"
+    },
+    {
+      "task_index": 2,
+      "job_id": "42168_2",
+      "raw_job_id": "42385",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:35",
+      "start": "2026-11-05T17:07:16",
+      "end": "2026-11-05T17:07:51"
+    },
+    {
+      "task_index": 3,
+      "job_id": "42168_3",
+      "raw_job_id": "42389",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-05T17:12:21",
+      "end": "2026-11-05T17:12:31"
+    },
+    {
+      "task_index": 4,
+      "job_id": "42168_4",
+      "raw_job_id": "42390",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:13",
+      "start": "2026-11-05T17:12:29",
+      "end": "2026-11-05T17:12:42"
+    },
+    {
+      "task_index": 5,
+      "job_id": "42168_5",
+      "raw_job_id": "42391",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-05T17:12:32",
+      "end": "2026-11-05T17:12:42"
+    },
+    {
+      "task_index": 6,
+      "job_id": "42168_6",
+      "raw_job_id": "42392",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:22",
+      "start": "2026-11-05T17:12:42",
+      "end": "2026-11-05T17:13:04"
+    },
+    {
+      "task_index": 7,
+      "job_id": "42168_7",
+      "raw_job_id": "42168",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:23",
+      "start": "2026-11-05T17:12:42",
+      "end": "2026-11-05T17:13:05"
+    }
+  ]
+}

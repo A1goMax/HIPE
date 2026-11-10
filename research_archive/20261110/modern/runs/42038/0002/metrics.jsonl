@@ -1,0 +1,1 @@
+{"step": 2, "train_loss": 10.600486040115356, "validation": {"loss_sum": 665459.8125, "loss": 10.1541109085083, "ppl": 25696.521422401805, "tokens": 65536}, "actual_prediction_tokens": 256000, "regular_validation": true, "final": true, "lr": 0.0}

@@ -1,0 +1,6 @@
+{
+  "step": 3051,
+  "actual_prediction_tokens": 399900672,
+  "model_sha256": "0e1b80470fa641c8f2ac22f900492393ac8d92bf575f0a7e28afb3f2d41efd0a",
+  "checkpoint_sha256": "d422178c5c9562996be5197c01f15ffe71b108ac36301af9eca40b896cf5d447"
+}

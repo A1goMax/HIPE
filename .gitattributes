@@ -12,3 +12,6 @@ hipe/olmo/beam_search.py -text
 hipe/olmo/exceptions.py -text
 hipe/olmo/initialization.py -text
 hipe/olmo/torch_util.py -text
+
+# Preserve archived evidence and upstream blob bytes across platforms.
+research_archive/** -text !eol

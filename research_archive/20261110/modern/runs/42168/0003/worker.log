@@ -1,0 +1,11 @@
+Map (num_proc=4):   0%|          | 0/512 [00:00<?, ? examples/s]Map (num_proc=4): 100%|██████████| 512/512 [00:00<00:00, 2911.34 examples/s]
+Map (num_proc=4):   0%|          | 0/128 [00:00<?, ? examples/s]Map (num_proc=4): 100%|██████████| 128/128 [00:00<00:00, 1041.76 examples/s]
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+{"step": 2, "train_loss": 10.566715240478516, "validation": {"loss_sum": 74812.6875, "loss": 10.437037876674108, "ppl": 34099.49578075309, "tokens": 7168}, "actual_prediction_tokens": 98304, "regular_validation": true, "final": true, "lr": 0.0}

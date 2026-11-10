@@ -1,0 +1,6 @@
+{
+  "experiment_id": "table2_budget_steps_wikitext103_60M_L1024_hipe_H6_s300_bipartite_t1_seed1024",
+  "returncode": 0,
+  "gpu_slot": 0,
+  "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_budget_steps_wikitext103_60M_L1024_hipe_H6_s300_bipartite_t1_seed1024_20261105T021333Z-f245db0a"
+}

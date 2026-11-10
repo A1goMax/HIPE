@@ -1,0 +1,8 @@
+[
+  {
+    "experiment_id": "table2_c4_60M_L2048_alibi_seed1024",
+    "returncode": 1,
+    "gpu_slot": 0,
+    "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_60M_L2048_alibi_seed1024_20261102T163208Z-502ddcd1"
+  }
+]

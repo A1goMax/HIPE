@@ -1,0 +1,8 @@
+[
+  {
+    "experiment_id": "table2_budget_steps_check_wikitext103_60M_L2048_hipe_H4_s1000_bipartite_t3_seed6198_gpucheck2",
+    "returncode": 0,
+    "gpu_slot": 0,
+    "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_budget_steps_check_wikitext103_60M_L2048_hipe_H4_s1000_bipartite_t3_seed6198_gpucheck2_20261105T021256Z-15a5c826"
+  }
+]

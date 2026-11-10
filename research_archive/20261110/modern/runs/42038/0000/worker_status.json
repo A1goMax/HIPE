@@ -1,0 +1,6 @@
+{
+  "experiment_id": "table2_c4_extension_check_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed6198_gpucheck2",
+  "returncode": 0,
+  "gpu_slot": 0,
+  "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_check_c4_60M_L2048_hipe_H1_s1_bipartite_t6_seed6198_gpucheck2_20261104T070626Z-19a44f29"
+}

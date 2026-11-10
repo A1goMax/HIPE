@@ -1,0 +1,8 @@
+[
+  {
+    "experiment_id": "table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed1024",
+    "returncode": 0,
+    "gpu_slot": 0,
+    "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t5_seed1024_20261103T143137Z-a0447d20"
+  }
+]

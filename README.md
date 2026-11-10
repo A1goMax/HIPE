@@ -2,7 +2,7 @@
 
 Shared positional-embedding code for the latest manuscript's main experiments and ablations. **Table 2 is the first target.** The active source is the 21-page PDF registered as MS04; the requested method scope is Tables 1-5.
 
-Code is authored in `E:\research\03\HIPE` and synchronized to `/home/qijunrong/03-proj/HIPE`, branch `journal/research-foundation`. GitHub publication remains a later decision.
+Code is authored in `E:\research\03\HIPE` and synchronized to `/home/qijunrong/03-proj/HIPE`, branch `journal/research-foundation`. The [portable code and results archive](research_archive/20261110/README.md) is on the research branch.
 
 ## One experiment interface
 

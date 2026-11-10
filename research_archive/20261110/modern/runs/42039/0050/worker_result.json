@@ -1,0 +1,8 @@
+[
+  {
+    "experiment_id": "table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed7",
+    "returncode": 0,
+    "gpu_slot": 0,
+    "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_c4_extension_c4_60M_L2048_hipe_H3_s50_bipartite_t4_seed7_20261104T070702Z-e6cc1493"
+  }
+]

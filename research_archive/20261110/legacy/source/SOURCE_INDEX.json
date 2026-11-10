@@ -1,0 +1,473 @@
+{
+  "schema_version": 1,
+  "upstream": "https://github.com/AIogry/relative_PE",
+  "public_refs_verified_via": "git ls-remote --heads and fetch from the upstream GitHub URL",
+  "public_refs_verified_on": "2026-11-10",
+  "observed_public_heads": {
+    "main": "6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+    "rebuttal/XPos": "060b6a64707614d6ec3406719e8c3424ff93eeb2",
+    "rebuttal/finetune": "59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e",
+    "rebuttal/learnable_sigma": "ee75363d913836d406a0f2347c827bd836daaf32",
+    "rebuttal/local-global_attention": "c0fc0c42394cfd54c6250d9beb70a2a64e6b197d",
+    "rebuttal/yarn": "16ad59c2dc221ae7f69ed62f7a7aafff3356bc6c"
+  },
+  "snapshots": [
+    {
+      "directory": "main-6432fc4",
+      "revision": "6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+      "tree": "f1d0dbb2ba1284e4c4b05f7bbfeb5e34cced1642",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/6432fc418dcabc39c180f3ecd38d9f5a64db4c51",
+      "selected_public_head": "main",
+      "reachable_from_public_heads": [
+        "main"
+      ],
+      "role": "Public release with unified fixed and learnable HIPE, C4 and WikiText training, SST-2, and local/global attention entry points.",
+      "association": "source_revision_only",
+      "files": 91,
+      "source_bytes": 2130500,
+      "file_manifest": "main-6432fc4/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 91
+    },
+    {
+      "directory": "XPos-060b6a6",
+      "revision": "060b6a64707614d6ec3406719e8c3424ff93eeb2",
+      "tree": "f907c626f7dd02a64733c0ef5e3cce8fbba26a42",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/060b6a64707614d6ec3406719e8c3424ff93eeb2",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/060b6a64707614d6ec3406719e8c3424ff93eeb2",
+      "selected_public_head": "rebuttal/XPos",
+      "reachable_from_public_heads": [
+        "rebuttal/XPos"
+      ],
+      "role": "Fixed HIPE model and original WikiText launchers. Committed base of the legacy experiment checkout.",
+      "association": "source_revision_only",
+      "files": 123,
+      "source_bytes": 2715458,
+      "file_manifest": "XPos-060b6a6/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 123
+    },
+    {
+      "directory": "finetune-59dbb11",
+      "revision": "59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e",
+      "tree": "2042abbc6e8389d218f013263b51d360ea13fea2",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e",
+      "selected_public_head": "rebuttal/finetune",
+      "reachable_from_public_heads": [
+        "rebuttal/finetune"
+      ],
+      "role": "SST-2 low-resource LoRA experiment source and the finetune audit checkout.",
+      "association": "source_revision_only",
+      "files": 137,
+      "source_bytes": 2850534,
+      "file_manifest": "finetune-59dbb11/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 137
+    },
+    {
+      "directory": "learnable-sigma-ee75363",
+      "revision": "ee75363d913836d406a0f2347c827bd836daaf32",
+      "tree": "3c4f2cd72293cbf1b0158c61313a9bf6b1b3e7d9",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/ee75363d913836d406a0f2347c827bd836daaf32",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/ee75363d913836d406a0f2347c827bd836daaf32",
+      "selected_public_head": "rebuttal/learnable_sigma",
+      "reachable_from_public_heads": [
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma"
+      ],
+      "role": "Per-head learnable-sigma implementation and launchers.",
+      "association": "source_revision_only",
+      "files": 127,
+      "source_bytes": 2754635,
+      "file_manifest": "learnable-sigma-ee75363/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 127
+    },
+    {
+      "directory": "local-global-attention-c0fc0c4",
+      "revision": "c0fc0c42394cfd54c6250d9beb70a2a64e6b197d",
+      "tree": "36a9e79617bbe410ad3209e3fc176273b924b8bf",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/c0fc0c42394cfd54c6250d9beb70a2a64e6b197d",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/c0fc0c42394cfd54c6250d9beb70a2a64e6b197d",
+      "selected_public_head": "rebuttal/local-global_attention",
+      "reachable_from_public_heads": [
+        "rebuttal/local-global_attention"
+      ],
+      "role": "Local/global attention implementation and experiment scripts.",
+      "association": "source_revision_only",
+      "files": 134,
+      "source_bytes": 2792701,
+      "file_manifest": "local-global-attention-c0fc0c4/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 134
+    },
+    {
+      "directory": "yarn-16ad59c",
+      "revision": "16ad59c2dc221ae7f69ed62f7a7aafff3356bc6c",
+      "tree": "b9c2dff55b13337e7841eb25e2c6898411c5b9b3",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/16ad59c2dc221ae7f69ed62f7a7aafff3356bc6c",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/16ad59c2dc221ae7f69ed62f7a7aafff3356bc6c",
+      "selected_public_head": "rebuttal/yarn",
+      "reachable_from_public_heads": [
+        "rebuttal/yarn"
+      ],
+      "role": "YaRN compatibility and length extrapolation evaluation source.",
+      "association": "source_revision_only",
+      "files": 158,
+      "source_bytes": 2911428,
+      "file_manifest": "yarn-16ad59c/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 158
+    },
+    {
+      "directory": "finetune-experiment-base-44192e7",
+      "revision": "44192e7483f3400d139332b23c6b9e4c82cfe4e0",
+      "tree": "4062a8226f70f87537aa8e263b8162ccbc848b5c",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/44192e7483f3400d139332b23c6b9e4c82cfe4e0",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/44192e7483f3400d139332b23c6b9e4c82cfe4e0",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "rebuttal/finetune"
+      ],
+      "role": "Committed SST-2 historical experiment checkout with multiple full-sample seeds.",
+      "association": "source_revision_only",
+      "files": 137,
+      "source_bytes": 2849654,
+      "file_manifest": "finetune-experiment-base-44192e7/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 137
+    },
+    {
+      "directory": "learnable-experiment-base-c2e3af3",
+      "revision": "c2e3af36aa0b9b37bcb8eae4ca02319929e73f79",
+      "tree": "e9175d0ca9e2dfbe99ed8bf4788f0aa3ab4d2904",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/c2e3af36aa0b9b37bcb8eae4ca02319929e73f79",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/c2e3af36aa0b9b37bcb8eae4ca02319929e73f79",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "Committed base of the historical learnable-sigma checkout with separate working-tree changes.",
+      "association": "source_revision_only",
+      "files": 125,
+      "source_bytes": 2724604,
+      "file_manifest": "learnable-experiment-base-c2e3af3/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 125
+    },
+    {
+      "directory": "january-protocol-8883bd7",
+      "revision": "8883bd79ac9ce1e4c85524f7e6b2e1f37adb99a2",
+      "tree": "ea8b3901f23ae7315262fc923dfd473f83821245",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/8883bd79ac9ce1e4c85524f7e6b2e1f37adb99a2",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/8883bd79ac9ce1e4c85524f7e6b2e1f37adb99a2",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "January HIPE training, batch-size and preprocessing evidence for the synthetic task, WikiText and C4.",
+      "association": "source_revision_only",
+      "files": 117,
+      "source_bytes": 2530686,
+      "file_manifest": "january-protocol-8883bd7/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 117
+    },
+    {
+      "directory": "anonymous-release-base-36582e9",
+      "revision": "36582e932ef44a4f9cadaa2656903e8349a26440",
+      "tree": "884bcfe216a446836f2cdea692f0c080e1b569e2",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/36582e932ef44a4f9cadaa2656903e8349a26440",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/36582e932ef44a4f9cadaa2656903e8349a26440",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main"
+      ],
+      "role": "Earlier public release revision observed in the Windows legacy source checkout.",
+      "association": "source_revision_only",
+      "files": 73,
+      "source_bytes": 2060774,
+      "file_manifest": "anonymous-release-base-36582e9/FILES.tsv",
+      "layout": "independent_subset",
+      "physical_file_copies": 73
+    },
+    {
+      "directory": "recorded-wandb-integration-aed116e",
+      "revision": "aed116e9dbf878e3773289b0b49df82c045ff916",
+      "tree": "1bde6381144d21b5d3bf04667daa0d761da773a7",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/aed116e9dbf878e3773289b0b49df82c045ff916",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/aed116e9dbf878e3773289b0b49df82c045ff916",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "Recorded commit hint for legacy LM and attention rows. Early training and logging integration.",
+      "association": "source_revision_only",
+      "files": 122,
+      "source_bytes": 2695133,
+      "file_manifest": "recorded-wandb-integration-aed116e/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 6
+    },
+    {
+      "directory": "recorded-yarn-debug-99b1363",
+      "revision": "99b1363a981ce21b37bb8782ccf69d7335b49a20",
+      "tree": "6b07e808451575c0fe1e89af7c7b68e9b71e7417",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/99b1363a981ce21b37bb8782ccf69d7335b49a20",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/99b1363a981ce21b37bb8782ccf69d7335b49a20",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/local-global_attention"
+      ],
+      "role": "Recorded commit hint. YaRN and HIPE development revision.",
+      "association": "source_revision_only",
+      "files": 133,
+      "source_bytes": 2787020,
+      "file_manifest": "recorded-yarn-debug-99b1363/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 2
+    },
+    {
+      "directory": "recorded-yarn-introduction-38286a3",
+      "revision": "38286a38704162ed5af165c779b227bd6ada960d",
+      "tree": "7e466c31d081012749273004205b98cf1e6d3260",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/38286a38704162ed5af165c779b227bd6ada960d",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/38286a38704162ed5af165c779b227bd6ada960d",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/local-global_attention"
+      ],
+      "role": "Recorded commit hint. Initial YaRN and HIPE evaluation development revision.",
+      "association": "source_revision_only",
+      "files": 131,
+      "source_bytes": 2761322,
+      "file_manifest": "recorded-yarn-introduction-38286a3/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 4
+    },
+    {
+      "directory": "recorded-wiki-validation-4cbf773",
+      "revision": "4cbf773bf1f658eabc4831a0b6bd49c56f0c467f",
+      "tree": "c73549c64afe1b6df8c18c6fa6f314c98e0d3eae",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/4cbf773bf1f658eabc4831a0b6bd49c56f0c467f",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/4cbf773bf1f658eabc4831a0b6bd49c56f0c467f",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "Recorded commit hint. WikiText training and validation sampling revision.",
+      "association": "source_revision_only",
+      "files": 122,
+      "source_bytes": 2689906,
+      "file_manifest": "recorded-wiki-validation-4cbf773/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 3
+    },
+    {
+      "directory": "recorded-300m-initial-7765ced",
+      "revision": "7765ced5cda31bb2a60fb97e39ccd1dcc35cca10",
+      "tree": "f07be1d9afc7f37f380ce5ee16dc1c54e63e0cac",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/7765ced5cda31bb2a60fb97e39ccd1dcc35cca10",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/7765ced5cda31bb2a60fb97e39ccd1dcc35cca10",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "Recorded commit hint. Early 300M-model experiment revision.",
+      "association": "source_revision_only",
+      "files": 123,
+      "source_bytes": 2715462,
+      "file_manifest": "recorded-300m-initial-7765ced/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 1
+    },
+    {
+      "directory": "recorded-300m-c4-budget-6891c55",
+      "revision": "6891c55528fecd6985781b751742fbf3c172d77b",
+      "tree": "8a7ab228f4d9d13a972016b2713f2c0e16ed9838",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/6891c55528fecd6985781b751742fbf3c172d77b",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/6891c55528fecd6985781b751742fbf3c172d77b",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "Recorded commit hint. Reduced C4 token budget for 300M experiments.",
+      "association": "source_revision_only",
+      "files": 123,
+      "source_bytes": 2715768,
+      "file_manifest": "recorded-300m-c4-budget-6891c55/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 0
+    },
+    {
+      "directory": "inferred-march-wikitext-legacy-a-8870dca",
+      "revision": "8870dca7422a5084079c2d4c7e17686e65d9e561",
+      "tree": "b6549f75feba8eb09ae6a3d97ffea3509df04af8",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/8870dca7422a5084079c2d4c7e17686e65d9e561",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/8870dca7422a5084079c2d4c7e17686e65d9e561",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "March WikiText 20M and 60M multi-seed launchers. Association with legacy runs is inferred from the upstream commit message.",
+      "association": "inferred_from_commit_message",
+      "files": 122,
+      "source_bytes": 2687727,
+      "file_manifest": "inferred-march-wikitext-legacy-a-8870dca/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 2,
+      "recorded_log_label_hints": [
+        "exp2_2457",
+        "exp2_baselines_2458"
+      ]
+    },
+    {
+      "directory": "inferred-march-wikitext-legacy-b-9f1fe4e",
+      "revision": "9f1fe4eee52db73a95450782909bc1201f4f4bca",
+      "tree": "f9c08a863cf877c103e01821fd51bc70446b3d36",
+      "source_commit_url": "https://github.com/AIogry/relative_PE/commit/9f1fe4eee52db73a95450782909bc1201f4f4bca",
+      "source_tree_url": "https://github.com/AIogry/relative_PE/tree/9f1fe4eee52db73a95450782909bc1201f4f4bca",
+      "selected_public_head": null,
+      "reachable_from_public_heads": [
+        "main",
+        "rebuttal/XPos",
+        "rebuttal/finetune",
+        "rebuttal/learnable_sigma",
+        "rebuttal/local-global_attention",
+        "rebuttal/yarn"
+      ],
+      "role": "March WikiText 20M and 60M multi-seed launchers. Association with legacy runs is inferred from the upstream commit message.",
+      "association": "inferred_from_commit_message",
+      "files": 117,
+      "source_bytes": 2530215,
+      "file_manifest": "inferred-march-wikitext-legacy-b-9f1fe4e/FILES.tsv",
+      "layout": "shared_files",
+      "physical_file_copies": 1,
+      "recorded_log_label_hints": [
+        "exp2_2457",
+        "exp2_baselines_2458"
+      ]
+    }
+  ],
+  "historical_evidence": {
+    "file": "../results/historical-evidence.json",
+    "rows_without_recorded_commit_by_related_table": {
+      "1": 109,
+      "2": 0,
+      "3": 0,
+      "4": 171,
+      "5": 0
+    },
+    "recorded_commit_hints": {
+      "38286a38704162ed5af165c779b227bd6ada960d": {
+        "public_source_snapshot": "recorded-yarn-introduction-38286a3",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "5": 8
+        },
+        "row_count": 8,
+        "executed_source_status": "unverified"
+      },
+      "4cbf773bf1f658eabc4831a0b6bd49c56f0c467f": {
+        "public_source_snapshot": "recorded-wiki-validation-4cbf773",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "2": 5
+        },
+        "row_count": 5,
+        "executed_source_status": "unverified"
+      },
+      "6891c55528fecd6985781b751742fbf3c172d77b": {
+        "public_source_snapshot": "recorded-300m-c4-budget-6891c55",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "3": 5
+        },
+        "row_count": 5,
+        "executed_source_status": "unverified"
+      },
+      "7765ced5cda31bb2a60fb97e39ccd1dcc35cca10": {
+        "public_source_snapshot": "recorded-300m-initial-7765ced",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "3": 5
+        },
+        "row_count": 5,
+        "executed_source_status": "unverified"
+      },
+      "99b1363a981ce21b37bb8782ccf69d7335b49a20": {
+        "public_source_snapshot": "recorded-yarn-debug-99b1363",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "5": 24
+        },
+        "row_count": 24,
+        "executed_source_status": "unverified"
+      },
+      "aed116e9dbf878e3773289b0b49df82c045ff916": {
+        "public_source_snapshot": "recorded-wandb-integration-aed116e",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "2": 255
+        },
+        "row_count": 255,
+        "executed_source_status": "unverified"
+      },
+      "c0fc0c42394cfd54c6250d9beb70a2a64e6b197d": {
+        "public_source_snapshot": "local-global-attention-c0fc0c4",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "5": 3
+        },
+        "row_count": 3,
+        "executed_source_status": "unverified"
+      },
+      "c2e3af36aa0b9b37bcb8eae4ca02319929e73f79": {
+        "public_source_snapshot": "learnable-experiment-base-c2e3af3",
+        "public_source_status": "archived_public_commit",
+        "related_table_rows": {
+          "3": 8
+        },
+        "row_count": 8,
+        "executed_source_status": "unverified"
+      }
+    }
+  }
+}

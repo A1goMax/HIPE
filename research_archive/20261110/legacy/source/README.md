@@ -1,0 +1,30 @@
+# Public legacy HIPE source snapshots
+
+These source subsets preserve the exact file bytes of selected commits from the public relative_PE repository. The six branch heads were checked against GitHub on 10 November 2026. Twelve earlier revisions are reachable from those heads. They cover identified historical checkouts, the January protocol, the distinct commit hints found in archived result records, and two March WikiText revisions linked by their commit messages. [Upstream repository](https://github.com/AIogry/relative_PE)
+
+| Snapshot directory | Historical context | Upstream commit |
+| --- | --- | --- |
+| main-6432fc4 | Public release with unified fixed and learnable HIPE, C4 and WikiText training, SST-2, and local/global attention entry points. | [6432fc4](https://github.com/AIogry/relative_PE/commit/6432fc418dcabc39c180f3ecd38d9f5a64db4c51) |
+| XPos-060b6a6 | Fixed HIPE model and original WikiText launchers. Committed base of the legacy experiment checkout. | [060b6a6](https://github.com/AIogry/relative_PE/commit/060b6a64707614d6ec3406719e8c3424ff93eeb2) |
+| finetune-59dbb11 | SST-2 low-resource LoRA experiment source and the finetune audit checkout. | [59dbb11](https://github.com/AIogry/relative_PE/commit/59dbb115cedd1b55ec0fb4c53c3a7a44b0f0fb3e) |
+| learnable-sigma-ee75363 | Per-head learnable-sigma implementation and launchers. | [ee75363](https://github.com/AIogry/relative_PE/commit/ee75363d913836d406a0f2347c827bd836daaf32) |
+| local-global-attention-c0fc0c4 | Local/global attention implementation and experiment scripts. | [c0fc0c4](https://github.com/AIogry/relative_PE/commit/c0fc0c42394cfd54c6250d9beb70a2a64e6b197d) |
+| yarn-16ad59c | YaRN compatibility and length extrapolation evaluation source. | [16ad59c](https://github.com/AIogry/relative_PE/commit/16ad59c2dc221ae7f69ed62f7a7aafff3356bc6c) |
+| finetune-experiment-base-44192e7 | Committed SST-2 historical experiment checkout with multiple full-sample seeds. | [44192e7](https://github.com/AIogry/relative_PE/commit/44192e7483f3400d139332b23c6b9e4c82cfe4e0) |
+| learnable-experiment-base-c2e3af3 | Committed base of the historical learnable-sigma checkout with separate working-tree changes. | [c2e3af3](https://github.com/AIogry/relative_PE/commit/c2e3af36aa0b9b37bcb8eae4ca02319929e73f79) |
+| january-protocol-8883bd7 | January HIPE training, batch-size and preprocessing evidence for the synthetic task, WikiText and C4. | [8883bd7](https://github.com/AIogry/relative_PE/commit/8883bd79ac9ce1e4c85524f7e6b2e1f37adb99a2) |
+| anonymous-release-base-36582e9 | Earlier public release revision observed in the Windows legacy source checkout. | [36582e9](https://github.com/AIogry/relative_PE/commit/36582e932ef44a4f9cadaa2656903e8349a26440) |
+| recorded-wandb-integration-aed116e | Recorded commit hint for legacy LM and attention rows. Early training and logging integration. | [aed116e](https://github.com/AIogry/relative_PE/commit/aed116e9dbf878e3773289b0b49df82c045ff916) |
+| recorded-yarn-debug-99b1363 | Recorded commit hint. YaRN and HIPE development revision. | [99b1363](https://github.com/AIogry/relative_PE/commit/99b1363a981ce21b37bb8782ccf69d7335b49a20) |
+| recorded-yarn-introduction-38286a3 | Recorded commit hint. Initial YaRN and HIPE evaluation development revision. | [38286a3](https://github.com/AIogry/relative_PE/commit/38286a38704162ed5af165c779b227bd6ada960d) |
+| recorded-wiki-validation-4cbf773 | Recorded commit hint. WikiText training and validation sampling revision. | [4cbf773](https://github.com/AIogry/relative_PE/commit/4cbf773bf1f658eabc4831a0b6bd49c56f0c467f) |
+| recorded-300m-initial-7765ced | Recorded commit hint. Early 300M-model experiment revision. | [7765ced](https://github.com/AIogry/relative_PE/commit/7765ced5cda31bb2a60fb97e39ccd1dcc35cca10) |
+| recorded-300m-c4-budget-6891c55 | Recorded commit hint. Reduced C4 token budget for 300M experiments. | [6891c55](https://github.com/AIogry/relative_PE/commit/6891c55528fecd6985781b751742fbf3c172d77b) |
+| inferred-march-wikitext-legacy-a-8870dca | March WikiText 20M and 60M multi-seed launchers. Association with legacy runs is inferred from the upstream commit message. | [8870dca](https://github.com/AIogry/relative_PE/commit/8870dca7422a5084079c2d4c7e17686e65d9e561) |
+| inferred-march-wikitext-legacy-b-9f1fe4e | March WikiText 20M and 60M multi-seed launchers. Association with legacy runs is inferred from the upstream commit message. | [9f1fe4e](https://github.com/AIogry/relative_PE/commit/9f1fe4eee52db73a95450782909bc1201f4f4bca) |
+
+The snapshots contain the committed HIPE scripts and experiment YAML, the OLMo/Hugging Face model packages, OLMo tiny configurations, and accompanying dependency declarations and license. The archive excludes datasets, tokenizer assets, test fixtures, checkpoints, results, logs, notebooks, manuscripts, optional upstream tools, and the legacy log uploader. XPos implementation and launcher flags are retained in the source where they occur alongside HIPE. These snapshots contain no standalone XPos metrics. The upstream commit pages link to the full trees.
+
+SOURCE_INDEX.json records the upstream commit and tree hashes, the GitHub links, and the public refs containing each revision. Each FILES.tsv lists the original repository-relative path, archive-relative path, Git mode and blob SHA-1, byte count, and SHA-256. For revisions that share files, follow each archived_path from this source directory. A manifest can point to exact matching bytes already stored with another revision. Upstream paths that differ only by case use distinct archive paths under _case-sensitive-paths when needed. Git modes describe the upstream files even when the local filesystem does not expose executable bits.
+
+The historical-evidence crosswalk counts recorded hints by table and links each available public commit to its source manifest. Run-level source, configuration, and data associations remain unverified. Historical working trees could contain additional edits, and some launchers retain historical path or environment assumptions.

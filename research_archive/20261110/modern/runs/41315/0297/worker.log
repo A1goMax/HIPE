@@ -1,0 +1,16 @@
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+{"step": 100, "train_loss": 6.84034138917923, "validation": {"loss_sum": 32802428.51171875, "loss": 6.732581251255851, "ppl": 839.3109446835815, "tokens": 4872192}, "actual_prediction_tokens": 13107200, "regular_validation": true, "final": false, "lr": 0.0005748625825850556}
+{"step": 200, "train_loss": 6.488549113273621, "validation": {"loss_sum": 31153333.484375, "loss": 6.394110388994317, "ppl": 598.3108225062632, "tokens": 4872192}, "actual_prediction_tokens": 26214400, "regular_validation": true, "final": false, "lr": 0.000503662928702177}
+{"step": 300, "train_loss": 6.2754159569740295, "validation": {"loss_sum": 30238308.7890625, "loss": 6.20630483960043, "ppl": 495.86555900968347, "tokens": 4872192}, "actual_prediction_tokens": 39321600, "regular_validation": true, "final": false, "lr": 0.0003983328744810534}
+{"step": 400, "train_loss": 6.0411416888237, "validation": {"loss_sum": 29483024.17578125, "loss": 6.051285371303358, "ppl": 424.6585232685276, "tokens": 4872192}, "actual_prediction_tokens": 52428800, "regular_validation": true, "final": false, "lr": 0.00027652392351698606}
+{"step": 500, "train_loss": 5.994005560874939, "validation": {"loss_sum": 28940722.71484375, "loss": 5.939979934050988, "ppl": 379.9273058597062, "tokens": 4872192}, "actual_prediction_tokens": 65536000, "regular_validation": true, "final": false, "lr": 0.0001586491587783765}
+{"step": 600, "train_loss": 5.962206661701202, "validation": {"loss_sum": 28624259.6484375, "loss": 5.8750270203714265, "ppl": 356.0342807193155, "tokens": 4872192}, "actual_prediction_tokens": 78643200, "regular_validation": true, "final": false, "lr": 6.446236135804363e-05}
+{"step": 700, "train_loss": 5.892742991447449, "validation": {"loss_sum": 28487388.09765625, "loss": 5.846934623606018, "ppl": 346.17160613952103, "tokens": 4872192}, "actual_prediction_tokens": 91750400, "regular_validation": true, "final": false, "lr": 9.747616867532176e-06}
+{"step": 762, "train_loss": 5.894671320915222, "validation": {"loss_sum": 28473748.84375, "loss": 5.844135215473856, "ppl": 345.20388568440325, "tokens": 4872192}, "actual_prediction_tokens": 99876864, "regular_validation": false, "final": true, "lr": 0.0}

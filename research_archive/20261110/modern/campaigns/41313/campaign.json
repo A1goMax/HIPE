@@ -1,0 +1,37 @@
+{
+  "job": "41313",
+  "campaign": "20261102T163049Z-f196bb6c",
+  "source_commit": "224bc280b72a595d4e1aa5273ac35f47a0ba24d0",
+  "frozen_head": "224bc280b72a595d4e1aa5273ac35f47a0ba24d0",
+  "source_fingerprint": "f9da45e9656c8b5361ca3ed5b44f8bbf1220d0b52c4c8005f1a315355b8ee8d8",
+  "source_status": "",
+  "public_tasks": 2,
+  "original_manifest_sha256": "0912d5af498b7be17840d9b6fcafe23a5f400c201987545ebc47640978b3f75b",
+  "original_submission_sha256": "361c72a5613703582387362bab0ac4f992e8200bb1752a250f70fbc163231c63",
+  "tasks": [
+    "41313_0",
+    "41313_1"
+  ],
+  "scheduler_records": [
+    {
+      "task_index": 0,
+      "job_id": "41313_0",
+      "raw_job_id": "41314",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:10",
+      "start": "2026-11-03T00:30:49",
+      "end": "2026-11-03T00:30:59"
+    },
+    {
+      "task_index": 1,
+      "job_id": "41313_1",
+      "raw_job_id": "41313",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:07",
+      "start": "2026-11-03T00:30:59",
+      "end": "2026-11-03T00:31:06"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "experiment_id": "table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed6198_gpucheck2",
+    "returncode": 0,
+    "gpu_slot": 0,
+    "output_dir": "/data/qijunrong/03-proj/HIPE-journal/runs/table2_sigma_layers_xpos_wikitext103_60M_L2048_hipe_s800_bipartite_t1_seed6198_gpucheck2_20261103T142743Z-5c66b2fe"
+  }
+]

@@ -1,0 +1,11 @@
+Map (num_proc=8):   0%|          | 0/512 [00:00<?, ? examples/s]Map (num_proc=8):  12%|█▎        | 64/512 [00:00<00:04, 100.66 examples/s]Map (num_proc=8):  25%|██▌       | 128/512 [00:01<00:03, 121.83 examples/s]Map (num_proc=8):  50%|█████     | 256/512 [00:01<00:00, 268.57 examples/s]Map (num_proc=8):  88%|████████▊ | 448/512 [00:01<00:00, 526.95 examples/s]Map (num_proc=8): 100%|██████████| 512/512 [00:01<00:00, 361.97 examples/s]
+Map (num_proc=4):   0%|          | 0/128 [00:00<?, ? examples/s]Map (num_proc=4):  25%|██▌       | 32/128 [00:00<00:01, 75.74 examples/s]Map (num_proc=4): 100%|██████████| 128/128 [00:00<00:00, 278.15 examples/s]Map (num_proc=4): 100%|██████████| 128/128 [00:00<00:00, 202.73 examples/s]
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+>>> SUCCESS: Flash Attention library loaded successfully!
+{"step": 2, "train_loss": 10.56035566329956, "validation": {"loss_sum": 696409.40625, "loss": 10.150556877477845, "ppl": 25605.35728393917, "tokens": 68608}, "actual_prediction_tokens": 131072, "regular_validation": true, "final": true, "lr": 0.0}

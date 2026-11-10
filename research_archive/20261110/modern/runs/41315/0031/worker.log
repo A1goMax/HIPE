@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 289, in <module>
+    run(spec, resume_path)
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 251, in run
+    tokens = train_steps(model, stream, optimizer, scheduler, config, device, start_step, tokens, on_step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/qijunrong/03-proj/HIPE-journal/campaigns/20261102T163208Z-502ddcd1/source/hipe/train.py", line 146, in train_steps
+    loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), labels.reshape(-1))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qijunrong/anaconda3/lib/python3.11/site-packages/torch/nn/functional.py", line 3462, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 6.14 GiB. GPU 0 has a total capacity of 31.36 GiB of which 2.30 GiB is free. Including non-PyTorch memory, this process has 29.05 GiB memory in use. Of the allocated memory 28.11 GiB is allocated by PyTorch, and 336.38 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
